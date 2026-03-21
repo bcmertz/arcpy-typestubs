@@ -6,9 +6,9 @@
 - Consider supporting stubs for different versions of arcpy
   - Consider if new native arcpy typing is backwards compatible with older arcpy versions (probably not)
     - possibility to use newer stubs to make older versions more complete or accurate
-  - Test which tools generate most accurate stubs: mypy, pyright, based-pyright, etc
+  - Test which tools generate most accurate stubs: [stubgen](https://github.com/python/typeshed/blob/main/scripts/create_baseline_stubs.py), or [other](https://typing.python.org/en/latest/guides/writing_stubs.html)
 - Consider publishing to a package repository
-- Consider mergeing into [python-typeshed](https://github.com/python/typeshed?tab=contributing-ov-file)
+- Consider merging into [python-typeshed](https://github.com/python/typeshed?tab=contributing-ov-file)
 
 
 # ArcGIS Pro third-party library support
