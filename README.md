@@ -8,6 +8,7 @@
     - possibility to use newer stubs to make older versions more complete or accurate
   - Test which tools generate most accurate stubs: mypy, pyright, based-pyright, etc
 - Consider publishing to a package repository
+- Consider mergeing into [python-typeshed]([url](https://github.com/python/typeshed?tab=contributing-ov-file))
 
 
 # ArcGIS Pro third-party library support
