@@ -3,10 +3,10 @@
 
 # Future Direction
 - Improve existing stub files which are incomplete and contain errors
-- Consider supporting stubs for different versions of arcpy
-  - Consider if new native arcpy typing is backwards compatible with older arcpy versions (probably not)
-    - possibility to use newer stubs to make older versions more complete or accurate
   - Test which tools generate most accurate stubs: [stubgen](https://github.com/python/typeshed/blob/main/scripts/create_baseline_stubs.py), or [other](https://typing.python.org/en/latest/guides/writing_stubs.html)
+- Consider supporting stubs for different versions of arcpy
+- Consider if new native arcpy typing is backwards compatible with older arcpy versions (probably not)
+  - possibility to use newer stubs to make older versions more complete or accurate
 - Consider publishing to a package repository
 - Consider merging into [python-typeshed](https://github.com/python/typeshed?tab=contributing-ov-file)
 
