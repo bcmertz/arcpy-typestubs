@@ -261,6 +261,7 @@ class CIMProfileGrid:
     xMax: int
     verticalIntervalInMeters: int
     verticalIntervalInFeet: int
+    showAbsoluteHorizontalScale: bool
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMProfileOIS:
@@ -312,10 +313,6 @@ class CIMReportElementFieldProperties:
     field: Incomplete
     format: str
     statistic: Incomplete
-    def __init__(self, *args, **Kwargs) -> None: ...
-
-class CIMReportMapFrameElementProperties:
-    spatialMapSeries: str
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMReportWatermark:
@@ -567,6 +564,10 @@ class CIMReport(CIMLayout):
 class CIMReportField(CIMTableField):
     def __init__(self, *args, **Kwargs) -> None: ...
 
+class CIMReportMapFrameElementProperties(CIMReportElementFieldProperties):
+    spatialMapSeries: str
+    def __init__(self, *args, **Kwargs) -> None: ...
+
 class CIMReportSectionElement(CIMGroupElement):
     autoSize: bool
     elementFieldProperties: Incomplete
@@ -599,6 +600,7 @@ class CIMScaleBar(CIMMapSurround):
     computeAtCenter: bool
     displayFirstOutside: bool
     displayLastOutside: bool
+    barWidth: float
     divisionMarkHeight: float
     divisionMarkSymbol: str
     markFrequency: Incomplete
@@ -822,6 +824,7 @@ class CIMDoubleFillScaleBar(CIMScaleBar):
 
 class CIMGroupFooter(CIMReportSectionElement):
     field: Incomplete
+    alignSubsectionToBottom: bool
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMGroupHeader(CIMReportSectionElement):
@@ -910,9 +913,11 @@ class CIMReportDetails(CIMReportSectionElement):
     columns: int
     rowBackgroundColors: Incomplete
     rowBackgroundCount: int
+    keepRecordTogether: bool
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMReportFooter(CIMReportSectionElement):
+    alignSubsectionToBottom: bool
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMReportHeader(CIMReportSectionElement):
@@ -957,6 +962,15 @@ class CIMTMElevationGuideBarElement(CIMMapProductSurround):
     highBandSymbol: str
     mediumBandSymbol: str
     lowBandSymbol: str
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMTopoCompassRose(CIMTopoNorthArrow):
+    degreeLabelFrequency: int
+    divisionMarkSymbol: str
+    subdivisionMarkSymbol: str
+    degreeMarkSymbol: str
+    divisions: int
+    subdivisions: int
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMGlossaryTable(CIMMapProductSurround):

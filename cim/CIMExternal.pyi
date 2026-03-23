@@ -5,10 +5,6 @@ class esriNumericAlignmentEnum(Enum):
     esriAlignRight: int
     esriAlignLeft: int
 
-class esriNumericAlignmentEnum(Enum):
-    esriAlignRight: int
-    esriAlignLeft: int
-
 class esriRoundingOptionEnum(Enum):
     esriRoundNumberOfDecimals: int
     esriRoundNumberOfSignificantDigits: int
@@ -260,6 +256,8 @@ class TimeReference:
     timeZoneNameID: Incomplete
     respectsDaylightSavingTime: bool
     respectsDynamicAdjustmentRules: bool
+    timeZone: Incomplete
+    timeZoneIANA: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class TimeValue(CIMObject):

@@ -16,11 +16,6 @@ class CIMLinkChartEntity:
     keyFieldNames: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
-class CIMLinkChartFieldFilter:
-    field: Incomplete
-    fieldType: Incomplete
-    def __init__(self, *args, **Kwargs) -> None: ...
-
 class CIMLinkChartFilter:
     iD: Incomplete
     name: Incomplete
@@ -68,10 +63,6 @@ class CIMLinkChartNodeDrawingInfo:
     showNodeFrames: bool
     def __init__(self, *args, **Kwargs) -> None: ...
 
-class CIMLinkChartPropertyFilter:
-    dataType: Incomplete
-    def __init__(self, *args, **Kwargs) -> None: ...
-
 class CIMLinkChartRelationship:
     iD: Incomplete
     name: Incomplete
@@ -111,10 +102,19 @@ class CIMLinkChart(CIMLinkChartBase):
     filterGroups: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
+class CIMLinkChartFieldFilter(CIMLinkChartFilter):
+    field: Incomplete
+    fieldType: Incomplete
+    def __init__(self, *args, **Kwargs) -> None: ...
+
 class CIMLinkChartLinkLabelingInfo(CIMLinkChartLabelingInfo):
     labelPlacement: Incomplete
     defaultLabel: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMLinkChartNodeLabelingInfo(CIMLinkChartLabelingInfo):
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMLinkChartPropertyFilter(CIMLinkChartFilter):
+    dataType: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...

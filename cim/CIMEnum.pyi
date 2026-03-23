@@ -1,5 +1,69 @@
 from enum import Enum
 
+class BABenchmarkMethod(Enum):
+    Average: int
+    Median: int
+    Feature: int
+    eNone: int
+
+class BABenchmarkStyle(Enum):
+    AboveOrBelow: int
+    AboveInBetweenOrBelow: int
+    Quartiles: int
+
+class BABoundaryMode(Enum):
+    Geographies: int
+    H3Hexagons: int
+
+class BACombinationMethod(Enum):
+    Sum: int
+    Mean: int
+    Product: int
+    GeometricMean: int
+
+class BACriterionInfluence(Enum):
+    Positive: int
+    Inverse: int
+    Ideal: int
+    TargetSite: int
+
+class BAFinalScoreMethod(Enum):
+    eNone: int
+    Method0_1: int
+    Method0_100: int
+
+class BAHistogramSubsetSelectionMethod(Enum):
+    Outliers: int
+    Percentage: int
+    StandardDeviation: int
+
+class BAPointCriterionType(Enum):
+    Count: int
+    Weight: int
+    MinDistance: int
+
+class BAPointStatisticsType(Enum):
+    Sum: int
+    Ave: int
+    StdDev: int
+    Min: int
+    Max: int
+
+class BAPreprocessingMethod(Enum):
+    MinMax: int
+    Percentile: int
+    ZScore: int
+    Raw: int
+
+class BAPresetMethod(Enum):
+    CombineValues: int
+    CompoundDifferences: int
+    Custom: int
+
+class BAScatterplotChartType(Enum):
+    Scatterplot: int
+    BubbleChart: int
+
 class BAVariableListValueType(Enum):
     Number: int
     Percent: int
@@ -46,6 +110,7 @@ class ChartFontWeight(Enum):
 class ChartGuideType(Enum):
     ChartGuideType_Line: int
     ChartGuideType_Range: int
+    ChartGuideType_Polyline: int
 
 class ChartLegendAlignment(Enum):
     Left: int
@@ -154,15 +219,33 @@ class ChartTrendLineFitType(Enum):
     ChartTrendLineFitType_AverageX: int
     ChartTrendLineFitType_AverageY: int
 
+class ChartType(Enum):
+    Basic: int
+    Combo: int
+
 class ChartValueType(Enum):
     ChartValueType_Numeric: int
     ChartValueType_Temporal: int
+
+class ProfileGraphLineSeriesType(Enum):
+    ProfileGraphLineSeriesType_LineOnly: int
+    ProfileGraphLineSeriesType_LineAndVertices: int
+    ProfileGraphLineSeriesType_Fill: int
+
+class ProfileGraphVariableInYAxis(Enum):
+    ProfileGraphVariableInYAxis_Z: int
+    ProfileGraphVariableInYAxis_M: int
 
 class SpectralProfileDisplayMode(Enum):
     MeanLine: int
     Boxes: int
     BoxesAndMeanLine: int
     ConsolidatedBoxesAndMeanLine: int
+
+class SpectralProfileHorizontalUnit(Enum):
+    BandIDs: int
+    Wavelengths: int
+    BandNames: int
 
 class ColorSpaceType(Enum):
     RGB: int
@@ -289,6 +372,7 @@ class ColorVisionDeficiencyType(Enum):
     Deuteranopia: int
     Protanopia: int
     Tritanopia: int
+    Achromatopsia: int
 
 class DominantSizeAxis(Enum):
     Z: int
@@ -390,6 +474,8 @@ class RasterStretchType(Enum):
     PercentMinimumMaximum: int
     Count: int
     ESRI: int
+    SquareRoot: int
+    Logarithm: int
 
 class RotationOrder(Enum):
     XYZ: int
@@ -520,6 +606,11 @@ class CentralityScoresNormalization(Enum):
     Global: int
     ByComponent: int
 
+class EventsTicksVisualization(Enum):
+    eNone: int
+    StartOnly: int
+    StartAndEnd: int
+
 class FilteredFindPathsEntityUsage(Enum):
     AnyOriginAnyDestination: int
     AnyOriginAllDestinations: int
@@ -590,6 +681,22 @@ class KnowledgeLinkChartLayoutAlgorithm(Enum):
     Radial_NodeCentric: int
     Hierarchical_TopToBottom: int
     Hierarchical_BottomToTop: int
+    Chronological_MonoTimeline: int
+    Chronological_MultiTimeline: int
+
+class KnowledgeNonspatialDataDisplayMode(Enum):
+    Visible: int
+    Hidden: int
+
+class LinkChartLayoutDirection(Enum):
+    Top: int
+    Bottom: int
+    Left: int
+    Right: int
+
+class LinkChartLayoutIdealEdgeLengthType(Enum):
+    AbsoluteValue: int
+    Multiplier: int
 
 class ProvenanceBehavior(Enum):
     Exclude: int
@@ -981,6 +1088,7 @@ class MapProductSpecType(Enum):
     JNC: int
     ONC: int
     TPC: int
+    EVC: int
 
 class MeterReferenceSquareType(Enum):
     Single: int
@@ -1048,6 +1156,7 @@ class ScaleBarFittingStrategy(Enum):
     AdjustFrame: int
     FixedWidth: int
     FixedHeight: int
+    FixedBarWidth: int
 
 class ScaleBarFrequency(Enum):
     eNone: int
@@ -1138,6 +1247,35 @@ class LinkChartLayoutAlgorithm(Enum):
     Hierarchy_BottomToTop: int
     Hierarchy_LeftToRight: int
     Hierarchy_RightToLeft: int
+    Circular_Default: int
+    Circular_Substructures: int
+    Organic_Substructures: int
+    Organic_Clustered_Substructures: int
+    Organic_Clustered: int
+    Tree_Multi_Parent_Tree_TopToBottom: int
+    Tree_Multi_Parent_Tree_BottomToTop: int
+    Tree_Multi_Parent_Tree_LeftToRight: int
+    Tree_Multi_Parent_Tree_RightToLeft: int
+    Tree_Mindmap_TopToBottom: int
+    Tree_Mindmap_BottomToTop: int
+    Tree_Mindmap_LeftToRight: int
+    Tree_Mindmap_RightToLeft: int
+    Tree_Compact_TopToBottom: int
+    Tree_Compact_BottomToTop: int
+    Tree_Compact_LeftToRight: int
+    Tree_Compact_RightToLeft: int
+    Balloon_Default: int
+    Balloon_Ray_Like: int
+    Radial_Default: int
+    Radial_Dendrogram: int
+    Hierarchy_Curves_TopToBottom: int
+    Hierarchy_Curves_BottomToTop: int
+    Hierarchy_Curves_LeftToRight: int
+    Hierarchy_Curves_RightToLeft: int
+    Hierarchy_Flowchart_TopToBottom: int
+    Hierarchy_Flowchart_BottomToTop: int
+    Hierarchy_Flowchart_LeftToRight: int
+    Hierarchy_Flowchart_RightToLeft: int
 
 class LinkChartLinkDashStyle(Enum):
     Solid: int
@@ -1555,6 +1693,7 @@ class PatchShape(Enum):
     AreaHexagonFlat: int
     AreaHexagonPointy: int
     AreaTrapezium: int
+    Custom: int
 
 class PolygonSymbolColorTarget(Enum):
     Fill: int
@@ -1598,6 +1737,12 @@ class VisualVariableInfoType(Enum):
 class AngleAlignment(Enum):
     Display: int
     Map: int
+
+class AnimatedSymbolEasingType(Enum):
+    Linear: int
+    EaseIn: int
+    EaseOut: int
+    EaseInOut: int
 
 class AnimatedSymbolRepeatType(Enum):
     eNone: int
@@ -1727,6 +1872,14 @@ class GeometricEffectControlMeasureLineRule(Enum):
     CurvedParallelTicks: int
     Arc90Degrees: int
     TipWithPerpendicularAndTicks: int
+    ConcentricCircles: int
+    DoubleJogArrow: int
+    LinkedChevrons: int
+    SegmentThenHalfCircle: int
+    LineWithStraightTicks: int
+    DoubleCurve: int
+    ParallelWithTicksByWidth: int
+    EnclosingRoundedRectangle: int
 
 class GeometricEffectDonutMethod(Enum):
     Mitered: int
@@ -1950,6 +2103,7 @@ class VerticalAlignment(Enum):
 class VerticalGlyphOrientation(Enum):
     Right: int
     Upright: int
+    Mixed: int
 
 class WaterbodySize(Enum):
     Small: int
@@ -2143,6 +2297,15 @@ class S52DepthDisplayUnits(Enum):
 class S52PointSymbolizationType(Enum):
     PaperChart: int
     Simplified: int
+
+class StandardDeviationMultiplier(Enum):
+    eNone: int
+    OneFourth: int
+    OneThird: int
+    OneHalf: int
+    One: int
+    Two: int
+    Custom: int
 
 class SymbolSubstitutionType(Enum):
     eNone: int

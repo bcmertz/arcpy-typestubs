@@ -1,7 +1,7 @@
 from _typeshed import Incomplete
 from arcpy.arcobjects._base import _ObjectWithoutInitCall
 
-__all__ = ['Chart', 'TimeBinningProperties', 'Bar', 'Box', 'CalendarHeat', 'DataClock', 'Histogram', 'Line', 'MatrixHeat', 'Pie', 'QQPlot', 'Scatter', 'ScatterMatrix']
+__all__ = ['Chart', 'Guide', 'TimeBinningProperties', 'Bar', 'Box', 'CalendarHeat', 'DataClock', 'Histogram', 'Line', 'MatrixHeat', 'Pie', 'QQPlot', 'Scatter', 'ScatterMatrix']
 
 class Chart(_ObjectWithoutInitCall):
     xAxis: Incomplete
@@ -41,6 +41,9 @@ class Chart(_ObjectWithoutInitCall):
         logarithmic: Incomplete
         useAdaptiveBounds: Incomplete
         invert: Incomplete
+        def addGuide(self, guide): ...
+        def removeGuide(self, guide): ...
+        def listGuides(self, guideName: Incomplete | None = None): ...
         axisId: Incomplete
         guides: Incomplete
         def __init__(self, parent, i) -> None: ...
@@ -124,6 +127,7 @@ class Chart(_ObjectWithoutInitCall):
         def __init__(self, parent) -> None: ...
         visible: Incomplete
         title: Incomplete
+        alignment: Incomplete
     @property
     def type(self): ...
     @type.setter
@@ -146,6 +150,19 @@ class TimeBinningProperties(_ObjectWithoutInitCall):
     referenceTime: Incomplete
     trimIncompleteInterval: Incomplete
     def __init__(self, intervalSize: Incomplete | None = None, intervalUnits: Incomplete | None = None, timeAggregationType: Incomplete | None = None, trimIncompleteInterval: Incomplete | None = None, referenceTime: Incomplete | None = None) -> None: ...
+
+class Guide(_ObjectWithoutInitCall):
+    guideType: Incomplete
+    name: Incomplete
+    label: Incomplete
+    valueFrom: Incomplete
+    valueTo: Incomplete
+    polyline: Incomplete
+    fillColor: Incomplete
+    lineColor: Incomplete
+    lineWidth: Incomplete
+    lineDashStyle: Incomplete
+    def __init__(self, guideType, *, name: Incomplete | None = None, label: Incomplete | None = None, valueFrom: Incomplete | None = None, valueTo: Incomplete | None = None, polyline: Incomplete | None = None, lineColor: Incomplete | None = None, lineWidth: Incomplete | None = None, lineDashStyle: Incomplete | None = None, fillColor: Incomplete | None = None) -> None: ...
 
 class Bar(Chart):
     type: str

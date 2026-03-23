@@ -39,6 +39,8 @@ class CIMAttachmentsMediaInfo(CIMMediaInfo):
     title: Incomplete
     contentType: Incomplete
     displayType: Incomplete
+    sortField: Incomplete
+    sortOrder: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMCarouselMediaInfo(CIMMediaInfo):
@@ -52,6 +54,8 @@ class CIMChartMediaInfo(CIMMediaInfo):
     normalizeField: Incomplete
     caption: Incomplete
     title: Incomplete
+    maximumAxisValue: float
+    colorRamp: str
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMColumnChartMediaInfo(CIMChartMediaInfo):

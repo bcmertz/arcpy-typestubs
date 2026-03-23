@@ -234,6 +234,7 @@ class CIMStandaloneVideo(CIMDefinition):
 
 class CIMVideoDataConnection(CIMDataConnection):
     uRI: Incomplete
+    anonymous: bool
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMVideoGraphicElement(CIMGraphicElement):

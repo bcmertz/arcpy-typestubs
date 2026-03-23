@@ -116,6 +116,8 @@ class CIMKnowledgeGraphDataLoadingRelationship:
 class CIMKnowledgeGraphInvestigationTypeInfo:
     typeName: Incomplete
     popupInfo: str
+    symbol: str
+    displayExpressionInfo: str
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMKnowledgeGraphLinkChartCentralityConfiguration:
@@ -133,6 +135,7 @@ class CIMKnowledgeGraphLinkChartProperties:
     centralityConfiguration: str
     centralityIsUpToDate: bool
     lastUsedLayout: str
+    nonspatialDataDisplay: str
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMKnowledgeGraphProperty:
@@ -162,8 +165,43 @@ class CIMKnowledgeGraphSearchFilterSetting:
     typeNames: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
+class CIMKnowledgeLinkChartChronologicalLayoutSettings:
+    timeDirection: Incomplete
+    timeBannerUTCOffsetInMinutes: int
+    eventsTicksVisualization: Incomplete
+    showDurationLineForNonZeroDurationEntityEvents: bool
+    durationLineWidth: int
+    entityPositionAtDurationRatio: float
+    showNonZeroDurationIntervalBounds: bool
+    separateTimeOverlaps: bool
+    separateTimelineOverlaps: bool
+    moveFirstBends: bool
+    secondBendRatio: float
+    lineSeparationMultiplier: float
+    spaceSeparatedLinesEvenly: bool
+    useBezierCurves: bool
+    separatedLineShapeRatio: float
+    def __init__(self, *args, **Kwargs) -> None: ...
+
 class CIMKnowledgeLinkChartLayout:
     algorithm: Incomplete
+    organicLayoutSettings: str
+    chronologicalLayoutSettings: str
+    autoApply: bool
+    preserveExtent: bool
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMKnowledgeLinkChartOrganicLayoutSettings:
+    computationTimeBudget: float
+    absoluteIdealEdgeLength: float
+    multiplicativeIdealEdgeLength: float
+    idealEdgeLengthType: Incomplete
+    autoComputeRepulsionRadius: bool
+    repulsionRadiusMultiplier: float
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMKnowledgeNonspatialDataDisplay:
+    mode: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMKnowledgeGraphDataConnection(CIMDataConnection):
@@ -182,6 +220,7 @@ class CIMKnowledgeGraphInvestigation(CIMDefinition):
     queryDefinitions: Incomplete
     filteredFindPathsConfigurations: Incomplete
     typeInfos: Incomplete
+    customProperties: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMKnowledgeGraphLayer(CIMBaseLayer):

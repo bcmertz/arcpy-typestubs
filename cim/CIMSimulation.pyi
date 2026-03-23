@@ -9,11 +9,8 @@ class CIMFloodSimulationObject:
     visible: bool
     def __init__(self, *args, **Kwargs) -> None: ...
 
-class CIMFloodSimulationRateRaster:
-    timeUnit: Incomplete
-    def __init__(self, *args, **Kwargs) -> None: ...
-
 class CIMFloodSimulationStorage:
+    waterSourceAreas: Incomplete
     waterSources: Incomplete
     barriers: Incomplete
     culverts: Incomplete
@@ -30,6 +27,8 @@ class CIMSimulationLayer(CIMBaseLayer):
     areaOfInterestSymbol: str
     useAutomaticCellResolution: bool
     manualCellResolution: int
+    maxAOIEdgeCellCount: int
+    elevationDownscalingFactor: int
     duration: int
     currentTime: int
     playbackSpeed: int
@@ -79,7 +78,16 @@ class CIMFloodSimulationLayer(CIMSimulationLayer):
     overrideWeatherEffects: bool
     def __init__(self, *args, **Kwargs) -> None: ...
 
+class CIMFloodSimulationRateRaster(CIMFloodSimulationDepthRaster):
+    timeUnit: Incomplete
+    def __init__(self, *args, **Kwargs) -> None: ...
+
 class CIMFloodSimulationWaterSource(CIMFloodSimulationObject):
     location: Incomplete
+    waterFlowRate: Incomplete
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMFloodSimulationWaterSourceArea(CIMFloodSimulationObject):
+    area: Incomplete
     waterFlowRate: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...

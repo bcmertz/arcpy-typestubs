@@ -15,6 +15,7 @@ class RasterClassifyColorizer(Base_raster):
     noDataColor: Incomplete
     classificationField: Incomplete
     classificationMethod: Incomplete
+    lowerBound: Incomplete
     @property
     def type(self): ...
     def __eq__(self, other): ...

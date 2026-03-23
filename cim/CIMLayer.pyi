@@ -32,9 +32,13 @@ class CIM3DLayerProperties:
 class CIMDefinitionFilter:
     name: Incomplete
     definitionExpression: Incomplete
+    geometryURI: Incomplete
+    spatialReference: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMDisplayEffect:
+    name: Incomplete
+    enabled: bool
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMElementStorage:
@@ -56,9 +60,7 @@ class CIMFeatureLayerEffect:
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMLayerEffect:
-    effect: str
-    maxScale: float
-    minScale: float
+    effects: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMLayerElevationSurface:
@@ -215,6 +217,10 @@ class CIMRasterDisplayEffect(CIMDisplayEffect):
 
 class CIMSaturateEffect(CIMColorDisplayEffect):
     strength: float
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMScaleDependentLayerEffect(CIMLayerEffect):
+    scale: float
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMSepiaEffect(CIMColorDisplayEffect):

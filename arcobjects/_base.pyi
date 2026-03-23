@@ -9,7 +9,6 @@ class _ArcobjectPassthrough:
 
 class _BaseArcObject:
     def __init__(self, *args, **kwargs) -> None: ...
-    def __cmp__(self, other): ...
 
 class _ObjectWithoutInitCall:
     @classmethod

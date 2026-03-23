@@ -39,6 +39,7 @@ class Graduated_colors_renderer(Base_renderer):
     colorRamp: Incomplete
     intervalSize: Incomplete
     deviationInterval: Incomplete
+    lowerBound: Incomplete
     @property
     def type(self): ...
     def __eq__(self, other): ...
@@ -57,6 +58,7 @@ class Graduated_symbols_renderer(Base_renderer):
     colorRamp: Incomplete
     intervalSize: Incomplete
     deviationInterval: Incomplete
+    lowerBound: Incomplete
     def updateSymbolTemplate(self, symbol_template): ...
     @property
     def type(self): ...
