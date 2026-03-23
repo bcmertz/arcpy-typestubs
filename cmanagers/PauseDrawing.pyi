@@ -1,0 +1,17 @@
+from _typeshed import Incomplete
+from enum import Flag
+
+class ViewContext(Flag):
+    maps: Incomplete
+    layouts: Incomplete
+    maps_and_layouts: Incomplete
+
+class PauseDrawing:
+    context: Incomplete
+    maps: Incomplete
+    layouts: Incomplete
+    def __init__(self, context=...) -> None: ...
+    def fall_back_method(self, context) -> None: ...
+    def redirect_call(self, method_name): ...
+    def __enter__(self) -> None: ...
+    def __exit__(self, exc_type: type[BaseException] | None, exc_value: BaseException | None, traceback: types.TracebackType | None) -> None: ...

@@ -1,0 +1,29 @@
+from _typeshed import Incomplete
+
+class PixelBlock:
+    def __init__(self, data, extent) -> None: ...
+    def getData(self): ...
+    cell_size: Incomplete
+    spatial_reference: Incomplete
+    tlc: Incomplete
+    @property
+    def extent(self): ...
+
+class PixelBlockCollection:
+    rasters: Incomplete
+    pixel_block_size: Incomplete
+    spatial_reference: Incomplete
+    tlc: Incomplete
+    mean_cell_height: Incomplete
+    mean_cell_width: Incomplete
+    extent: Incomplete
+    height: Incomplete
+    width: Incomplete
+    stride: Incomplete
+    size: Incomplete
+    def __init__(self, rasters, pixel_block_size=(512, 512), stride: Incomplete | None = None, overlay_type: str = 'INTERSECTION', nodata_to_values: Incomplete | None = None) -> None: ...
+    def __iter__(self): ...
+    def __next__(self): ...
+    def __getitem__(self, item): ...
+    def reset(self) -> None: ...
+    def shuffle(self) -> None: ...

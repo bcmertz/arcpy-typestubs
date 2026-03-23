@@ -1,0 +1,3 @@
+__all__ = ['PopulateXMLElementWithAttr']
+
+def PopulateXMLElementWithAttr(obj): ...

@@ -1,0 +1,6 @@
+from _typeshed import Incomplete
+
+__all__ = ['QuickExport', 'QuickImport']
+
+def QuickExport(Input: Incomplete | None = None, Output: Incomplete | None = None): ...
+def QuickImport(Input: Incomplete | None = None, Output: Incomplete | None = None): ...

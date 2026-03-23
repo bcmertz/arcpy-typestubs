@@ -1,0 +1,6 @@
+from _typeshed import Incomplete
+
+arcobject_to_python_class_mapping: Incomplete
+
+def initialize_conversion_mapping() -> None: ...
+def convertArcObjectToPythonObject(obj): ...
