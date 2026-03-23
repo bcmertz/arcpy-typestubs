@@ -22,6 +22,18 @@ After cloning the repo, check the branch of the arcpy version you are running:
 git checkout 3.3
 ```
 
+# Creating type stub
+- add mypy to default arcgispro conda environment (arcgispro-py3)
+- open arcgis pro python command prompt
+- stubgen -p arcpy -o <output folder>
+
+
+If arcgis pro is a more recent version than the arcpy library listed by anaconda and version errors occur:
+- open python command prompt (https://pro.arcgis.com/en/pro-app/latest/arcpy/get-started/upgrade-an-environment.htm)
+- switch to a non-default conda environment (not arcgispro-py3)
+- run `conda proup -n <default environment-name>`
+- then proceed with regular generation of type stubs
+
 
 # ArcGIS Pro third-party library support
 
