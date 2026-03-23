@@ -10,6 +10,18 @@
 - Consider publishing to a package repository
 - Consider merging into [python-typeshed](https://github.com/python/typeshed?tab=contributing-ov-file)
 
+# Installation
+Type stub .pyi files can be used by cloning the repository into the root of the project into a folder named `arcpy` by running:
+```
+cd SWCD-Tools/
+git clone git@github.com:bcmertz/arcpy-typestubs.git arcpy
+```
+
+After cloning the repo, check the branch of the arcpy version you are running:
+```
+git checkout 3.3
+```
+
 
 # ArcGIS Pro third-party library support
 
