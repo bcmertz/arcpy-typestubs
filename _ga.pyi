@@ -12,7 +12,7 @@ class SearchNeighborhoodStandard(_NamedAttrObject):
     nbrMax: Incomplete
     nbrMin: Incomplete
     sectorType: Incomplete
-    def __init__(self, majorSemiaxis: Incomplete | None = None, minorSemiaxis: Incomplete | None = None, angle: float = 0.0, nbrMax: int = 15, nbrMin: int = 10, sectorType: str = 'ONE_SECTOR') -> None: ...
+    def __init__(self, majorSemiaxis=None, minorSemiaxis=None, angle: float = 0.0, nbrMax: int = 15, nbrMin: int = 10, sectorType: str = 'ONE_SECTOR') -> None: ...
 
 class SearchNeighborhoodSmooth(_NamedAttrObject):
     __esri_toolinfo__: Incomplete
@@ -20,7 +20,7 @@ class SearchNeighborhoodSmooth(_NamedAttrObject):
     minorSemiaxis: Incomplete
     angle: Incomplete
     smoothFactor: Incomplete
-    def __init__(self, majorSemiaxis: Incomplete | None = None, minorSemiaxis: Incomplete | None = None, angle: float = 0.0, smoothFactor: float = 0.2) -> None: ...
+    def __init__(self, majorSemiaxis=None, minorSemiaxis=None, angle: float = 0.0, smoothFactor: float = 0.2) -> None: ...
 
 class SearchNeighborhoodStandardCircular(_NamedAttrObject):
     __esri_toolinfo__: Incomplete
@@ -29,13 +29,13 @@ class SearchNeighborhoodStandardCircular(_NamedAttrObject):
     nbrMax: Incomplete
     nbrMin: Incomplete
     sectorType: Incomplete
-    def __init__(self, radius: Incomplete | None = None, angle: float = 0.0, nbrMax: int = 15, nbrMin: int = 10, sectorType: str = 'ONE_SECTOR') -> None: ...
+    def __init__(self, radius=None, angle: float = 0.0, nbrMax: int = 15, nbrMin: int = 10, sectorType: str = 'ONE_SECTOR') -> None: ...
 
 class SearchNeighborhoodSmoothCircular(_NamedAttrObject):
     __esri_toolinfo__: Incomplete
     radius: Incomplete
     smoothFactor: Incomplete
-    def __init__(self, radius: Incomplete | None = None, smoothFactor: float = 0.2) -> None: ...
+    def __init__(self, radius=None, smoothFactor: float = 0.2) -> None: ...
 
 class SearchNeighborhoodStandard3D(_NamedAttrObject):
     __esri_toolinfo__: Incomplete
@@ -43,7 +43,7 @@ class SearchNeighborhoodStandard3D(_NamedAttrObject):
     nbrMax: Incomplete
     nbrMin: Incomplete
     sectorType: Incomplete
-    def __init__(self, radius: Incomplete | None = None, nbrMax: int = 2, nbrMin: int = 1, sectorType: str = 'TWELVE_SECTORS') -> None: ...
+    def __init__(self, radius=None, nbrMax: int = 2, nbrMin: int = 1, sectorType: str = 'TWELVE_SECTORS') -> None: ...
 
 class CrossValidationResult(Result):
     @property

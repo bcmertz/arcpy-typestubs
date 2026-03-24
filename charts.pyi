@@ -1,7 +1,7 @@
 from _typeshed import Incomplete
 from arcpy.arcobjects._base import _ObjectWithoutInitCall
 
-__all__ = ['Chart', 'TimeBinningProperties', 'Bar', 'Box', 'CalendarHeat', 'DataClock', 'Histogram', 'Line', 'MatrixHeat', 'Pie', 'QQPlot', 'Scatter', 'ScatterMatrix']
+__all__ = ['Chart', 'Guide', 'Series', 'TimeBinningProperties', 'Bar', 'Box', 'CalendarHeat', 'DataClock', 'Histogram', 'Line', 'MatrixHeat', 'Pie', 'QQPlot', 'Scatter', 'ScatterMatrix', 'Combo']
 
 class Chart(_ObjectWithoutInitCall):
     xAxis: Incomplete
@@ -10,7 +10,7 @@ class Chart(_ObjectWithoutInitCall):
     title: Incomplete
     description: Incomplete
     theme: Incomplete
-    def __init__(self, name, title: Incomplete | None = None, description: Incomplete | None = None, xTitle: Incomplete | None = None, yTitle: Incomplete | None = None, dataSource: Incomplete | None = None, displaySize: Incomplete | None = None, theme: Incomplete | None = None) -> None: ...
+    def __init__(self, name, title=None, description=None, xTitle=None, yTitle=None, dataSource=None, displaySize=None, theme=None, **kwargs) -> None: ...
     color: Incomplete
     enableServerSideProcessing: Incomplete
     class _arc_base:
@@ -25,7 +25,7 @@ class Chart(_ObjectWithoutInitCall):
             label: Incomplete
             def __init__(self, _name) -> None: ...
         class _Guides:
-            def new(self, name, valueFrom, valueTo: Incomplete | None = None, label: Incomplete | None = None): ...
+            def new(self, name, valueFrom, valueTo=None, label=None): ...
             def get(self, index): ...
             def update(self, _guides) -> None: ...
             def remove(self, guide) -> None: ...
@@ -41,6 +41,9 @@ class Chart(_ObjectWithoutInitCall):
         logarithmic: Incomplete
         useAdaptiveBounds: Incomplete
         invert: Incomplete
+        def addGuide(self, guide): ...
+        def removeGuide(self, guide): ...
+        def listGuides(self, guideName=None): ...
         axisId: Incomplete
         guides: Incomplete
         def __init__(self, parent, i) -> None: ...
@@ -71,6 +74,8 @@ class Chart(_ObjectWithoutInitCall):
         timeAggregationType: Incomplete
         nullPolicy: Incomplete
         rotated: Incomplete
+    class _comboChart(_seriesType):
+        def __init__(self, parent) -> None: ...
     class _histogram(_seriesType):
         def __init__(self, parent) -> None: ...
         binCount: Incomplete
@@ -124,6 +129,7 @@ class Chart(_ObjectWithoutInitCall):
         def __init__(self, parent) -> None: ...
         visible: Incomplete
         title: Incomplete
+        alignment: Incomplete
     @property
     def type(self): ...
     @type.setter
@@ -131,7 +137,11 @@ class Chart(_ObjectWithoutInitCall):
     @property
     def legend(self): ...
     def getSVG(self, width, height): ...
-    def exportToSVG(self, path, width: Incomplete | None = None, height: Incomplete | None = None) -> None: ...
+    def exportToSVG(self, path, width=None, height=None) -> None: ...
+    def getPNG(self, width, height): ...
+    def exportToPNG(self, path, width=None, height=None) -> None: ...
+    def getJPEG(self, width, height): ...
+    def exportToJPEG(self, path, width=None, height=None) -> None: ...
     def addToLayer(self, layer_or_layerfile): ...
     def updateChart(self): ...
     @property
@@ -145,7 +155,30 @@ class TimeBinningProperties(_ObjectWithoutInitCall):
     timeAggregationType: Incomplete
     referenceTime: Incomplete
     trimIncompleteInterval: Incomplete
-    def __init__(self, intervalSize: Incomplete | None = None, intervalUnits: Incomplete | None = None, timeAggregationType: Incomplete | None = None, trimIncompleteInterval: Incomplete | None = None, referenceTime: Incomplete | None = None) -> None: ...
+    def __init__(self, intervalSize=None, intervalUnits=None, timeAggregationType=None, trimIncompleteInterval=None, referenceTime=None) -> None: ...
+
+class Guide(_ObjectWithoutInitCall):
+    guideType: Incomplete
+    name: Incomplete
+    label: Incomplete
+    valueFrom: Incomplete
+    valueTo: Incomplete
+    polyline: Incomplete
+    fillColor: Incomplete
+    lineColor: Incomplete
+    lineWidth: Incomplete
+    lineDashStyle: Incomplete
+    valueFromField: Incomplete
+    valueFromFieldAggregationType: Incomplete
+    symbolStyle: Incomplete
+    symbolSize: Incomplete
+    def __init__(self, guideType, *, name=None, label=None, valueFrom=None, valueTo=None, valueFromField=None, valueFromFieldAggregationType=None, polyline=None, lineColor=None, lineWidth=None, lineDashStyle=None, fillColor=None, symbolStyle=None, symbolSize=None) -> None: ...
+
+class Series(_ObjectWithoutInitCall):
+    y: Incomplete
+    seriesType: Incomplete
+    aggregation: Incomplete
+    def __init__(self, y, seriesType=None, *, aggregation=None) -> None: ...
 
 class Bar(Chart):
     type: str
@@ -161,11 +194,22 @@ class Bar(Chart):
     rotated: Incomplete
     timeBinningProperties: Incomplete
     nullPolicy: Incomplete
-    def __init__(self, x, *, y: Incomplete | None = None, aggregation: Incomplete | None = None, splitCategory: Incomplete | None = None, multiSeriesDisplay: Incomplete | None = None, miniChartsPerRow: Incomplete | None = None, showPreviewChart: Incomplete | None = None, showMovingAverage: Incomplete | None = None, movingAveragePeriod: Incomplete | None = None, rotated: Incomplete | None = None, title: Incomplete | None = None, description: Incomplete | None = None, xTitle: Incomplete | None = None, yTitle: Incomplete | None = None, dataSource: Incomplete | None = None, displaySize: Incomplete | None = None, theme: Incomplete | None = None, timeBinningProperties: Incomplete | None = None, nullPolicy: Incomplete | None = None) -> None: ...
+    def __init__(self, x, *, y=None, aggregation=None, splitCategory=None, multiSeriesDisplay=None, miniChartsPerRow=None, showPreviewChart=None, showMovingAverage=None, movingAveragePeriod=None, rotated=None, title=None, description=None, xTitle=None, yTitle=None, dataSource=None, displaySize=None, theme=None, timeBinningProperties=None, nullPolicy=None, **kwargs) -> None: ...
     sortSeries: Incomplete
     showNullCategory: Incomplete
     nullCategoryLabel: Incomplete
     nullCategoryColor: Incomplete
+
+class Combo(Chart):
+    type: str
+    x: Incomplete
+    seriesLeft: Incomplete
+    seriesRight: Incomplete
+    timeBinningProperties: Incomplete
+    nullPolicy: Incomplete
+    yAxisLeft: Incomplete
+    yAxisRight: Incomplete
+    def __init__(self, x, *, seriesLeft=None, seriesRight=None, title=None, description=None, xTitle=None, yTitleLeft=None, yTitleRight=None, dataSource=None, displaySize=None, theme=None, timeBinningProperties=None, nullPolicy=None, **kwargs) -> None: ...
 
 class Box(Chart):
     type: str
@@ -176,7 +220,7 @@ class Box(Chart):
     standardizeValues: Incomplete
     showOutliers: Incomplete
     rotated: Incomplete
-    def __init__(self, y, *, x: Incomplete | None = None, splitCategory: Incomplete | None = None, splitCategoryAsMeanLine: Incomplete | None = None, standardizeValues: Incomplete | None = None, showOutliers: Incomplete | None = None, rotated: Incomplete | None = None, title: Incomplete | None = None, description: Incomplete | None = None, xTitle: Incomplete | None = None, yTitle: Incomplete | None = None, dataSource: Incomplete | None = None, displaySize: Incomplete | None = None, theme: Incomplete | None = None) -> None: ...
+    def __init__(self, y, *, x=None, splitCategory=None, splitCategoryAsMeanLine=None, standardizeValues=None, showOutliers=None, rotated=None, title=None, description=None, xTitle=None, yTitle=None, dataSource=None, displaySize=None, theme=None, **kwargs) -> None: ...
     sortSeries: Incomplete
 
 class Pie(Chart):
@@ -191,7 +235,7 @@ class Pie(Chart):
     sort: Incomplete
     showDataLabels: Incomplete
     dataLabelsDisplay: Incomplete
-    def __init__(self, *, categoryField: Incomplete | None = None, numberFields: Incomplete | None = None, splitCategory: Incomplete | None = None, miniChartsPerRow: Incomplete | None = None, showPreviewChart: Incomplete | None = None, groupingPercent: Incomplete | None = None, donutSize: Incomplete | None = None, sort: Incomplete | None = None, showDataLabels: Incomplete | None = None, dataLabelsDisplay: Incomplete | None = None, title: Incomplete | None = None, description: Incomplete | None = None, dataSource: Incomplete | None = None, displaySize: Incomplete | None = None, theme: Incomplete | None = None) -> None: ...
+    def __init__(self, *, categoryField=None, numberFields=None, splitCategory=None, miniChartsPerRow=None, showPreviewChart=None, groupingPercent=None, donutSize=None, sort=None, showDataLabels=None, dataLabelsDisplay=None, title=None, description=None, dataSource=None, displaySize=None, theme=None, **kwargs) -> None: ...
     sortSeries: Incomplete
 
 class Line(Chart):
@@ -210,7 +254,9 @@ class Line(Chart):
     trimIncompleteTimeInterval: Incomplete
     nullPolicy: Incomplete
     rotated: Incomplete
-    def __init__(self, x, *, y: Incomplete | None = None, splitCategory: Incomplete | None = None, multiSeriesDisplay: Incomplete | None = None, miniChartsPerRow: Incomplete | None = None, showPreviewChart: Incomplete | None = None, aggregation: Incomplete | None = None, timeIntervalUnits: Incomplete | None = None, timeIntervalSize: Incomplete | None = None, trimIncompleteTimeInterval: Incomplete | None = None, timeAggregationType: Incomplete | None = None, referenceTime: Incomplete | None = None, nullPolicy: Incomplete | None = None, rotated: Incomplete | None = None, title: Incomplete | None = None, description: Incomplete | None = None, xTitle: Incomplete | None = None, yTitle: Incomplete | None = None, dataSource: Incomplete | None = None, displaySize: Incomplete | None = None, theme: Incomplete | None = None) -> None: ...
+    showMovingAverage: Incomplete
+    movingAveragePeriod: Incomplete
+    def __init__(self, x, *, y=None, splitCategory=None, multiSeriesDisplay=None, miniChartsPerRow=None, showPreviewChart=None, aggregation=None, timeIntervalUnits=None, timeIntervalSize=None, trimIncompleteTimeInterval=None, timeAggregationType=None, referenceTime=None, nullPolicy=None, showMovingAverage=None, movingAveragePeriod=None, rotated=None, title=None, description=None, xTitle=None, yTitle=None, dataSource=None, displaySize=None, theme=None, **kwargs) -> None: ...
     sortSeries: Incomplete
 
 class Histogram(Chart):
@@ -226,7 +272,7 @@ class Histogram(Chart):
     showComparisonDistribution: Incomplete
     dataTransformationType: Incomplete
     dataTransformationParameters: Incomplete
-    def __init__(self, x, *, splitCategory: Incomplete | None = None, miniChartsPerRow: Incomplete | None = None, showPreviewChart: Incomplete | None = None, binCount: Incomplete | None = None, showMean: Incomplete | None = None, showMedian: Incomplete | None = None, showStandardDeviation: Incomplete | None = None, showComparisonDistribution: Incomplete | None = None, dataTransformationType: Incomplete | None = None, dataTransformationParameters: Incomplete | None = None, title: Incomplete | None = None, description: Incomplete | None = None, xTitle: Incomplete | None = None, yTitle: Incomplete | None = None, dataSource: Incomplete | None = None, displaySize: Incomplete | None = None, theme: Incomplete | None = None) -> None: ...
+    def __init__(self, x, *, splitCategory=None, miniChartsPerRow=None, showPreviewChart=None, binCount=None, showMean=None, showMedian=None, showStandardDeviation=None, showComparisonDistribution=None, dataTransformationType=None, dataTransformationParameters=None, title=None, description=None, xTitle=None, yTitle=None, dataSource=None, displaySize=None, theme=None, **kwargs) -> None: ...
     sortSeries: Incomplete
 
 class Scatter(Chart):
@@ -241,7 +287,7 @@ class Scatter(Chart):
     miniChartsPerRow: Incomplete
     showPreviewChart: Incomplete
     showTrendLine: Incomplete
-    def __init__(self, x, y, *, splitCategory: Incomplete | None = None, sizeField: Incomplete | None = None, sizeMin: Incomplete | None = None, sizeMax: Incomplete | None = None, multiSeriesDisplay: Incomplete | None = None, miniChartsPerRow: Incomplete | None = None, showPreviewChart: Incomplete | None = None, showTrendLine: Incomplete | None = None, title: Incomplete | None = None, description: Incomplete | None = None, xTitle: Incomplete | None = None, yTitle: Incomplete | None = None, dataSource: Incomplete | None = None, displaySize: Incomplete | None = None, theme: Incomplete | None = None) -> None: ...
+    def __init__(self, x, y, *, splitCategory=None, sizeField=None, sizeMin=None, sizeMax=None, multiSeriesDisplay=None, miniChartsPerRow=None, showPreviewChart=None, showTrendLine=None, title=None, description=None, xTitle=None, yTitle=None, dataSource=None, displaySize=None, theme=None, **kwargs) -> None: ...
     sortSeries: Incomplete
 
 class QQPlot(Chart):
@@ -251,7 +297,7 @@ class QQPlot(Chart):
     showReferenceLine: Incomplete
     dataTransformationType: Incomplete
     dataTransformationParameters: Incomplete
-    def __init__(self, x, *, y: Incomplete | None = None, showReferenceLine: Incomplete | None = None, dataTransformationType: Incomplete | None = None, dataTransformationParameters: Incomplete | None = None, title: Incomplete | None = None, description: Incomplete | None = None, xTitle: Incomplete | None = None, yTitle: Incomplete | None = None, dataSource: Incomplete | None = None, displaySize: Incomplete | None = None, theme: Incomplete | None = None) -> None: ...
+    def __init__(self, x, *, y=None, showReferenceLine=None, dataTransformationType=None, dataTransformationParameters=None, title=None, description=None, xTitle=None, yTitle=None, dataSource=None, displaySize=None, theme=None, **kwargs) -> None: ...
 
 class ScatterMatrix(Chart):
     type: str
@@ -262,7 +308,7 @@ class ScatterMatrix(Chart):
     diagonal: Incomplete
     sort: Incomplete
     sortBy: Incomplete
-    def __init__(self, fields, *, showTrendLine: Incomplete | None = None, lowerLeft: Incomplete | None = None, upperRight: Incomplete | None = None, diagonal: Incomplete | None = None, sort: Incomplete | None = None, sortBy: Incomplete | None = None, title: Incomplete | None = None, description: Incomplete | None = None, dataSource: Incomplete | None = None, displaySize: Incomplete | None = None, theme: Incomplete | None = None) -> None: ...
+    def __init__(self, fields, *, showTrendLine=None, lowerLeft=None, upperRight=None, diagonal=None, sort=None, sortBy=None, title=None, description=None, dataSource=None, displaySize=None, theme=None, **kwargs) -> None: ...
 
 class DataClock(Chart):
     type: str
@@ -273,7 +319,7 @@ class DataClock(Chart):
     nullPolicy: Incomplete
     classificationMethod: Incomplete
     classCount: Incomplete
-    def __init__(self, dateField, *, numberField: Incomplete | None = None, timeUnitsRingWedge: Incomplete | None = None, aggregation: Incomplete | None = None, nullPolicy: Incomplete | None = None, classificationMethod: Incomplete | None = None, classCount: Incomplete | None = None, title: Incomplete | None = None, description: Incomplete | None = None, dataSource: Incomplete | None = None, displaySize: Incomplete | None = None, theme: Incomplete | None = None) -> None: ...
+    def __init__(self, dateField, *, numberField=None, timeUnitsRingWedge=None, aggregation=None, nullPolicy=None, classificationMethod=None, classCount=None, title=None, description=None, dataSource=None, displaySize=None, theme=None, **kwargs) -> None: ...
 
 class CalendarHeat(Chart):
     type: str
@@ -287,7 +333,7 @@ class CalendarHeat(Chart):
     nullPolicy: Incomplete
     classificationMethod: Incomplete
     classCount: Incomplete
-    def __init__(self, dateField, *, numberField: Incomplete | None = None, calendarType: Incomplete | None = None, viewType: Incomplete | None = None, invertViews: Incomplete | None = None, includeLeapDay: Incomplete | None = None, aggregation: Incomplete | None = None, nullPolicy: Incomplete | None = None, classificationMethod: Incomplete | None = None, classCount: Incomplete | None = None, title: Incomplete | None = None, description: Incomplete | None = None, xTitle: Incomplete | None = None, yTitle: Incomplete | None = None, dataSource: Incomplete | None = None, displaySize: Incomplete | None = None, theme: Incomplete | None = None) -> None: ...
+    def __init__(self, dateField, *, numberField=None, calendarType=None, viewType=None, invertViews=None, includeLeapDay=None, aggregation=None, nullPolicy=None, classificationMethod=None, classCount=None, title=None, description=None, xTitle=None, yTitle=None, dataSource=None, displaySize=None, theme=None, **kwargs) -> None: ...
 
 class MatrixHeat(Chart):
     type: str
@@ -300,4 +346,4 @@ class MatrixHeat(Chart):
     classCount: Incomplete
     timeBinningPropertiesCol: Incomplete
     timeBinningPropertiesRow: Incomplete
-    def __init__(self, x, y, *, numberField: Incomplete | None = None, aggregation: Incomplete | None = None, nullPolicy: Incomplete | None = None, classificationMethod: Incomplete | None = None, classCount: Incomplete | None = None, title: Incomplete | None = None, description: Incomplete | None = None, xTitle: Incomplete | None = None, yTitle: Incomplete | None = None, dataSource: Incomplete | None = None, displaySize: Incomplete | None = None, theme: Incomplete | None = None, timeBinningPropertiesCol: Incomplete | None = None, timeBinningPropertiesRow: Incomplete | None = None) -> None: ...
+    def __init__(self, x, y, *, numberField=None, aggregation=None, nullPolicy=None, classificationMethod=None, classCount=None, title=None, description=None, xTitle=None, yTitle=None, dataSource=None, displaySize=None, theme=None, timeBinningPropertiesCol=None, timeBinningPropertiesRow=None, **kwargs) -> None: ...
