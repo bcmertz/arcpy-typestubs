@@ -89,17 +89,13 @@ class CIMStatisticalDataCollectionField:
     summaryType: Incomplete
     weightFieldName: Incomplete
     precision: int
-    fieldFormat: str
+    fieldFormat: Incomplete
     vintage: Incomplete
     script: Incomplete
     scriptLanguage: Incomplete
     usedFields: Incomplete
     showInDataBrowser: bool
     outputFieldType: Incomplete
-    def __init__(self, *args, **Kwargs) -> None: ...
-
-class CIMStatisticalDataCollectionInputAreaProperty:
-    units: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMStatisticalDataCollectionInputProperty:
@@ -207,6 +203,18 @@ class CIMMapView(CIMView):
     colorVisionDeficiencyMode: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
+class CIMPresentationDocument(CIMVersion):
+    presentationDefinition: str
+    binaryReferences: Incomplete
+    layerDefinitions: Incomplete
+    mapDefinitions: Incomplete
+    tableDefinitions: Incomplete
+    linkChartDefinitions: Incomplete
+    timelineDefinitions: Incomplete
+    videoDefinitions: Incomplete
+    elevationSurfaceLayerDefinitions: Incomplete
+    def __init__(self, *args, **Kwargs) -> None: ...
+
 class CIMStatisticalDataCollectionDocument(CIMVersion):
     statisticalDataCollection: str
     def __init__(self, *args, **Kwargs) -> None: ...
@@ -216,6 +224,10 @@ class CIMStatisticalDataCollectionFeatureLayerCalculator(CIMStatisticalDataColle
     dataConnection: str
     fields: Incomplete
     apportionmentDatasetConnection: str
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMStatisticalDataCollectionInputAreaProperty(CIMStatisticalDataCollectionInputProperty):
+    units: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMStatisticalDataCollectionInputPropertiesCalculator(CIMStatisticalDataCollectionCalculator):

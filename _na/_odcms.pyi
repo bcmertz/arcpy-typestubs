@@ -4,16 +4,16 @@ from enum import IntEnum
 __all__ = ['OriginDestinationCostMatrixInputDataType', 'OriginDestinationCostMatrixOutputDataType', 'OriginDestinationCostMatrix']
 
 class OriginDestinationCostMatrixInputDataType(IntEnum):
-    Origins: int
-    Destinations: int
-    PointBarriers: int
-    LineBarriers: int
-    PolygonBarriers: int
+    Origins = 0
+    Destinations = 1
+    PointBarriers = 2
+    LineBarriers = 3
+    PolygonBarriers = 4
 
 class OriginDestinationCostMatrixOutputDataType(IntEnum):
-    Origins: int
-    Destinations: int
-    Lines: int
+    Origins = 0
+    Destinations = 1
+    Lines = 2
 
 class OriginDestinationCostMatrix(cna.OriginDestinationCostMatrix):
     def __init__(self, in_network) -> None: ...

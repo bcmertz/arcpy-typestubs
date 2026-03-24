@@ -1,7 +1,52 @@
+import dataclasses
 from _typeshed import Incomplete
 from arcgisscripting import na as cna
 
 __all__ = ['NetworkDataset']
+
+@dataclasses.dataclass
+class _TMCTrafficFeedDirectoryConfig:
+    traffic_directory: str | None
+    def __eq__(self, other): ...
+
+@dataclasses.dataclass
+class _TMCTrafficFeedGPServiceConfig:
+    connection_properties: dict
+    service_name: str
+    task_name: str
+    def __eq__(self, other): ...
+
+@dataclasses.dataclass
+class _TMCLiveTrafficConfig:
+    field_name: str
+    table_name: str
+    feed_config: _TMCTrafficFeedGPServiceConfig | _TMCTrafficFeedDirectoryConfig | None
+    def __post_init__(self) -> None: ...
+    def __eq__(self, other): ...
+
+@dataclasses.dataclass
+class _OpenLRTrafficServiceConfig:
+    service_id: str
+    def __eq__(self, other): ...
+
+@dataclasses.dataclass
+class _OpenLRTrafficFeedConfig:
+    feed_ids: list[str]
+    def __eq__(self, other): ...
+
+@dataclasses.dataclass
+class _OpenLRLiveTrafficConfig:
+    attribute_mapping: dict[str, str]
+    feed_config: _OpenLRTrafficServiceConfig | _OpenLRTrafficFeedConfig | None
+    def __post_init__(self) -> None: ...
+    def __eq__(self, other): ...
+
+@dataclasses.dataclass
+class _NetworkDatasetSchema:
+    tmc_live_traffic: _TMCLiveTrafficConfig | None
+    openlr_live_traffic: _OpenLRLiveTrafficConfig | None
+    def __post_init__(self) -> None: ...
+    def __eq__(self, other): ...
 
 class NetworkDataset(cna.NetworkDataset):
     def __init__(self, in_network) -> None: ...

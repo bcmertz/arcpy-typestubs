@@ -121,6 +121,7 @@ class CIMTraceNetworkLayer(CIMBaseLayer):
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMUtilityNetworkLayer(CIMBaseLayer):
+    standaloneTables: Incomplete
     dataConnection: str
     pointErrorLayer: Incomplete
     lineErrorLayer: Incomplete
@@ -130,6 +131,7 @@ class CIMUtilityNetworkLayer(CIMBaseLayer):
     structuralAttachmentAssociationSymbol: str
     containerAssociationSymbol: str
     activeTraceConfigurations: Incomplete
+    dirtyObjectsTable: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMNetworkDatasetElementCompositeRenderer(CIMNetworkDatasetRenderer):

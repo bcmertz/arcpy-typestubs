@@ -87,6 +87,7 @@ class CIMMaplexLabelStackingProperties:
     maximumNumberOfCharsPerLine: int
     separators: Incomplete
     trimStackingSeparators: bool
+    preferToStackLongLabels: bool
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMMaplexOffsetAlongLineProperties:

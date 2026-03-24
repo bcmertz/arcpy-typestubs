@@ -9,14 +9,12 @@ class CIMFloodSimulationObject:
     visible: bool
     def __init__(self, *args, **Kwargs) -> None: ...
 
-class CIMFloodSimulationRateRaster:
-    timeUnit: Incomplete
-    def __init__(self, *args, **Kwargs) -> None: ...
-
 class CIMFloodSimulationStorage:
+    waterSourceAreas: Incomplete
     waterSources: Incomplete
     barriers: Incomplete
     culverts: Incomplete
+    waterSinkAreas: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMRateDuration:
@@ -30,12 +28,15 @@ class CIMSimulationLayer(CIMBaseLayer):
     areaOfInterestSymbol: str
     useAutomaticCellResolution: bool
     manualCellResolution: int
+    maxAOIEdgeCellCount: int
+    elevationDownscalingFactor: int
     duration: int
     currentTime: int
     playbackSpeed: int
     playbackStep: int
     useDefaultNumberOfCacheSlices: bool
     secondsPerSimulationCacheSlice: int
+    startTime: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMFloodSimulationBarrier(CIMFloodSimulationObject):
@@ -72,14 +73,30 @@ class CIMFloodSimulationLayer(CIMSimulationLayer):
     initialWaterDepthRaster: str
     infiltrationMaxRaster: str
     infiltrationRateRaster: str
+    surfaceRoughnessValueRaster: str
     floodSimulationStorageURI: Incomplete
     waterColorizer: str
     waterDisplayType: Incomplete
     containWaterInAOI: bool
     overrideWeatherEffects: bool
+    calibrationMode: Incomplete
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMFloodSimulationRateRaster(CIMFloodSimulationDepthRaster):
+    timeUnit: Incomplete
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMFloodSimulationWaterSinkArea(CIMFloodSimulationObject):
+    area: Incomplete
+    waterFlowRate: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMFloodSimulationWaterSource(CIMFloodSimulationObject):
     location: Incomplete
+    waterFlowRate: Incomplete
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMFloodSimulationWaterSourceArea(CIMFloodSimulationObject):
+    area: Incomplete
     waterFlowRate: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...

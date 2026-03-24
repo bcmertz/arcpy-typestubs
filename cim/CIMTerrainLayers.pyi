@@ -26,6 +26,11 @@ class CIMColorUniqueValue:
     visible: bool
     def __init__(self, *args, **Kwargs) -> None: ...
 
+class CIMContourIntervalScaleBreak:
+    upperBound: int
+    contourInterval: int
+    def __init__(self, *args, **Kwargs) -> None: ...
+
 class CIMLASPointSplatter:
     splatMinimumSize: float
     splatScale: float
@@ -74,6 +79,8 @@ class CIMPointCloudRenderer:
 
 class CIMTinRenderer:
     illuminate: bool
+    maxScale: int
+    minScale: int
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMLASDatasetLayer(CIMBaseLayer):
@@ -190,6 +197,7 @@ class CIMTinColorRampRenderer(CIMTerrainAttributeRenderer):
     colorRamp: str
     cursorType: Incomplete
     description: Incomplete
+    heading: Incomplete
     label: Incomplete
     minimumBreak: int
     numberFormat: str
@@ -208,6 +216,8 @@ class CIMTinContourRenderer(CIMTinRenderer):
     indexContourLabel: Incomplete
     indexContourSymbol: str
     referenceContourHeight: int
+    useIntervalScaleBreaks: bool
+    contourIntervalScaleBreaks: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMTinFaceClassBreaksRenderer(CIMTinColorRampRenderer):
@@ -251,6 +261,7 @@ class CIMLASStretchRenderer(CIMTerrainAttributeRenderer):
     useModulation: bool
     useSplat: bool
     colorModulation: str
+    heading: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMLASUniqueValueRenderer(CIMTinUniqueValueRenderer):

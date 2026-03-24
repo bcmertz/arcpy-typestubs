@@ -20,9 +20,6 @@ class CIMBindVariable:
     dataType: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
-class CIMBinningVisualization:
-    def __init__(self, *args, **Kwargs) -> None: ...
-
 class CIMCondition:
     def __init__(self, *args, **Kwargs) -> None: ...
 
@@ -149,10 +146,6 @@ class CIMFeatureReduction:
 class CIMFeatureSortInfo:
     fieldName: Incomplete
     sortDirection: Incomplete
-    def __init__(self, *args, **Kwargs) -> None: ...
-
-class CIMFeatureTrajectorySubLayer:
-    trajectorySubLayerType: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMFieldDescription:
@@ -315,10 +308,6 @@ class CIMS52ViewingGroupSettings:
     showTidal: bool
     def __init__(self, *args, **Kwargs) -> None: ...
 
-class CIMSubtypeGroupTable:
-    standaloneTables: Incomplete
-    def __init__(self, *args, **Kwargs) -> None: ...
-
 class CIMSymbolIdentifier:
     iD: int
     name: Incomplete
@@ -335,6 +324,7 @@ class CIMTimeDataDefinition:
     customTimeExtent: Incomplete
     hasLiveData: bool
     timeExtentCanChange: bool
+    applyTimeReferenceToAllFields: bool
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMTimeDimensionDefinition:
@@ -536,6 +526,10 @@ class CIMBinningFeatureReduction(CIMAggregationFeatureReduction):
     fixedLevel: int
     binType: Incomplete
     clientSideBinning: bool
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMBinningVisualization(CIMAggregateVisualization):
+    standardDeviationMultiplier: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMCatalogLayer(CIMBasicFeatureLayer):
@@ -776,6 +770,11 @@ class CIMSubtypeGroupLayer(CIMBasicFeatureLayer):
 class CIMSubtypeGroupLayerBase(CIMBasicFeatureLayer):
     def __init__(self, *args, **Kwargs) -> None: ...
 
+class CIMSubtypeGroupTable(CIMStandaloneTable):
+    standaloneTables: Incomplete
+    expanded: bool
+    def __init__(self, *args, **Kwargs) -> None: ...
+
 class CIMSuppressActivity(CIMActivity):
     def __init__(self, *args, **Kwargs) -> None: ...
 
@@ -846,6 +845,10 @@ class CIMXYEventDataConnection(CIMDataConnection):
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMFeatureLayer(CIMGeoFeatureLayerBase):
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMFeatureTrajectorySubLayer(CIMFeatureLayer):
+    trajectorySubLayerType: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMGeometryLocationCondition(CIMLocationCondition):

@@ -4,24 +4,24 @@ from enum import IntEnum
 __all__ = ['TimeOfDayUsage', 'ClosestFacilityInputDataType', 'ClosestFacilityOutputDataType', 'ClosestFacility']
 
 class TimeOfDayUsage(IntEnum):
-    DepartureTime: int
-    ArrivalTime: int
+    DepartureTime = 0
+    ArrivalTime = 1
 
 class ClosestFacilityInputDataType(IntEnum):
-    Incidents: int
-    Facilities: int
-    PointBarriers: int
-    LineBarriers: int
-    PolygonBarriers: int
+    Incidents = 0
+    Facilities = 1
+    PointBarriers = 2
+    LineBarriers = 3
+    PolygonBarriers = 4
 
 class ClosestFacilityOutputDataType(IntEnum):
-    Incidents: int
-    Facilities: int
-    Routes: int
-    ClosestFacilities: int
-    DirectionPoints: int
-    DirectionLines: int
-    Directions: int
+    Incidents = 0
+    Facilities = 1
+    Routes = 2
+    ClosestFacilities = 3
+    DirectionPoints = 4
+    DirectionLines = 5
+    Directions = 6
 
 class ClosestFacility(cna.ClosestFacility):
     def __init__(self, in_network) -> None: ...

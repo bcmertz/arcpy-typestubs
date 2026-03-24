@@ -69,15 +69,6 @@ class CIMFacilityLayerProperties:
     nameField: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
-class CIMFenceGeotrigger:
-    feed: str
-    fenceNotificationRule: Incomplete
-    feedAccuracyMode: Incomplete
-    enterExitRule: Incomplete
-    fenceParameters: str
-    notificationOptions: str
-    def __init__(self, *args, **Kwargs) -> None: ...
-
 class CIMFieldMapping:
     sourceURI: Incomplete
     targetURI: Incomplete
@@ -95,6 +86,9 @@ class CIMFloorFilterSettings:
     selectedSiteID: Incomplete
     selectedFacilityID: Incomplete
     selectedLevelID: Incomplete
+    selectedVerticalOrder: int
+    useVerticalOrder: bool
+    focusSelectedFacility: bool
     enabled: bool
     minimized: bool
     longNames: bool
@@ -105,17 +99,6 @@ class CIMFloorFilterSettings:
 
 class CIMGeotrigger:
     name: Incomplete
-    def __init__(self, *args, **Kwargs) -> None: ...
-
-class CIMGeotriggerDeviceLocationFeed:
-    filterExpression: str
-    def __init__(self, *args, **Kwargs) -> None: ...
-
-class CIMGeotriggerFeatureFenceParameters:
-    bufferDistance: float
-    sourceDataConnection: str
-    sourceLayer: Incomplete
-    filter: str
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMGeotriggerFeed:
@@ -143,19 +126,46 @@ class CIMGroundToGridCorrection:
     constantScaleFactor: float
     def __init__(self, *args, **Kwargs) -> None: ...
 
+class CIMIPSAppleIPSConfiguration:
+    enabled: bool
+    def __init__(self, *args, **Kwargs) -> None: ...
+
 class CIMIPSAwareMapProperties:
     iPSRecordingsLayerURI: Incomplete
     iPSPositioningTableProperties: str
     iPSPositioningDataServiceProperties: str
+    iPSConfiguration: str
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMIPSConfiguration:
+    pathSnapping: str
+    smoothing: str
+    gNSS: str
+    appleIPS: str
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMIPSGNSSConfiguration:
+    enabled: bool
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMIPSPathSnappingConfiguration:
+    enabled: bool
+    distance: float
+    distanceUnit: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMIPSPositioningDataServiceProperties:
     portalItem: str
+    workspaceConnection: str
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMIPSPositioningTableProperties:
     tableURI: Incomplete
     selectedGlobalID: Incomplete
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMIPSSmoothingConfiguration:
+    enabled: bool
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMIlluminationProperties:
@@ -299,6 +309,7 @@ class CIMMapTimeDisplay:
     hasLiveData: bool
     timeRelation: Incomplete
     uniqueTimes: Incomplete
+    displayDatesInMapTimeZone: bool
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMScale:
@@ -511,6 +522,26 @@ class CIMEditingTemplateCollection(CIMEditingTemplateCollectionItem):
 class CIMEditingTemplateReference(CIMEditingTemplateCollectionItem):
     layerURI: Incomplete
     templateName: Incomplete
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMFenceGeotrigger(CIMGeotrigger):
+    feed: str
+    fenceNotificationRule: Incomplete
+    feedAccuracyMode: Incomplete
+    enterExitRule: Incomplete
+    fenceParameters: str
+    notificationOptions: str
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMGeotriggerDeviceLocationFeed(CIMGeotriggerFeed):
+    filterExpression: str
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMGeotriggerFeatureFenceParameters(CIMGeotriggerFenceParameters):
+    bufferDistance: float
+    sourceDataConnection: str
+    sourceLayer: Incomplete
+    filter: str
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMKeyframeVoxelLayer(CIMKeyframeLayer):

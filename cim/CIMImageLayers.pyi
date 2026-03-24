@@ -43,6 +43,7 @@ class CIMRangeDimensionValue:
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMRasterClassBreak:
+    criticalBreak: bool
     upperBound: float
     label: Incomplete
     description: Incomplete
@@ -160,6 +161,11 @@ class CIMNITFDataConnection(CIMDataConnection):
 class CIMNitfFeatureSubLayer(CIMFeatureLayer):
     def __init__(self, *args, **Kwargs) -> None: ...
 
+class CIMNitfGroupSubLayer(CIMBaseLayer):
+    standaloneTables: Incomplete
+    layers: Incomplete
+    def __init__(self, *args, **Kwargs) -> None: ...
+
 class CIMNitfLayer(CIMBaseLayer):
     standaloneTables: Incomplete
     dataConnection: str
@@ -234,6 +240,7 @@ class CIMStandaloneVideo(CIMDefinition):
 
 class CIMVideoDataConnection(CIMDataConnection):
     uRI: Incomplete
+    anonymous: bool
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMVideoGraphicElement(CIMGraphicElement):
@@ -308,6 +315,7 @@ class CIMRasterClassifyColorizer(CIMRasterColorizer):
     useExclusionColor: bool
     numberFormat: str
     heading: Incomplete
+    alwaysUpdateClassLabels: bool
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMRasterColorMapColorizer(CIMRasterColorizer):
@@ -379,6 +387,8 @@ class CIMRasterRGBColorizer(CIMRasterColorizer):
     histogramEditInfoRed: str
     histogramEditInfoGreen: str
     histogramEditInfoBlue: str
+    saturation: int
+    sharpening: int
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMRasterShadedReliefColorizer(CIMRasterColorizer):
@@ -422,6 +432,7 @@ class CIMRasterStretchColorizer(CIMRasterColorizer):
     specificationHistogram: Incomplete
     histogramEditInfo: str
     useAdvancedLabeling: bool
+    sharpening: int
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMRasterUniqueValueColorizer(CIMRasterColorizer):

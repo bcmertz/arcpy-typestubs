@@ -156,6 +156,8 @@ class CIMIndexedSceneLayer(CIMBaseLayer):
     timeFields: str
     timeDefinition: str
     timeDisplayDefinition: str
+    rangeDefinitions: Incomplete
+    activeRangeName: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMServiceCompositeSubLayer(CIMSubLayerBase):
@@ -190,6 +192,11 @@ class CIMServiceSubLayer(CIMSubLayerBase):
     showPopups: bool
     floorAwareTableProperties: str
     uRI: Incomplete
+    definitionExpressionName: Incomplete
+    definitionFilterChoices: Incomplete
+    selectionSetURI: Incomplete
+    selectable: bool
+    renderer: str
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMTiles3DDataConnection(CIMDataConnection):
@@ -201,6 +208,8 @@ class CIMTiles3DLayer(CIMBaseLayer):
     dataConnection: str
     snappable: bool
     tiles3DLayerType: Incomplete
+    modificationLayerURI: Incomplete
+    modificationLayerEnabled: bool
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMVoxelDataConnection(CIMDataConnection):
@@ -226,6 +235,8 @@ class CIMVoxelLayer(CIMBaseLayer):
     visualization: Incomplete
     alignment: Incomplete
     volumes: Incomplete
+    timeDefinition: str
+    timeDisplayDefinition: str
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMWMSSubLayer(CIMSubLayerBase):
@@ -262,6 +273,7 @@ class CIMInternetServerConnectionBase(CIMServerConnection):
     password: Incomplete
     url: Incomplete
     user: Incomplete
+    authenticationInfo: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMLANServerConnection(CIMServerConnection):
@@ -340,6 +352,7 @@ class CIMVoxelUniqueValueRenderer(CIMVoxelRenderer):
     defaultLabel: Incomplete
     defaultDescription: Incomplete
     unlistedValues: Incomplete
+    showClassVisibility: bool
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMVoxelValueFilter(CIMVoxelFilter):

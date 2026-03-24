@@ -51,6 +51,7 @@ class CIMPictureGraphic(CIMGraphic):
     frame: str
     sourceURL: Incomplete
     referenceURI: Incomplete
+    shape: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMShapeGraphic(CIMGraphic):

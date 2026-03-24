@@ -27,12 +27,40 @@ class CIMFilteredFindPathsEntity:
     propertyFilterPredicate: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
+class CIMFilteredFindPathsError:
+    error: Incomplete
+    detailedErrorMessage: Incomplete
+    def __init__(self, *args, **Kwargs) -> None: ...
+
 class CIMFilteredFindPathsPathFilter:
     iD: Incomplete
     itemTypeName: Incomplete
     itemType: Incomplete
     filterType: Incomplete
     propertyFilterPredicate: Incomplete
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMFilteredFindPathsResult:
+    error: str
+    configurationWarning: Incomplete
+    statistics: str
+    paths: str
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMFilteredFindPathsStatistics:
+    countLocalGraphNodes: int
+    countLocalGraphEdges: int
+    countOriginExpansionQueries: int
+    countDestinationExpansionQueries: int
+    countWaypointsExpansionQueries: int
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMKGColorInfo:
+    useCustomColors: bool
+    defaultItemColor: str
+    defaultTextColor: str
+    customItemColor: str
+    customTextColor: str
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMKGConsecutiveEventsRestrictions:
@@ -42,6 +70,17 @@ class CIMKGConsecutiveEventsRestrictions:
     restrictMaxGap: bool
     maxGap: int
     maxGapUnit: Incomplete
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMKGDataModelVisualization:
+    configurationName: Incomplete
+    entityTypes: Incomplete
+    relationshipTypes: Incomplete
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMKGDiagramPosition:
+    x: float
+    y: float
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMKGDurativeEventsDurationConstraint:
@@ -67,6 +106,27 @@ class CIMKGEventsDefinitions:
     eventDefinitions: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
+class CIMKGPaths:
+    entitiesUIDs: Incomplete
+    entityTypes: Incomplete
+    indexedEntityTypes: Incomplete
+    relationshipsGroupsUIDsBuffer: Incomplete
+    relationshipTypes: Incomplete
+    indexedRelationshipTypes: Incomplete
+    relationshipsGroupsUIDsEndIndex: Incomplete
+    relationshipsGroupsFrom: Incomplete
+    relationshipsGroupsTo: Incomplete
+    relationshipsFrom: Incomplete
+    relationshipsTo: Incomplete
+    pathsBuffer: Incomplete
+    pathsEndIndex: Incomplete
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMKGRelationshipTypeEndpoint:
+    originEntityTypeName: Incomplete
+    destinationEntityTypeName: Incomplete
+    def __init__(self, *args, **Kwargs) -> None: ...
+
 class CIMKGTimeFilter:
     enabled: bool
     kGPathTimeFlow: Incomplete
@@ -85,6 +145,24 @@ class CIMKGTimeWindow:
 class CIMKGTraversalDirection:
     relationshipTypeName: Incomplete
     traversalDirectionType: Incomplete
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMKGType:
+    typeName: Incomplete
+    geometryType: Incomplete
+    properties: Incomplete
+    colorInfo: str
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMKGTypeProperty:
+    propertyName: Incomplete
+    propertyType: Incomplete
+    aliasName: Incomplete
+    isNullable: bool
+    defaultVisibility: bool
+    editable: bool
+    domainName: Incomplete
+    defaultValue: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMKnowledgeGraphDataLoadingConfiguration:
@@ -116,10 +194,19 @@ class CIMKnowledgeGraphDataLoadingRelationship:
 class CIMKnowledgeGraphInvestigationTypeInfo:
     typeName: Incomplete
     popupInfo: str
+    symbol: str
+    displayExpressionInfo: str
+    propertyInfos: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMKnowledgeGraphLinkChartCentralityConfiguration:
     relationshipsInterpretation: Incomplete
+    computeShortestPathsBasedMeasures: bool
+    includeDocumentEntities: bool
+    defaultRelationshipImportance: float
+    relationshipImportanceProperty: Incomplete
+    defaultRelationshipCost: float
+    relationshipCostProperty: Incomplete
     multiedgeFactor: float
     normalization: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
@@ -133,6 +220,7 @@ class CIMKnowledgeGraphLinkChartProperties:
     centralityConfiguration: str
     centralityIsUpToDate: bool
     lastUsedLayout: str
+    nonspatialDataDisplay: str
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMKnowledgeGraphProperty:
@@ -158,12 +246,52 @@ class CIMKnowledgeGraphSearchDefinition:
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMKnowledgeGraphSearchFilterSetting:
-    scope: str
+    scope: Incomplete
     typeNames: Incomplete
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMKnowledgeGraphTypePropertyInfo:
+    propertyName: Incomplete
+    isVisible: bool
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMKnowledgeLinkChartChronologicalLayoutSettings:
+    timeDirection: Incomplete
+    timeBannerUTCOffsetInMinutes: int
+    eventsTicksVisualization: Incomplete
+    showDurationLineForNonZeroDurationEntityEvents: bool
+    durationLineWidth: int
+    entityPositionAtDurationRatio: float
+    showNonZeroDurationIntervalBounds: bool
+    separateTimeOverlaps: bool
+    separateTimelineOverlaps: bool
+    moveFirstBends: bool
+    secondBendRatio: float
+    lineSeparationMultiplier: float
+    spaceSeparatedLinesEvenly: bool
+    useBezierCurves: bool
+    separatedLineShapeRatio: float
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMKnowledgeLinkChartLayout:
     algorithm: Incomplete
+    organicLayoutSettings: str
+    chronologicalLayoutSettings: str
+    autoApply: bool
+    preserveExtent: bool
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMKnowledgeLinkChartOrganicLayoutSettings:
+    computationTimeBudget: float
+    absoluteIdealEdgeLength: float
+    multiplicativeIdealEdgeLength: float
+    idealEdgeLengthType: Incomplete
+    autoComputeRepulsionRadius: bool
+    repulsionRadiusMultiplier: float
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMKnowledgeNonspatialDataDisplay:
+    mode: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMKnowledgeGraphDataConnection(CIMDataConnection):
@@ -182,6 +310,8 @@ class CIMKnowledgeGraphInvestigation(CIMDefinition):
     queryDefinitions: Incomplete
     filteredFindPathsConfigurations: Incomplete
     typeInfos: Incomplete
+    customProperties: Incomplete
+    dataModelVisualizations: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMKnowledgeGraphLayer(CIMBaseLayer):
@@ -202,6 +332,14 @@ class CIMKnowledgeGraphTableDataConnection(CIMDataConnection):
 
 class CIMLinkChartFeatureLayer(CIMGeoFeatureLayerBase):
     aggregationLayerURI: Incomplete
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMKGEntityType(CIMKGType):
+    diagramPosition: str
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMKGRelationshipType(CIMKGType):
+    endpoints: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMKnowledgeGraphCoordinatePropertyValue(CIMKnowledgeGraphPropertyValue):
