@@ -1,10 +1,9 @@
 from _typeshed import Incomplete
+from arcpy._sharingproperties import _ParameterChecker
 from arcpy.arcobjects._base import _ObjectWithoutInitCall
 
-class FeatureSharingDraft(_ObjectWithoutInitCall):
+class _SharingDraftBase(_ParameterChecker):
     overwriteExistingService: bool
-    serverType: str
-    serviceType: str
     serviceName: str
     portalFolder: str
     summary: str
@@ -13,70 +12,66 @@ class FeatureSharingDraft(_ObjectWithoutInitCall):
     credits: str
     useLimitations: bool
     offline: bool
+    sharing: Incomplete
+    def __init__(self) -> None: ...
+    def exportToSDDraft(self, out_sddraft): ...
+
+class _FeatureSharingDraft(_SharingDraftBase):
+    maxRecordCount: Incomplete
     checkUniqueIDAssignment: bool
     useCIMSymbols: bool
+    approvePublicDataCollection: bool
+    preserveEditUsersAndTimestamps: bool
+    allowUpdateWithoutMValues: bool
+    featureCapabilities: str
+    zDefault: Incomplete
+    timezone: Incomplete
     def __init__(self) -> None: ...
-    def exportToSDDraft(self, out_sddraft): ...
 
-class TileSharingDraft(_ObjectWithoutInitCall):
-    overwriteExistingService: bool
-    serverType: str
-    serviceType: str
-    serviceName: str
-    portalFolder: str
-    summary: str
-    tags: str
-    description: str
-    credits: str
-    useLimitations: bool
-    offline: bool
+class _TileSharingDraft(_SharingDraftBase):
+    cache: Incomplete
     def __init__(self) -> None: ...
-    def exportToSDDraft(self, out_sddraft): ...
 
-class MapImageSharingDraft(_ObjectWithoutInitCall):
+class _MapImageSharingDraft(_SharingDraftBase):
+    maxRecordCount: Incomplete
     federatedServerUrl: str
-    overwriteExistingService: bool
-    serverType: str
-    serviceType: str
-    serviceName: str
-    portalFolder: str
     serverFolder: str
-    summary: str
-    tags: str
-    description: str
-    credits: str
-    useLimitations: bool
-    offline: bool
     copyDataToServer: bool
     checkUniqueIDAssignment: bool
     useCIMSymbols: bool
+    enableDynamicWorkspaces: bool
+    mapOperations: str
+    enableCache: bool
+    extension: Incomplete
+    cache: Incomplete
+    timezone: Incomplete
+    pooling: Incomplete
     def __init__(self) -> None: ...
-    def exportToSDDraft(self, out_sddraft): ...
 
-class MapServiceSharingDraft(_ObjectWithoutInitCall):
+class _MapServiceSharingDraft(_SharingDraftBase):
+    maxRecordCount: Incomplete
     federatedServerUrl: str
     targetServer: str
-    overwriteExistingService: bool
     serverType: str
     serviceType: str
-    serviceName: str
-    portalFolder: str
     serverFolder: str
-    summary: str
-    tags: str
-    description: str
-    credits: str
-    useLimitations: bool
-    offline: bool
     copyDataToServer: bool
     checkUniqueIDAssignment: bool
+    enableDynamicWorkspaces: bool
+    mapOperations: str
+    enableCache: bool
+    extension: Incomplete
+    cache: Incomplete
+    timezone: Incomplete
+    pooling: Incomplete
     def __init__(self) -> None: ...
-    def exportToSDDraft(self, out_sddraft): ...
+    def exportToSDDraft(self, out_sddraft) -> None: ...
 
 class GeoprocessingSharingDraft(_ObjectWithoutInitCall):
     serverType: str
     serviceType: str
     serviceName: str
+    draftValue: Incomplete
     description: str
     summary: str
     tags: str
@@ -98,12 +93,77 @@ class GeoprocessingSharingDraft(_ObjectWithoutInitCall):
     capabilities: Incomplete
     constantValues: Incomplete
     choiceLists: Incomplete
-    draftValue: Incomplete
     offlineTarget: str
     enableOutputFeatureService: Incomplete
     convertFeatureLayerURL: bool
     removeDefaultValues: Incomplete
-    def __init__(self) -> None: ...
+    GPStringValues: Incomplete
+    enableOutputImageService: bool
+    def __init__(self, **kwargs) -> None: ...
+    def exportToSDDraft(self, out_sddraft): ...
+    def analyzeSDDraft(self, out_sddraft: Incomplete | None = None): ...
+
+class _ImageSharingDraft(_SharingDraftBase):
+    maxRecordCount: Incomplete
+    maxImageWidth: Incomplete
+    maxImageHeight: Incomplete
+    maxSampleCount: Incomplete
+    defaultResamplingMethod: Incomplete
+    allowedTemplates: Incomplete
+    defaultTemplate: Incomplete
+    allowFunction: Incomplete
+    allowCopy: Incomplete
+    allowAnalysis: Incomplete
+    colormapToRGB: Incomplete
+    defaultCompressionQuality: Incomplete
+    defaultCompressionTolerance: Incomplete
+    allowedCompressions: Incomplete
+    allowedMensurationCapabilities: Incomplete
+    returnJPGPNGAsJPG: Incomplete
+    maxMosaicImageCount: Incomplete
+    maxDownloadImageCount: Incomplete
+    maxDownloadSizeLimit: Incomplete
+    downloadDirectory: Incomplete
+    allowedFields: Incomplete
+    allowedMosaicMethods: Incomplete
+    allowedItemMetadata: Incomplete
+    referenceImage: Incomplete
+    sortField: Incomplete
+    sortValue: Incomplete
+    hasLiveData: Incomplete
+    enableCache: Incomplete
+    minScale: Incomplete
+    maxScale: Incomplete
+    cacheControlMaxAge: Incomplete
+    DEM: Incomplete
+    capabilities: Incomplete
+    targetServer: Incomplete
+    serverType: str
+    serviceType: Incomplete
+    serverFolder: Incomplete
+    copyDataToServer: Incomplete
+    extension: Incomplete
+    cache: Incomplete
+    pooling: Incomplete
+    virtualDownloadDirectory: Incomplete
+    def __init__(self, service_type: Incomplete | None = None) -> None: ...
+    def __setattr__(self, key, value) -> None: ...
     def exportToSDDraft(self, out_sddraft): ...
 
 def CreateSharingDraft(server_type, service_type, service_name, draft_value): ...
+
+class _SceneLayerSharingDraft(_ParameterChecker):
+    serviceType: Incomplete
+    serviceName: Incomplete
+    compressedTextures: bool
+    export: bool
+    def __init__(self, serviceType, serviceName, draftValue, sharingDraft, isLocalScene) -> None: ...
+    def analyzeForSharing(self): ...
+
+class _VectorTileSharingDraft(_ParameterChecker):
+    serviceType: Incomplete
+    serviceName: Incomplete
+    def __init__(self, serviceType, serviceName, draftValue, sharingDraft) -> None: ...
+    def analyzeForSharing(self): ...
+
+def Publish(object, item_id: Incomplete | None = None): ...
