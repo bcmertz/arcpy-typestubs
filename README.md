@@ -12,7 +12,7 @@ git clone git@github.com:bcmertz/arcpy-typestubs.git arcpy
 
 After cloning the repo, check the branch of the arcpy version you are running:
 ```
-git checkout 3.x
+git checkout 3.3
 ```
 
 # Supported arcpy versions
