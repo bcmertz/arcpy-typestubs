@@ -16,7 +16,7 @@ git checkout 3.x
 ```
 
 # Supported arcpy versions
-This project currently has type stubs for arcpy 3.3 and 3.4
+This project currently has type stubs for arcpy 3.3, 3.4, 3.5, 3.6
 
 # Creating type stub
 - add mypy to default arcgispro conda environment (arcgispro-py3)
