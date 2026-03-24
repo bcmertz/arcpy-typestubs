@@ -34,14 +34,26 @@ class CIMPopupLayout:
     borderColor: str
     def __init__(self, *args, **Kwargs) -> None: ...
 
+class CIMPopupUtilityNetworkAssociation:
+    caption: Incomplete
+    associationType: Incomplete
+    title: Incomplete
+    associatedNetworkSourceID: int
+    associatedAssetGroupID: int
+    associatedAssetTypeID: int
+    def __init__(self, *args, **Kwargs) -> None: ...
+
 class CIMAttachmentsMediaInfo(CIMMediaInfo):
     caption: Incomplete
     title: Incomplete
     contentType: Incomplete
     displayType: Incomplete
+    sortField: Incomplete
+    sortOrder: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMCarouselMediaInfo(CIMMediaInfo):
+    altText: Incomplete
     caption: Incomplete
     title: Incomplete
     mediaInfos: Incomplete
@@ -50,8 +62,11 @@ class CIMCarouselMediaInfo(CIMMediaInfo):
 class CIMChartMediaInfo(CIMMediaInfo):
     fields: Incomplete
     normalizeField: Incomplete
+    altText: Incomplete
     caption: Incomplete
     title: Incomplete
+    maximumAxisValue: float
+    colorRamp: str
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMColumnChartMediaInfo(CIMChartMediaInfo):
@@ -64,6 +79,7 @@ class CIMExpressionMediaInfo(CIMMediaInfo):
 class CIMImageMediaInfo(CIMMediaInfo):
     sourceURL: Incomplete
     linkURL: Incomplete
+    altText: Incomplete
     caption: Incomplete
     title: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
@@ -91,6 +107,13 @@ class CIMTableMediaInfo(CIMMediaInfo):
 
 class CIMTextMediaInfo(CIMMediaInfo):
     text: Incomplete
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMUtilityNetworkAssociationsMediaInfo(CIMMediaInfo):
+    caption: Incomplete
+    title: Incomplete
+    displayCount: int
+    associations: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMBarChartMediaInfo(CIMChartMediaInfo):

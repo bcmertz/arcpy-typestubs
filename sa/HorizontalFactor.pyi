@@ -10,27 +10,27 @@ class HfBinary(HorizontalFactor):
     __esri_toolinfo__: Incomplete
     zeroFactor: Incomplete
     cutAngle: Incomplete
-    def __init__(self, zeroFactor: Incomplete | None = None, cutAngle: Incomplete | None = None) -> None: ...
+    def __init__(self, zeroFactor=None, cutAngle=None) -> None: ...
 
 class HfForward(HorizontalFactor):
     __esri_toolinfo__: Incomplete
     zeroFactor: Incomplete
     sideValue: Incomplete
-    def __init__(self, zeroFactor: Incomplete | None = None, sideValue: Incomplete | None = None) -> None: ...
+    def __init__(self, zeroFactor=None, sideValue=None) -> None: ...
 
 class HfLinear(HorizontalFactor):
     __esri_toolinfo__: Incomplete
     zeroFactor: Incomplete
     cutAngle: Incomplete
     slope: Incomplete
-    def __init__(self, zeroFactor: Incomplete | None = None, cutAngle: Incomplete | None = None, slope: Incomplete | None = None) -> None: ...
+    def __init__(self, zeroFactor=None, cutAngle=None, slope=None) -> None: ...
 
 class HfInverseLinear(HorizontalFactor):
     __esri_toolinfo__: Incomplete
     zeroFactor: Incomplete
     cutAngle: Incomplete
     slope: Incomplete
-    def __init__(self, zeroFactor: Incomplete | None = None, cutAngle: Incomplete | None = None, slope: Incomplete | None = None) -> None: ...
+    def __init__(self, zeroFactor=None, cutAngle=None, slope=None) -> None: ...
 
 class HfTable(HorizontalFactor):
     __esri_toolinfo__: Incomplete

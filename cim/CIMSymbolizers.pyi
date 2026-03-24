@@ -13,6 +13,7 @@ class CIMBivariateFieldInfo:
     defaultLabel: Incomplete
     minimumBreak: int
     upperBounds: Incomplete
+    numberOfHistogramBins: int
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMClassBreak:
@@ -23,23 +24,7 @@ class CIMClassBreak:
     symbol: str
     upperBound: int
     alternateSymbols: Incomplete
-    def __init__(self, *args, **Kwargs) -> None: ...
-
-class CIMColorClassBreaksVisualVariable:
-    classificationMethod: Incomplete
-    breaks: Incomplete
-    minimumBreak: float
-    showClassGaps: bool
-    showInAscendingOrder: bool
-    useDefaultSymbol: bool
-    defaultSymbolPatch: Incomplete
-    defaultSymbol: str
-    defaultLabel: Incomplete
-    defaultDescription: Incomplete
-    numberFormat: str
-    colorChannelTarget: Incomplete
-    classBreaksLegendVisualVariableOptions: Incomplete
-    useClassBreaks: bool
+    customPatch: str
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMExpressionInfo:
@@ -47,6 +32,10 @@ class CIMExpressionInfo:
     expression: Incomplete
     name: Incomplete
     returnType: Incomplete
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMLegendPatch:
+    geometryURI: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMPrimitiveOverride:
@@ -81,24 +70,6 @@ class CIMRuleSymbolLayerNames:
 class CIMScaleDependentSizeVariation:
     scale: float
     size: float
-    def __init__(self, *args, **Kwargs) -> None: ...
-
-class CIMSizeClassBreaksVisualVariable:
-    classBreaksLegendVisualVariableOptions: Incomplete
-    useClassBreaks: bool
-    classificationMethod: Incomplete
-    breaks: Incomplete
-    minimumBreak: float
-    showClassGaps: bool
-    showInAscendingOrder: bool
-    useDefaultSymbol: bool
-    defaultSymbolPatch: Incomplete
-    defaultSymbol: str
-    defaultLabel: Incomplete
-    defaultDescription: Incomplete
-    numberFormat: str
-    templateSymbol: str
-    drawSizeMarkerSymbolsAboveAllLayers: bool
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMStringMap:
@@ -140,6 +111,7 @@ class CIMUniqueValueClass:
     values: Incomplete
     visible: bool
     alternateSymbols: Incomplete
+    customPatch: str
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMUniqueValueGroup:
@@ -163,6 +135,7 @@ class CIMVisualVariableAuthoringInfo:
     theme: Incomplete
     showLegend: bool
     heading: Incomplete
+    numberOfHistogramBins: int
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMVisualVariableInfo:
@@ -181,6 +154,9 @@ class CIMVisualVariableLevel:
     standardDeviation: float
     def __init__(self, *args, **Kwargs) -> None: ...
 
+class CIMAreaLegendPatch(CIMLegendPatch):
+    def __init__(self, *args, **Kwargs) -> None: ...
+
 class CIMChartRenderer(CIMRenderer):
     normalizationField: Incomplete
     normalizationTotal: float
@@ -197,6 +173,7 @@ class CIMChartRenderer(CIMRenderer):
     colorRamp: str
     fieldLabels: Incomplete
     showSizeLegend: bool
+    sizeLegendHeading: Incomplete
     sizeLegendOutlineColor: str
     sizeLegendLeaderlineColor: str
     drawChartSymbolsAboveAllLayers: bool
@@ -206,6 +183,12 @@ class CIMChartRenderer(CIMRenderer):
     exclusionSymbol: str
     useExclusionSymbol: bool
     exclusionSymbolPatch: Incomplete
+    exclusionSymbolCustomPatch: str
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMClassBreaksRendererAuthoringInfo(CIMRendererAuthoringInfo):
+    numberOfHistogramBins: int
+    templateSymbol: str
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMClassBreaksRendererBase(CIMRenderer):
@@ -221,6 +204,8 @@ class CIMClassBreaksRendererBase(CIMRenderer):
     defaultLabel: Incomplete
     defaultDescription: Incomplete
     numberFormat: str
+    defaultSymbolCustomPatch: str
+    alwaysUpdateClassLabels: bool
     backgroundSymbol: str
     barrierWeight: Incomplete
     classBreakType: Incomplete
@@ -231,6 +216,7 @@ class CIMClassBreaksRendererBase(CIMRenderer):
     valueExpressionInfo: str
     polygonSymbolColorTarget: Incomplete
     drawGraduatedSymbolsAboveAllLayers: bool
+    authoringInfo: str
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMColorVisualVariable(CIMVisualVariable):
@@ -259,6 +245,7 @@ class CIMDotDensityRenderer(CIMRenderer):
     exclusionSymbol: str
     useExclusionSymbol: bool
     exclusionSymbolPatch: Incomplete
+    exclusionSymbolCustomPatch: str
     colorRamp: str
     dotDensitySymbol: str
     dotSize: float
@@ -291,6 +278,9 @@ class CIMHeatMapRenderer(CIMRenderer):
     referenceScale: float
     def __init__(self, *args, **Kwargs) -> None: ...
 
+class CIMLineLegendPatch(CIMLegendPatch):
+    def __init__(self, *args, **Kwargs) -> None: ...
+
 class CIMMultilevelVisualVariable(CIMVisualVariable):
     levels: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
@@ -307,6 +297,7 @@ class CIMProportionalRenderer(CIMRenderer):
     exclusionSymbol: str
     useExclusionSymbol: bool
     exclusionSymbolPatch: Incomplete
+    exclusionSymbolCustomPatch: str
     backgroundSymbol: str
     barrierWeight: Incomplete
     field: Incomplete
@@ -325,6 +316,12 @@ class CIMProportionalRenderer(CIMRenderer):
     showInAscendingOrder: bool
     valueExpressionInfo: str
     drawProportionalSymbolsAboveAllLayers: bool
+    defaultSymbolCustomPatch: str
+    authoringInfo: str
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMProportionalRendererAuthoringInfo(CIMRendererAuthoringInfo):
+    numberOfHistogramBins: int
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMRepresentationRenderer(CIMRenderer):
@@ -358,6 +355,7 @@ class CIMSimpleRenderer(CIMRenderer):
     patch: Incomplete
     symbol: str
     alternateSymbols: Incomplete
+    customPatch: str
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMSizeVisualVariable(CIMVisualVariable):
@@ -402,10 +400,13 @@ class CIMUniqueValueRenderer(CIMRenderer):
     fields: Incomplete
     groups: Incomplete
     useDefaultSymbol: bool
+    isDefaultSymbolVisible: bool
     styleGallery: Incomplete
     valueExpressionInfo: str
     polygonSymbolColorTarget: Incomplete
     authoringInfo: str
+    defaultSymbolCustomPatch: str
+    showClassVisibility: bool
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMUniqueValueRendererAuthoringInfo(CIMRendererAuthoringInfo):
@@ -430,7 +431,27 @@ class CIMClassBreaksRenderer(CIMClassBreaksRendererBase):
     exclusionSymbol: str
     useExclusionSymbol: bool
     exclusionSymbolPatch: Incomplete
+    exclusionSymbolCustomPatch: str
     visualVariables: Incomplete
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMColorClassBreaksVisualVariable(CIMColorVisualVariable):
+    classificationMethod: Incomplete
+    breaks: Incomplete
+    minimumBreak: float
+    showClassGaps: bool
+    showInAscendingOrder: bool
+    useDefaultSymbol: bool
+    defaultSymbolPatch: Incomplete
+    defaultSymbol: str
+    defaultLabel: Incomplete
+    defaultDescription: Incomplete
+    numberFormat: str
+    defaultSymbolCustomPatch: str
+    alwaysUpdateClassLabels: bool
+    colorChannelTarget: Incomplete
+    classBreaksLegendVisualVariableOptions: Incomplete
+    useClassBreaks: bool
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMMultilevelColorVisualVariable(CIMMultilevelVisualVariable):
@@ -452,4 +473,24 @@ class CIMMultilevelSizeVisualVariable(CIMMultilevelVisualVariable):
     normalizationField: Incomplete
     normalizationType: Incomplete
     valueExpressionInfo: str
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMSizeClassBreaksVisualVariable(CIMSizeVisualVariable):
+    classBreaksLegendVisualVariableOptions: Incomplete
+    useClassBreaks: bool
+    classificationMethod: Incomplete
+    breaks: Incomplete
+    minimumBreak: float
+    showClassGaps: bool
+    showInAscendingOrder: bool
+    useDefaultSymbol: bool
+    defaultSymbolPatch: Incomplete
+    defaultSymbol: str
+    defaultLabel: Incomplete
+    defaultDescription: Incomplete
+    numberFormat: str
+    defaultSymbolCustomPatch: str
+    alwaysUpdateClassLabels: bool
+    templateSymbol: str
+    drawSizeMarkerSymbolsAboveAllLayers: bool
     def __init__(self, *args, **Kwargs) -> None: ...

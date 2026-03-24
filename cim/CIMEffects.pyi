@@ -36,6 +36,9 @@ class CIMBlueprintEffect(CIMVisualEffect):
 
 class CIMCloudyWeatherEffect(CIMWeatherEffect):
     cloudCover: float
+    cloudBaseElevation: int
+    windSpeed: int
+    windDirection: int
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMColorGradingPostprocessingEffect(CIMPostprocessingEffect):
@@ -98,16 +101,25 @@ class CIMPixelatedEffect(CIMVisualEffect):
 class CIMRainyWeatherEffect(CIMWeatherEffect):
     cloudCover: float
     precipitation: float
+    cloudBaseElevation: int
+    windSpeed: int
+    windDirection: int
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMSnowyWeatherEffect(CIMWeatherEffect):
     cloudCover: float
     precipitation: float
     snowCover: bool
+    cloudBaseElevation: int
+    windSpeed: int
+    windDirection: int
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMSunnyWeatherEffect(CIMWeatherEffect):
     cloudCover: float
+    cloudBaseElevation: int
+    windSpeed: int
+    windDirection: int
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMTiltShiftEffect(CIMCameraEffect):

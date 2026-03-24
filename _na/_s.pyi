@@ -4,121 +4,124 @@ from enum import IntEnum
 __all__ = ['TraversedElementType', 'DirectionsFieldMapping', 'CurbApproach', 'DrivingSide', 'LandmarkSide', 'ReferenceLandmarkType', 'DirectionPointType', 'DirectionPoint', 'DirectionsName', 'DirectionsCustomizer', 'TraversedJunction', 'TraversedEdge', 'TraversedElement', 'TraversedTurn', 'DirectionsQuery', 'AdjacentEdge', 'SpatialLandmark', 'ReferenceLandmark', 'NameClass']
 
 class TraversedElementType(IntEnum):
-    Unknown: Incomplete
-    Junction: Incomplete
-    Edge: Incomplete
-    Turn: Incomplete
-    Road: Incomplete
-    HighwayRoad: Incomplete
-    Ramp: Incomplete
-    Ferry: Incomplete
-    RoundaboutRoad: Incomplete
-    MajorRoad: Incomplete
-    Walkway: Incomplete
-    TurningArc: Incomplete
-    Stairs: Incomplete
-    Escalator: Incomplete
-    Elevator: Incomplete
-    PedestrianRamp: Incomplete
-    MovingWalkway: Incomplete
-    Hallway: Incomplete
-    Indoor: Incomplete
-    Transit: Incomplete
-    SailingLine: Incomplete
-    Stop: Incomplete
-    Waypoint: Incomplete
-    RestBreak: Incomplete
-    RoadIntersection: Incomplete
+    Unknown = (0,)
+    Junction = ...
+    Edge = ...
+    Turn = ...
+    Road = ...
+    HighwayRoad = ...
+    Ramp = ...
+    Ferry = ...
+    RoundaboutRoad = ...
+    MajorRoad = ...
+    Walkway = ...
+    TurningArc = ...
+    Stairs = ...
+    Escalator = ...
+    Elevator = ...
+    PedestrianRamp = ...
+    MovingWalkway = ...
+    Hallway = ...
+    Indoor = ...
+    Transit = ...
+    SailingLine = ...
+    Stop = ...
+    Waypoint = ...
+    RestBreak = ...
+    RoadIntersection = ...
 
 class CurbApproach(IntEnum):
-    Unknown: Incomplete
-    EitherSide: Incomplete
-    RightSide: Incomplete
-    LeftSide: Incomplete
-    NoUTurn: int
+    Unknown = (-1,)
+    EitherSide = (0,)
+    RightSide = (1,)
+    LeftSide = (2,)
+    NoUTurn = 3
 
 class DrivingSide(IntEnum):
-    Unknown: Incomplete
-    RightSide: Incomplete
-    LeftSide: int
+    Unknown = (0,)
+    RightSide = (1,)
+    LeftSide = 2
 
 class LandmarkSide(IntEnum):
-    Unknown: int
-    Both: Incomplete
-    Left: Incomplete
-    Right: int
+    Unknown = -1
+    Both = (0,)
+    Left = (1,)
+    Right = 2
 
 class ReferenceLandmarkType(IntEnum):
-    Turn: Incomplete
-    Confirmation: Incomplete
-    StopSign: Incomplete
-    TrafficLight: Incomplete
-    RailwayCrossing: int
+    Turn = (0,)
+    Confirmation = (1,)
+    StopSign = (2,)
+    TrafficLight = (3,)
+    RailwayCrossing = 4
 
 class NameClass(IntEnum):
-    Unknown: int
-    StreetName: Incomplete
-    RouteNumber: int
+    Unknown = -1
+    StreetName = (0,)
+    RouteNumber = 1
 
 class DirectionPointType(IntEnum):
-    Unknown: Incomplete
-    Header: Incomplete
-    ManeuverArrive: Incomplete
-    ManeuverDepart: Incomplete
-    ManeuverStraight: Incomplete
-    ManeuverFerryOn: Incomplete
-    ManeuverFerryOff: Incomplete
-    ManeuverForkCentral: Incomplete
-    ManeuverRoundabout: Incomplete
-    ManeuverUTurn: Incomplete
-    ManeuverDoor: Incomplete
-    ManeuverStairs: Incomplete
-    ManeuverElevator: Incomplete
-    ManeuverEscalator: Incomplete
-    ManeuverPedestrianRamp: Incomplete
-    ManeuverForkLeft: Incomplete
-    ManeuverRampLeft: Incomplete
-    ManeuverRoundaboutLeft: Incomplete
-    ManeuverUTurnLeft: Incomplete
-    ManeuverBearLeft: Incomplete
-    ManeuverTurnLeft: Incomplete
-    ManeuverSharpLeft: Incomplete
-    ManeuverTurnLeftLeft: Incomplete
-    ManeuverTurnLeftRight: Incomplete
-    ManeuverForkRight: Incomplete
-    ManeuverRampRight: Incomplete
-    ManeuverRoundaboutRight: Incomplete
-    ManeuverUTurnRight: Incomplete
-    ManeuverBearRight: Incomplete
-    ManeuverTurnRight: Incomplete
-    ManeuverSharpRight: Incomplete
-    ManeuverTurnRightLeft: Incomplete
-    ManeuverTurnRightRight: Incomplete
-    ManeuverElevatorUp: Incomplete
-    ManeuverEscalatorUp: Incomplete
-    ManeuverStairsUp: Incomplete
-    ManeuverElevatorDown: Incomplete
-    ManeuverEscalatorDown: Incomplete
-    ManeuverStairsDown: Incomplete
-    Event: Incomplete
-    EventLandmark: Incomplete
-    EventTimeZone: Incomplete
-    EventTraffic: Incomplete
-    EventBarrier: Incomplete
-    EventBoundary: Incomplete
-    EventRestrictionViolation: int
+    Unknown = (0,)
+    Header = (1,)
+    ManeuverArrive = (50,)
+    ManeuverDepart = (51,)
+    ManeuverStraight = (52,)
+    ManeuverCollectLeft = (53,)
+    ManeuverCollectRight = (54,)
+    ManeuverCollectBoth = (55,)
+    ManeuverFerryOn = (100,)
+    ManeuverFerryOff = (101,)
+    ManeuverForkCentral = (102,)
+    ManeuverRoundabout = (103,)
+    ManeuverUTurn = (104,)
+    ManeuverDoor = (150,)
+    ManeuverStairs = (151,)
+    ManeuverElevator = (152,)
+    ManeuverEscalator = (153,)
+    ManeuverPedestrianRamp = (154,)
+    ManeuverForkLeft = (200,)
+    ManeuverRampLeft = (201,)
+    ManeuverRoundaboutLeft = (202,)
+    ManeuverUTurnLeft = (203,)
+    ManeuverBearLeft = (204,)
+    ManeuverTurnLeft = (205,)
+    ManeuverSharpLeft = (206,)
+    ManeuverTurnLeftLeft = (207,)
+    ManeuverTurnLeftRight = (208,)
+    ManeuverForkRight = (300,)
+    ManeuverRampRight = (301,)
+    ManeuverRoundaboutRight = (302,)
+    ManeuverUTurnRight = (303,)
+    ManeuverBearRight = (304,)
+    ManeuverTurnRight = (305,)
+    ManeuverSharpRight = (306,)
+    ManeuverTurnRightLeft = (307,)
+    ManeuverTurnRightRight = (308,)
+    ManeuverElevatorUp = (400,)
+    ManeuverEscalatorUp = (401,)
+    ManeuverStairsUp = (402,)
+    ManeuverElevatorDown = (500,)
+    ManeuverEscalatorDown = (501,)
+    ManeuverStairsDown = (502,)
+    Event = (1000,)
+    EventLandmark = (1001,)
+    EventTimeZone = (1002,)
+    EventTraffic = (1003,)
+    EventBarrier = (1004,)
+    EventBoundary = (1005,)
+    EventRestrictionViolation = 1006
 
 class DirectionsFieldMapping(IntEnum):
-    FullName: int
-    BaseName: int
-    PrefixType: int
-    SuffixType: int
-    HighwayDirection: int
-    PrefixDirection: int
-    SuffixDirection: int
-    Phrase: int
-    Language: int
-    NameClass: int
+    FullName = 0
+    BaseName = 1
+    PrefixType = 2
+    SuffixType = 3
+    HighwayDirection = 4
+    PrefixDirection = 5
+    SuffixDirection = 6
+    Phrase = 7
+    Language = 8
+    NameClass = 9
 
 DirectionPoint: Incomplete
 DirectionsName: Incomplete

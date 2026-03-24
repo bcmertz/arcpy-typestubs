@@ -13,7 +13,7 @@ class KrigingModelOrdinary(KrigingModel):
     majorRange: Incomplete
     partialSill: Incomplete
     nugget: Incomplete
-    def __init__(self, semivariogramType: Incomplete | None = None, lagSize: Incomplete | None = None, majorRange: Incomplete | None = None, partialSill: Incomplete | None = None, nugget: Incomplete | None = None) -> None: ...
+    def __init__(self, semivariogramType=None, lagSize=None, majorRange=None, partialSill=None, nugget=None) -> None: ...
 
 class KrigingModelUniversal(KrigingModel):
     __esri_toolinfo__: Incomplete
@@ -22,4 +22,4 @@ class KrigingModelUniversal(KrigingModel):
     majorRange: Incomplete
     partialSill: Incomplete
     nugget: Incomplete
-    def __init__(self, semivariogramType: Incomplete | None = None, lagSize: Incomplete | None = None, majorRange: Incomplete | None = None, partialSill: Incomplete | None = None, nugget: Incomplete | None = None) -> None: ...
+    def __init__(self, semivariogramType=None, lagSize=None, majorRange=None, partialSill=None, nugget=None) -> None: ...

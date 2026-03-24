@@ -1,2192 +1,2505 @@
 from enum import Enum
 
+class BABenchmarkAboveAndBelowType(Enum):
+    RawValue = 1
+    Percentage = 2
+
+class BABenchmarkHighlightExtremesType(Enum):
+    IQR = 1
+    StandardDeviation = 2
+
+class BABenchmarkMethod(Enum):
+    Average = 1
+    Median = 2
+    Feature = 3
+    eNone = 4
+
+class BABenchmarkStyle(Enum):
+    AboveOrBelow = 1
+    AboveInBetweenOrBelow = 2
+    Quartiles = 3
+    HighToLow = 4
+    TopAndBottom = 5
+    Quantiles = 6
+    HighlightExtremes = 7
+    eNone = 0
+
+class BABenchmarkTopAndBottomType(Enum):
+    Rank = 1
+    Percentile = 2
+
+class BABoundaryMode(Enum):
+    Geographies = 1
+    H3Hexagons = 2
+
+class BAColorCodedLayerLODStatus(Enum):
+    Available = 0
+    UnknownError = 1
+    NoFeatures = 2
+    TooManyFeatures = 3
+
+class BACombinationMethod(Enum):
+    Sum = 1
+    Mean = 2
+    Product = 3
+    GeometricMean = 4
+
+class BACriterionInfluence(Enum):
+    Positive = 1
+    Inverse = 2
+    Ideal = 3
+    TargetSite = 4
+
+class BAFinalScoreMethod(Enum):
+    eNone = 0
+    Method0_1 = 1
+    Method0_100 = 2
+
+class BAHistogramSubsetSelectionMethod(Enum):
+    Outliers = 1
+    Percentage = 2
+    StandardDeviation = 3
+
+class BAPointCriterionType(Enum):
+    Count = 1
+    Weight = 2
+    MinDistance = 3
+
+class BAPointStatisticsType(Enum):
+    Sum = 1
+    Ave = 2
+    StdDev = 3
+    Min = 4
+    Max = 5
+
+class BAPreprocessingMethod(Enum):
+    MinMax = 1
+    Percentile = 2
+    ZScore = 3
+    Raw = 4
+
+class BAPresetMethod(Enum):
+    CombineValues = 1
+    CompoundDifferences = 2
+    Custom = 3
+
+class BAScatterplotChartType(Enum):
+    Scatterplot = 1
+    BubbleChart = 2
+
 class BAVariableListValueType(Enum):
-    Number: int
-    Percent: int
-    Average: int
-    Index: int
+    Number = 0
+    Percent = 1
+    Average = 2
+    Index = 3
 
 class ChartAggregationType(Enum):
-    eNone: int
-    Minimum: int
-    Maximum: int
-    Mean: int
-    Median: int
-    Sum: int
-    Majority: int
-    Minority: int
+    eNone = 0
+    Minimum = 1
+    Maximum = 2
+    Mean = 3
+    Median = 4
+    Sum = 5
+    Majority = 6
+    Minority = 7
 
 class ChartColorType(Enum):
-    SingleColor: int
-    ColorMatch: int
-    CustomColor: int
+    SingleColor = 0
+    ColorMatch = 1
+    CustomColor = 2
 
 class ChartDataTransformationType(Enum):
-    eNone: int
-    Logarithmic: int
-    SquareRoot: int
-    Inverse: int
-    BoxCox: int
+    eNone = 0
+    Logarithmic = 1
+    SquareRoot = 2
+    Inverse = 3
+    BoxCox = 4
 
 class ChartDimensionalProfilePlotType(Enum):
-    Variables: int
-    Bands: int
-    DimensionValues: int
-    Variable: int
-    Band: int
-    CCDC: int
-    LandTrendr: int
-    Dimension: int
+    Variables = 0
+    Bands = 1
+    DimensionValues = 2
+    Variable = 3
+    Band = 4
+    CCDC = 5
+    LandTrendr = 6
+    Dimension = 7
 
 class ChartFontWeight(Enum):
-    Lighter: int
-    Normal: int
-    Bold: int
+    Lighter = 0
+    Normal = 1
+    Bold = 2
 
 class ChartGuideType(Enum):
-    ChartGuideType_Line: int
-    ChartGuideType_Range: int
+    ChartGuideType_Line = 0
+    ChartGuideType_Range = 1
+    ChartGuideType_Polyline = 2
 
 class ChartLegendAlignment(Enum):
-    Left: int
-    Right: int
-    Top: int
-    Bottom: int
+    Left = 0
+    Right = 1
+    Top = 2
+    Bottom = 3
 
 class ChartLineDashStyle(Enum):
-    Solid: int
-    Dot: int
-    Dash: int
-    DashDot: int
-    LongDash: int
-    LongDashDot: int
+    Solid = 0
+    Dot = 1
+    Dash = 2
+    DashDot = 3
+    LongDash = 4
+    LongDashDot = 5
 
 class ChartMapSelectionHandling(Enum):
-    eNone: int
-    Highlight: int
-    BuildFromSelectionSet: int
+    eNone = 0
+    Highlight = 1
+    BuildFromSelectionSet = 2
 
 class ChartMarkerSymbolStyle(Enum):
-    Circle: int
-    Square: int
-    Diamond: int
-    Triangle: int
+    Circle = 0
+    Square = 1
+    Diamond = 2
+    Triangle = 3
+    Star_FourPoint = 4
+    Star_FivePoint = 5
+    Cross = 6
 
 class ChartMultiBarType(Enum):
-    eNone: int
-    SideBySide: int
-    Stacked: int
-    Stacked100: int
+    eNone = 0
+    SideBySide = 1
+    Stacked = 2
+    Stacked100 = 3
 
 class ChartNullPolicy(Enum):
-    Null: int
-    Zero: int
-    Interpolate: int
+    Null = 0
+    Zero = 1
+    Interpolate = 2
 
 class ChartPosition(Enum):
-    ChartPosition_Center: int
-    ChartPosition_Top: int
-    ChartPosition_Bottom: int
-    ChartPosition_Left: int
-    ChartPosition_Right: int
+    ChartPosition_Center = 0
+    ChartPosition_Top = 1
+    ChartPosition_Bottom = 2
+    ChartPosition_Left = 3
+    ChartPosition_Right = 4
 
 class ChartProbabilityPlotType(Enum):
-    NormalQQPlot: int
-    QQPlot: int
+    NormalQQPlot = 0
+    QQPlot = 1
 
 class ChartSPMDiagonalOption(Enum):
-    eNone: int
-    Histogram: int
-    FieldName: int
+    eNone = 0
+    Histogram = 1
+    FieldName = 2
 
 class ChartSPMDisplayOption(Enum):
-    eNone: int
-    PreviewPlot: int
-    ScatterPlots: int
-    RSquared: int
-    PearsonsR: int
+    eNone = 0
+    PreviewPlot = 1
+    ScatterPlots = 2
+    RSquared = 3
+    PearsonsR = 4
 
 class ChartSPMSortByType(Enum):
-    RSquared: int
-    PearsonsR: int
-    Alphabetical: int
-    Custom: int
+    RSquared = 0
+    PearsonsR = 1
+    Alphabetical = 2
+    Custom = 3
+
+class ChartScatterDisplayOption(Enum):
+    ScatterPlots = 0
+    RSquared = 1
+    PearsonsR = 2
 
 class ChartSortDirection(Enum):
-    Ascending: int
-    Descending: int
+    Ascending = 0
+    Descending = 1
 
 class ChartSurfaceProfilePlotType(Enum):
-    SingleLayer: int
-    MultiLayer: int
+    SingleLayer = 0
+    MultiLayer = 1
 
 class ChartTextCase(Enum):
-    Normal: int
-    Uppercase: int
-    Lowercase: int
-    Capitalize: int
-    SmallCaps: int
+    Normal = 0
+    Uppercase = 1
+    Lowercase = 2
+    Capitalize = 3
+    SmallCaps = 4
 
 class ChartTimeAggregationType(Enum):
-    eNone: int
-    EqualIntervalsFromStartTime: int
-    EqualIntervalsFromEndTime: int
-    CalendarIntervals: int
-    ReferenceTime: int
+    eNone = 0
+    EqualIntervalsFromStartTime = 1
+    EqualIntervalsFromEndTime = 2
+    CalendarIntervals = 3
+    ReferenceTime = 4
 
 class ChartTrajectoryProfilePlotType(Enum):
-    Tracks: int
-    Track: int
-    Points: int
-    Layers: int
+    Tracks = 0
+    Track = 1
+    Points = 2
+    Layers = 3
 
 class ChartTrendLineFitType(Enum):
-    ChartTrendLineFitType_Linear: int
-    ChartTrendLineFitType_Exponential: int
-    ChartTrendLineFitType_Logarithmic: int
-    ChartTrendLineFitType_Power: int
-    ChartTrendLineFitType_Fourier: int
-    ChartTrendLineFitType_Polynomial: int
-    ChartTrendLineFitType_MinX: int
-    ChartTrendLineFitType_MinY: int
-    ChartTrendLineFitType_MaxX: int
-    ChartTrendLineFitType_MaxY: int
-    ChartTrendLineFitType_AverageX: int
-    ChartTrendLineFitType_AverageY: int
+    ChartTrendLineFitType_Linear = 0
+    ChartTrendLineFitType_Exponential = 1
+    ChartTrendLineFitType_Logarithmic = 2
+    ChartTrendLineFitType_Power = 3
+    ChartTrendLineFitType_Fourier = 4
+    ChartTrendLineFitType_Polynomial = 5
+    ChartTrendLineFitType_MinX = 6
+    ChartTrendLineFitType_MinY = 7
+    ChartTrendLineFitType_MaxX = 8
+    ChartTrendLineFitType_MaxY = 9
+    ChartTrendLineFitType_AverageX = 10
+    ChartTrendLineFitType_AverageY = 11
+
+class ChartType(Enum):
+    Basic = 0
+    Combo = 1
 
 class ChartValueType(Enum):
-    ChartValueType_Numeric: int
-    ChartValueType_Temporal: int
+    ChartValueType_Numeric = 0
+    ChartValueType_Temporal = 1
+
+class ProfileGraphLineSeriesType(Enum):
+    ProfileGraphLineSeriesType_LineOnly = 0
+    ProfileGraphLineSeriesType_LineAndVertices = 1
+    ProfileGraphLineSeriesType_Fill = 2
+
+class ProfileGraphVariableInYAxis(Enum):
+    ProfileGraphVariableInYAxis_Z = 0
+    ProfileGraphVariableInYAxis_M = 1
 
 class SpectralProfileDisplayMode(Enum):
-    MeanLine: int
-    Boxes: int
-    BoxesAndMeanLine: int
-    ConsolidatedBoxesAndMeanLine: int
+    MeanLine = 0
+    Boxes = 1
+    BoxesAndMeanLine = 2
+    ConsolidatedBoxesAndMeanLine = 3
+
+class SpectralProfileHorizontalUnit(Enum):
+    BandIDs = 0
+    Wavelengths = 1
+    BandNames = 2
 
 class ColorSpaceType(Enum):
-    RGB: int
-    CMYK: int
-    Gray: int
-    HSV: int
-    HLS: int
-    XYZ: int
-    LAB: int
-    Spot: int
+    RGB = 1
+    CMYK = 2
+    Gray = 3
+    HSV = 4
+    HLS = 5
+    XYZ = 7
+    LAB = 8
+    Spot = 9
 
 class FixedColorRampArrangementType(Enum):
-    Default: int
-    Bivariate: int
+    Default = 1
+    Bivariate = 2
 
 class PolarDirection(Enum):
-    Auto: int
-    Clockwise: int
-    Counterclockwise: int
+    Auto = 0
+    Clockwise = 1
+    Counterclockwise = 2
 
 class DataEngineeringSourceFilterType(Enum):
-    eNone: int
-    Selection: int
-    Extent: int
-    SelectionAndExtent: int
+    eNone = 0
+    Selection = 1
+    Extent = 2
+    SelectionAndExtent = 3
 
 class DataEngineeringStatType(Enum):
-    Mean: int
-    StandardDeviation: int
-    Maximum: int
-    Minimum: int
-    Median: int
-    Mode: int
-    FirstQuartile: int
-    ThirdQuartile: int
-    Sum: int
-    NumberOfNulls: int
-    Outliers: int
-    NumberUniqueValues: int
-    LeastCommon: int
-    Kurtosis: int
-    Skewness: int
-    CoefficientOfVariation: int
-    Range: int
-    IQR: int
-    Count: int
+    Mean = 0
+    StandardDeviation = 1
+    Maximum = 2
+    Minimum = 3
+    Median = 4
+    Mode = 5
+    FirstQuartile = 6
+    ThirdQuartile = 7
+    Sum = 8
+    NumberOfNulls = 9
+    Outliers = 10
+    NumberUniqueValues = 11
+    LeastCommon = 12
+    Kurtosis = 13
+    Skewness = 14
+    CoefficientOfVariation = 15
+    Range = 16
+    IQR = 17
+    Count = 18
+    RowCount = 19
 
 class DataEngineeringTreatFieldAsType(Enum):
-    Numerical: int
-    Categorical: int
-    DateTime: int
-    Other: int
+    Numerical = 0
+    Categorical = 1
+    DateTime = 2
+    Other = 3
 
 class DataEngineeringViewLayoutType(Enum):
-    FieldsAndStatistics: int
-    OnlyStatistics: int
+    FieldsAndStatistics = 0
+    OnlyStatistics = 1
 
 class ProjectThumbnailAutomaticGenerationSource(Enum):
-    ActiveMap: int
-    SpecifiedMap: int
+    ActiveMap = 0
+    SpecifiedMap = 1
 
 class ProjectThumbnailGenerationMethod(Enum):
-    Manual: int
-    Automatic: int
+    Manual = 0
+    Automatic = 1
 
 class SceneDrawingMode(Enum):
-    Perspective: int
-    Isometric: int
+    Perspective = 0
+    Isometric = 1
 
 class StatisticalDataCollectionSummaryType(Enum):
-    Sum: int
-    Avg: int
-    Min: int
-    Max: int
-    Script: int
+    Sum = 0
+    Avg = 1
+    Min = 2
+    Max = 3
+    Script = 4
 
 class StatisticalReportFieldFormat(Enum):
-    Count: int
-    Percent: int
-    Currency: int
+    Count = 0
+    Percent = 1
+    Currency = 2
 
 class TableRowHeightType(Enum):
-    eNone: int
-    Single: int
-    Double: int
-    Triple: int
+    eNone = 0
+    Single = 1
+    Double = 2
+    Triple = 3
 
 class DepthOfFieldMaxBlur(Enum):
-    Small: int
-    Medium: int
-    Large: int
-    VeryLarge: int
+    Small = 0
+    Medium = 1
+    Large = 2
+    VeryLarge = 3
 
 class AltitudeMode(Enum):
-    ClampToGround: int
-    RelativeToGround: int
-    Absolute: int
+    ClampToGround = 0
+    RelativeToGround = 1
+    Absolute = 2
 
 class AnimationTransition(Enum):
-    eNone: int
-    Linear: int
-    Stepped: int
-    Hop: int
-    FixedArc: int
-    AdjustableArc: int
-    Hold: int
+    eNone = 0
+    Linear = 1
+    Stepped = 2
+    Hop = 3
+    FixedArc = 4
+    AdjustableArc = 5
+    Hold = 6
 
 class BaseElevationType(Enum):
-    Expression: int
-    Surface: int
-    Shape: int
+    Expression = 0
+    Surface = 1
+    Shape = 2
 
 class BillboardMode(Enum):
-    eNone: int
-    SignPost: int
-    FaceNearPlane: int
+    eNone = 0
+    SignPost = 1
+    FaceNearPlane = 2
 
 class ColorModel(Enum):
-    RGB: int
-    CMYK: int
+    RGB = 0
+    CMYK = 1
 
 class ColorVisionDeficiencyType(Enum):
-    eNone: int
-    Deuteranopia: int
-    Protanopia: int
-    Tritanopia: int
+    eNone = 0
+    Deuteranopia = 1
+    Protanopia = 2
+    Tritanopia = 3
+    Achromatopsia = 4
 
 class DominantSizeAxis(Enum):
-    Z: int
-    X: int
-    Y: int
+    Z = 0
+    X = 1
+    Y = 2
 
 class ElevationMode(Enum):
-    BaseGlobeSurface: int
-    CustomSurface: int
-    eNone: int
+    BaseGlobeSurface = 0
+    CustomSurface = 1
+    eNone = 2
 
 class ExtrusionType(Enum):
-    eNone: int
-    MinZ: int
-    MaxZ: int
-    Base: int
-    Absolute: int
+    eNone = 0
+    MinZ = 1
+    MaxZ = 2
+    Base = 3
+    Absolute = 4
 
 class FaceCulling3D(Enum):
-    Backface: int
-    Frontface: int
-    eNone: int
-    FromGeometry: int
+    Backface = 0
+    Frontface = 1
+    eNone = 2
+    FromGeometry = 3
 
 class GradientStrokeMethod(Enum):
-    AcrossLine: int
-    AlongLine: int
+    AcrossLine = 0
+    AlongLine = 1
 
 class MapLayerType(Enum):
-    Operational: int
-    BasemapBackground: int
-    BasemapTopReference: int
-    MapNotes: int
+    Operational = 0
+    BasemapBackground = 1
+    BasemapTopReference = 2
+    MapNotes = 3
 
 class MapViewingMode(Enum):
-    Map: int
-    SceneLocal: int
-    SceneGlobal: int
-    MapStereo: int
+    Map = 0
+    SceneLocal = 1
+    SceneGlobal = 2
+    MapStereo = 3
 
 class OffsetCurveMethod(Enum):
-    Square: int
-    Mitered: int
-    Bevelled: int
-    Rounded: int
+    Square = 0
+    Mitered = 1
+    Bevelled = 2
+    Rounded = 3
 
 class OffsetCurveOption(Enum):
-    Fast: int
-    Accurate: int
+    Fast = 0
+    Accurate = 1
 
 class PrimitiveShapeType(Enum):
-    Unknown: int
-    Cone: int
-    Cube: int
-    Cylinder: int
-    Diamond: int
-    Sphere: int
-    Tetrahedron: int
+    Unknown = 0
+    Cone = 1
+    Cube = 2
+    Cylinder = 3
+    Diamond = 4
+    Sphere = 5
+    Tetrahedron = 6
 
 class PrimitiveType3D(Enum):
-    TriangleStrip: int
-    TriangleFan: int
-    TriangleList: int
-    PointList: int
-    LineList: int
+    TriangleStrip = 0
+    TriangleFan = 1
+    TriangleList = 2
+    PointList = 3
+    LineList = 4
 
 class RangeRelation(Enum):
-    Overlaps: int
-    OverlapsStartWithinEnd: int
-    AfterStartOverlapsEnd: int
-    Within: int
+    Overlaps = 0
+    OverlapsStartWithinEnd = 1
+    AfterStartOverlapsEnd = 2
+    Within = 3
 
 class RasterResamplingType(Enum):
-    NearestNeighbor: int
-    BilinearInterpolation: int
-    CubicConvolution: int
-    Majority: int
-    BilinearInterpolationPlus: int
-    BilinearGaussianBlur: int
-    BilinearGaussianBlurPlus: int
-    Average: int
-    Minimum: int
-    Maximum: int
-    VectorAverage: int
+    NearestNeighbor = 0
+    BilinearInterpolation = 1
+    CubicConvolution = 2
+    Majority = 3
+    BilinearInterpolationPlus = 4
+    BilinearGaussianBlur = 5
+    BilinearGaussianBlurPlus = 6
+    Average = 7
+    Minimum = 8
+    Maximum = 9
+    VectorAverage = 10
 
 class RasterStretchStatsType(Enum):
-    AreaOfView: int
-    Dataset: int
-    GlobalStats: int
+    AreaOfView = 0
+    Dataset = 1
+    GlobalStats = 2
 
 class RasterStretchType(Enum):
-    eNone: int
-    DefaultFromSource: int
-    Custom: int
-    StandardDeviations: int
-    HistogramEqualize: int
-    MinimumMaximum: int
-    HistogramSpecification: int
-    PercentMinimumMaximum: int
-    Count: int
-    ESRI: int
+    eNone = 0
+    DefaultFromSource = 1
+    Custom = 2
+    StandardDeviations = 3
+    HistogramEqualize = 4
+    MinimumMaximum = 5
+    HistogramSpecification = 6
+    PercentMinimumMaximum = 7
+    Count = 8
+    ESRI = 9
+    SquareRoot = 10
+    Logarithm = 11
 
 class RotationOrder(Enum):
-    XYZ: int
-    ZXY: int
-    YXZ: int
+    XYZ = 0
+    ZXY = 1
+    YXZ = 2
 
 class ColorBalanceMethod(Enum):
-    Dodging: int
-    Histogram: int
-    StdDev: int
-    eNone: int
+    Dodging = 0
+    Histogram = 1
+    StdDev = 2
+    eNone = 3
 
 class ColorCorrectionStretchType(Enum):
-    eNone: int
-    Adaptive: int
-    MinMax: int
-    StdDev: int
+    eNone = 0
+    Adaptive = 1
+    MinMax = 2
+    StdDev = 3
 
 class ColorMatchingMethod(Enum):
-    Statistics: int
-    Histogram: int
-    LinearCorrelation: int
-    eNone: int
+    Statistics = 0
+    Histogram = 1
+    LinearCorrelation = 2
+    eNone = 3
 
 class ColorizerHillshadeType(Enum):
-    Traditional: int
-    Multidirectional: int
+    Traditional = 0
+    Multidirectional = 1
 
 class ColorizerScalingType(Enum):
-    eNone: int
-    Adjusted: int
+    eNone = 0
+    Adjusted = 1
 
 class FlowRepresentationType(Enum):
-    From: int
-    To: int
+    From = 0
+    To = 1
 
 class MosaicSubLayerType(Enum):
-    Boundary: int
-    Footprint: int
-    Image: int
-    Seamline: int
+    Boundary = 0
+    Footprint = 1
+    Image = 2
+    Seamline = 3
 
 class PansharpeningType(Enum):
-    IHS: int
-    Brovey: int
-    ESRI: int
-    Mean: int
+    IHS = 0
+    Brovey = 1
+    ESRI = 2
+    Mean = 3
 
 class RasterFootprintDrawMode(Enum):
-    All: int
-    OnlyPrimary: int
+    All = 0
+    OnlyPrimary = 1
 
 class RasterHistogramEditType(Enum):
-    Lines: int
-    Splines: int
-    Points: int
+    Lines = 0
+    Splines = 1
+    Points = 2
 
 class RasterMosaicMethod(Enum):
-    eNone: int
-    Center: int
-    Nadir: int
-    Viewpoint: int
-    Attribute: int
-    LockRaster: int
-    Northwest: int
-    Seamline: int
+    eNone = 0
+    Center = 1
+    Nadir = 2
+    Viewpoint = 3
+    Attribute = 4
+    LockRaster = 5
+    Northwest = 6
+    Seamline = 7
 
 class RasterMosaicOperatorType(Enum):
-    First: int
-    Last: int
-    Min: int
-    Max: int
-    Mean: int
-    Blend: int
-    Sum: int
+    First = 0
+    Last = 1
+    Min = 2
+    Max = 3
+    Mean = 4
+    Blend = 5
+    Sum = 6
 
 class SpeedUnitType(Enum):
-    Unknown: int
-    MetersPerSecond: int
-    KilometersPerHour: int
-    Knots: int
-    FeetPerSecond: int
-    MilesPerHour: int
+    Unknown = 0
+    MetersPerSecond = 1
+    KilometersPerHour = 2
+    Knots = 3
+    FeetPerSecond = 4
+    MilesPerHour = 5
 
 class StretchType(Enum):
-    Gamma: int
-    MinMax: int
-    StdDev: int
-    eNone: int
+    Gamma = 0
+    MinMax = 1
+    StdDev = 2
+    eNone = 3
 
 class SymbolTileUnitType(Enum):
-    Unknown: int
-    Feet: int
-    Miles: int
-    NauticalMiles: int
-    Meters: int
-    Kilometers: int
-    DecimalDegrees: int
-    Pixels: int
+    Unknown = 0
+    Feet = 1
+    Miles = 2
+    NauticalMiles = 3
+    Meters = 4
+    Kilometers = 5
+    DecimalDegrees = 6
+    Pixels = 100
 
 class SymbolizationType(Enum):
-    Scalar: int
-    SingleArrow: int
-    WindBarbs: int
-    BeaufortWindKnots: int
-    BeaufortWindMetersPerSecond: int
-    OceanCurrentKnots: int
-    OceanCurrentMetersPerSecond: int
-    BeaufortWindMilesPerHour: int
-    BeaufortWindKilometersPerHour: int
-    ClassifiedArrow: int
-    Custom: int
+    Scalar = 0
+    SingleArrow = 1
+    WindBarbs = 2
+    BeaufortWindKnots = 3
+    BeaufortWindMetersPerSecond = 4
+    OceanCurrentKnots = 5
+    OceanCurrentMetersPerSecond = 6
+    BeaufortWindMilesPerHour = 7
+    BeaufortWindKilometersPerHour = 8
+    ClassifiedArrow = 9
+    Custom = 100
 
 class TargetColorSurfaceType(Enum):
-    SingleColorPoint: int
-    ColorGrid: int
-    FirstOrderSurface: int
-    SecondOrderSurface: int
-    ThirdOrderSurface: int
+    SingleColorPoint = 0
+    ColorGrid = 1
+    FirstOrderSurface = 2
+    SecondOrderSurface = 3
+    ThirdOrderSurface = 4
+
+class CentralityMeasure(Enum):
+    Degree = 0
+    InDegree = 1
+    OutDegree = 2
+    Eigenvector = 3
+    PageRank = 4
+    Betweenness = 5
+    Closeness = 6
+    Harmonic = 7
+    Coreness = 8
 
 class CentralityRelationshipInterpretation(Enum):
-    Undirected: int
-    Directed: int
-    Reversed: int
+    Undirected = 0
+    Directed = 1
+    Reversed = 2
 
 class CentralityScoresNormalization(Enum):
-    eNone: int
-    Global: int
-    ByComponent: int
+    eNone = 0
+    Global = 1
+    ByComponent = 2
+
+class EventsTicksVisualization(Enum):
+    eNone = 0
+    StartOnly = 1
+    StartAndEnd = 2
+
+class FFPConfigurationWarning(Enum):
+    eNone = 0
+    AllOriginsAreExcluded = 1
+    AllDestinationsAreExcluded = 2
+    AllOptionalWaypointsAreExcluded = 3
+    AtLeastOneMandatoryEntityWaypointIsExcluded = 4
+    AtLeastOneMandatoryRelationshipWaypointIsExcluded = 5
+    ReachedMaxPathLength = 6
+
+class FFPExecutionWarning(Enum):
+    AtLeastOneCostIsStrictlyNegative = 0
 
 class FilteredFindPathsEntityUsage(Enum):
-    AnyOriginAnyDestination: int
-    AnyOriginAllDestinations: int
-    AllOriginsAnyDestination: int
-    AllOriginsAllDestinations: int
+    AnyOriginAnyDestination = 0
+    AnyOriginAllDestinations = 1
+    AllOriginsAnyDestination = 2
+    AllOriginsAllDestinations = 3
+    EachPair = 4
+
+class KGClosedPathPolicy(Enum):
+    Forbid = 0
+    Allow = 1
+    Require = 2
 
 class KGDurativeEventMissingOneTimeBehaviour(Enum):
-    Error: int
-    Exclude: int
-    MakeNonEvent: int
-    MakePunctualEvent: int
+    Error = 0
+    Exclude = 1
+    MakeNonEvent = 2
+    MakePunctualEvent = 3
 
 class KGDurativeEventSwappedTimesBehaviour(Enum):
-    Error: int
-    Exclude: int
-    MakeNonEvent: int
-    MakeMinPunctualEvent: int
-    MakeMaxPunctualEvent: int
-    MakeDurativeEvent: int
+    Error = 0
+    Exclude = 1
+    MakeNonEvent = 2
+    MakeMinPunctualEvent = 3
+    MakeMaxPunctualEvent = 4
+    MakeDurativeEvent = 5
 
 class KGEventMissingAllTimesBehaviour(Enum):
-    Error: int
-    Exclude: int
-    MakeNonEvent: int
+    Error = 0
+    Exclude = 1
+    MakeNonEvent = 2
+
+class KGFilterType(Enum):
+    Include = 0
+    Exclude = 1
+
+class KGMergePropertiesWithMissingData(Enum):
+    DoNotCreateOrMerge = 0
+    CreateButDoNotMerge = 1
+    CreateAndMerge = 2
+
+class KGNegativeCostBehaviour(Enum):
+    ReplaceByZero = 0
+    ReplaceByDefaultCostValue = 1
+    ReplaceByAbsoluteValue = 2
 
 class KGPathFilterItemType(Enum):
-    Entity: int
-    Relationship: int
+    Entity = 0
+    Relationship = 1
 
 class KGPathFilterType(Enum):
-    IncludeOnly: int
-    Exclude: int
-    MandatoryWaypoint: int
-    OptionalWaypoint: int
+    IncludeOnly = 0
+    Exclude = 1
+    MandatoryWaypoint = 2
+    OptionalWaypoint = 3
+
+class KGPathFindingError(Enum):
+    eNone = 0
+    ConfigurationHasTooManyInputEntities = 1
+    ConfigurationIsTooComplex = 2
+    PunctualEventHasNoTime = 3
+    DurativeEventHasNoTime = 4
+    DurativeEventHasOneMissingTime = 5
+    DurativeEventHasSwappedTimes = 6
+    PropertyFilterSyntaxError = 7
 
 class KGPathMode(Enum):
-    Shortest: int
-    All: int
+    Shortest = 0
+    All = 1
+    LowestCost = 2
 
 class KGPathTimeFlow(Enum):
-    Forward: int
-    Backward: int
-    Unconstrained: int
+    Forward = 0
+    Backward = 1
+    Unconstrained = 2
 
 class KGTraversalDirectionType(Enum):
-    Any: int
-    Forward: int
-    Backward: int
+    Any = 0
+    Forward = 1
+    Backward = 2
 
 class KnowledgeGraphSearchFilterScope(Enum):
-    Entities: int
-    Relationships: int
-    BothEntitiesAndRelationships: int
-    Provenance: int
+    Entities = 1
+    Relationships = 2
+    BothEntitiesAndRelationships = 3
+    Provenance = 4
 
 class KnowledgeLinkChartLayoutAlgorithm(Enum):
-    Organic_Standard: int
-    Organic_LeafCircle: int
-    Organic_Fusiform: int
-    Organic_Community: int
-    Geographic_Organic_Standard: int
-    Basic_Grid: int
-    Tree_LeftToRight: int
-    Tree_RightToLeft: int
-    Tree_TopToBottom: int
-    Tree_BottomToTop: int
-    Radial_RootCentric: int
-    Radial_NodeCentric: int
-    Hierarchical_TopToBottom: int
-    Hierarchical_BottomToTop: int
+    Organic_Standard = 0
+    Organic_LeafCircle = 1
+    Organic_Fusiform = 2
+    Organic_Community = 3
+    Geographic_Organic_Standard = 4
+    Basic_Grid = 5
+    Tree_LeftToRight = 6
+    Tree_RightToLeft = 7
+    Tree_TopToBottom = 8
+    Tree_BottomToTop = 9
+    Radial_RootCentric = 10
+    Radial_NodeCentric = 11
+    Hierarchical_TopToBottom = 12
+    Hierarchical_BottomToTop = 13
+    Chronological_MonoTimeline = 14
+    Chronological_MultiTimeline = 15
+
+class KnowledgeNonspatialDataDisplayMode(Enum):
+    Visible = 0
+    Hidden = 1
+
+class LinkChartLayoutDirection(Enum):
+    Top = 0
+    Bottom = 1
+    Left = 2
+    Right = 3
+
+class LinkChartLayoutIdealEdgeLengthType(Enum):
+    AbsoluteValue = 0
+    Multiplier = 1
 
 class ProvenanceBehavior(Enum):
-    Exclude: int
-    Include: int
+    Exclude = 0
+    Include = 1
 
 class FeaturesToLabel(Enum):
-    AllVisibleFeatures: int
-    MostCurrentTrackFeatures: int
+    AllVisibleFeatures = 0
+    MostCurrentTrackFeatures = 1
 
 class LabelExpressionEngine(Enum):
-    VBScript: int
-    JScript: int
-    Python: int
-    Arcade: int
+    VBScript = 0
+    JScript = 1
+    Python = 2
+    Arcade = 3
 
 class LabelFeatureType(Enum):
-    Point: int
-    Line: int
-    Polygon: int
+    Point = 0
+    Line = 1
+    Polygon = 2
 
 class MaplexAbbreviationType(Enum):
-    Translation: int
-    Keyword: int
-    Ending: int
+    Translation = 0
+    Keyword = 1
+    Ending = 2
 
 class MaplexAnchorPointType(Enum):
-    GeometricCenter: int
-    ErodedCenter: int
-    Perimeter: int
-    UnclippedGeometricCenter: int
+    GeometricCenter = 0
+    ErodedCenter = 1
+    Perimeter = 2
+    UnclippedGeometricCenter = 3
 
 class MaplexCenterLabelAnchorType(Enum):
-    Symbol: int
-    FeatureGeometry: int
+    Symbol = 0
+    FeatureGeometry = 1
 
 class MaplexConnectionType(Enum):
-    MinimizeLabels: int
-    Unambiguous: int
+    MinimizeLabels = 0
+    Unambiguous = 1
 
 class MaplexConstrainOffset(Enum):
-    NoConstraint: int
-    AboveLine: int
-    BelowLine: int
-    LeftOfLine: int
-    RightOfLine: int
+    NoConstraint = 0
+    AboveLine = 1
+    BelowLine = 2
+    LeftOfLine = 3
+    RightOfLine = 4
 
 class MaplexContourAlignmentType(Enum):
-    Uphill: int
-    Page: int
-    Downhill: int
+    Uphill = 0
+    Page = 1
+    Downhill = 2
 
 class MaplexContourLadderType(Enum):
-    eNone: int
-    Straight: int
-    Curved: int
+    eNone = 0
+    Straight = 1
+    Curved = 2
 
 class MaplexGraticuleAlignmentType(Enum):
-    Straight: int
-    StraightNoFlip: int
-    Curved: int
-    CurvedNoFlip: int
+    Straight = 0
+    StraightNoFlip = 1
+    Curved = 2
+    CurvedNoFlip = 3
 
 class MaplexKeyNumberHorizontalAlignment(Enum):
-    Auto: int
-    Left: int
-    Right: int
+    Auto = 0
+    Left = 1
+    Right = 2
 
 class MaplexKeyNumberMethod(Enum):
-    PreventUnplacedLabels: int
-    AlwaysNumber: int
+    PreventUnplacedLabels = 0
+    AlwaysNumber = 1
 
 class MaplexKeyNumberResetType(Enum):
-    eNone: int
-    Maybe: int
-    Always: int
+    eNone = 0
+    Maybe = 1
+    Always = 2
 
 class MaplexLabelAnchorPoint(Enum):
-    CenterOfLabel: int
-    NearestSideOfLabel: int
-    FurthestSideOfLabel: int
+    CenterOfLabel = 0
+    NearestSideOfLabel = 1
+    FurthestSideOfLabel = 2
 
 class MaplexLabelRotationType(Enum):
-    Geographic: int
-    Arithmetic: int
-    Radians: int
-    AV3: int
+    Geographic = 0
+    Arithmetic = 1
+    Radians = 2
+    AV3 = 3
 
 class MaplexLineFeatureType(Enum):
-    General: int
-    Street: int
-    StreetAddressRange: int
-    Contour: int
-    River: int
+    General = 0
+    Street = 1
+    StreetAddressRange = 2
+    Contour = 3
+    River = 4
 
 class MaplexLinePlacementMethod(Enum):
-    CenteredHorizontalOnLine: int
-    CenteredStraightOnLine: int
-    CenteredCurvedOnLine: int
-    CenteredPerpendicularOnLine: int
-    OffsetHorizontalFromLine: int
-    OffsetStraightFromLine: int
-    OffsetCurvedFromLine: int
-    OffsetPerpendicularFromLine: int
+    CenteredHorizontalOnLine = 0
+    CenteredStraightOnLine = 1
+    CenteredCurvedOnLine = 2
+    CenteredPerpendicularOnLine = 3
+    OffsetHorizontalFromLine = 4
+    OffsetStraightFromLine = 5
+    OffsetCurvedFromLine = 6
+    OffsetPerpendicularFromLine = 7
 
 class MaplexMultiPartOption(Enum):
-    OneLabelPerFeature: int
-    OneLabelPerPart: int
-    OneLabelPerSegment: int
+    OneLabelPerFeature = 0
+    OneLabelPerPart = 1
+    OneLabelPerSegment = 2
 
 class MaplexOffsetAlongLineMethod(Enum):
-    BestPositionAlongLine: int
-    BeforeStartOfLine: int
-    AlongLineFromStart: int
-    AlongLineFromEnd: int
-    AfterEndOfLine: int
+    BestPositionAlongLine = 0
+    BeforeStartOfLine = 1
+    AlongLineFromStart = 2
+    AlongLineFromEnd = 3
+    AfterEndOfLine = 4
 
 class MaplexPointPlacementMethod(Enum):
-    AroundPoint: int
-    CenteredOnPoint: int
-    NorthOfPoint: int
-    NorthEastOfPoint: int
-    EastOfPoint: int
-    SouthEastOfPoint: int
-    SouthOfPoint: int
-    SouthWestOfPoint: int
-    WestOfPoint: int
-    NorthWestOfPoint: int
+    AroundPoint = 0
+    CenteredOnPoint = 1
+    NorthOfPoint = 2
+    NorthEastOfPoint = 3
+    EastOfPoint = 4
+    SouthEastOfPoint = 5
+    SouthOfPoint = 6
+    SouthWestOfPoint = 7
+    WestOfPoint = 8
+    NorthWestOfPoint = 9
 
 class MaplexPolygonFeatureType(Enum):
-    General: int
-    LandParcel: int
-    River: int
-    Boundary: int
+    General = 0
+    LandParcel = 1
+    River = 2
+    Boundary = 3
 
 class MaplexPolygonPlacementMethod(Enum):
-    HorizontalInPolygon: int
-    StraightInPolygon: int
-    CurvedInPolygon: int
-    HorizontalAroundPolygon: int
-    RepeatAlongBoundary: int
-    CurvedAroundPolygon: int
+    HorizontalInPolygon = 0
+    StraightInPolygon = 1
+    CurvedInPolygon = 2
+    HorizontalAroundPolygon = 3
+    RepeatAlongBoundary = 4
+    CurvedAroundPolygon = 5
 
 class MaplexQualityType(Enum):
-    Low: int
-    Medium: int
-    High: int
+    Low = 0
+    Medium = 1
+    High = 2
 
 class MaplexRemoveAmbiguousLabelsType(Enum):
-    All: int
-    WithinLabelClass: int
-    eNone: int
+    All = 0
+    WithinLabelClass = 1
+    eNone = 2
 
 class MaplexRotationAlignmentType(Enum):
-    Straight: int
-    Horizontal: int
-    Perpendicular: int
+    Straight = 0
+    Horizontal = 1
+    Perpendicular = 2
 
 class MaplexStackingAlignment(Enum):
-    ChooseBest: int
-    ConstrainLeftOrRight: int
-    ConstrainLeft: int
-    ConstrainRight: int
-    ConstrainCenter: int
+    ChooseBest = 0
+    ConstrainLeftOrRight = 1
+    ConstrainLeft = 2
+    ConstrainRight = 3
+    ConstrainCenter = 4
 
 class MaplexUnit(Enum):
-    Map: int
-    MM: int
-    Inch: int
-    Point: int
-    Percentage: int
+    Map = 0
+    MM = 1
+    Inch = 2
+    Point = 3
+    Percentage = 4
 
 class StandardFeatureWeight(Enum):
-    eNone: int
-    Low: int
-    Medium: int
-    High: int
+    eNone = 0
+    Low = 1
+    Medium = 2
+    High = 3
 
 class StandardLabelRotationType(Enum):
-    Geographic: int
-    Arithmetic: int
-    Radians: int
-    AV3: int
+    Geographic = 0
+    Arithmetic = 1
+    Radians = 2
+    AV3 = 3
 
 class StandardLabelWeight(Enum):
-    Low: int
-    Medium: int
-    High: int
+    Low = 0
+    Medium = 1
+    High = 2
 
 class StandardNumLabelsOption(Enum):
-    NoLabelRestrictions: int
-    OneLabelPerName: int
-    OneLabelPerShape: int
-    OneLabelPerPart: int
+    NoLabelRestrictions = 0
+    OneLabelPerName = 1
+    OneLabelPerShape = 2
+    OneLabelPerPart = 3
 
 class StandardPointPlacementMethod(Enum):
-    AroundPoint: int
-    OnTopPoint: int
-    SpecifiedAngles: int
-    RotationField: int
+    AroundPoint = 0
+    OnTopPoint = 1
+    SpecifiedAngles = 2
+    RotationField = 3
 
 class StandardPolygonPlacementMethod(Enum):
-    AlwaysHorizontal: int
-    AlwaysStraight: int
-    MixedStrategy: int
+    AlwaysHorizontal = 0
+    AlwaysStraight = 1
+    MixedStrategy = 2
 
 class DisplayCacheType(Enum):
-    Permanent: int
-    InSession: int
-    eNone: int
-    MaxAge: int
+    Permanent = 0
+    InSession = 1
+    eNone = 2
+    MaxAge = 3
 
 class ExaggerationMode(Enum):
-    ScaleZ: int
-    ScaleVoxelHeight: int
+    ScaleZ = 0
+    ScaleVoxelHeight = 1
 
 class LayerEffectsMode(Enum):
-    Layer: int
-    Feature: int
+    Layer = 0
+    Feature = 1
 
 class Lighting3D(Enum):
-    OneSideDataNormal: int
-    OneSideResetNormal: int
-    TwoSideDataNormal: int
-    TwoSideResetNormal: int
-    TwoSideDataNormalFromWindingOrder: int
-    TwoSideResetNormalFromWindingOrder: int
+    OneSideDataNormal = 0
+    OneSideResetNormal = 1
+    TwoSideDataNormal = 2
+    TwoSideResetNormal = 3
+    TwoSideDataNormalFromWindingOrder = 4
+    TwoSideResetNormalFromWindingOrder = 5
 
 class SortOrderType(Enum):
-    Ascending: int
-    Descending: int
+    Ascending = 0
+    Descending = 1
 
 class SublayerVisibilityMode(Enum):
-    Independent: int
-    Exclusive: int
+    Independent = 0
+    Exclusive = 1
 
 class Anchor(Enum):
-    Unspecified: int
-    TopLeftCorner: int
-    TopMidPoint: int
-    TopRightCorner: int
-    LeftMidPoint: int
-    CenterPoint: int
-    RightMidPoint: int
-    BottomLeftCorner: int
-    BottomMidPoint: int
-    BottomRightCorner: int
+    Unspecified = 0
+    TopLeftCorner = 1
+    TopMidPoint = 2
+    TopRightCorner = 3
+    LeftMidPoint = 4
+    CenterPoint = 5
+    RightMidPoint = 6
+    BottomLeftCorner = 7
+    BottomMidPoint = 8
+    BottomRightCorner = 9
 
 class AutoCameraSource(Enum):
-    eNone: int
-    Fixed: int
-    MapFrameLink: int
-    MapSeriesLink: int
+    eNone = 0
+    Fixed = 1
+    MapFrameLink = 2
+    MapSeriesLink = 3
 
 class AutoCameraType(Enum):
-    Center: int
-    Scale: int
-    CenterAndScale: int
-    Extent: int
+    Center = 0
+    Scale = 1
+    CenterAndScale = 2
+    Extent = 3
+
+class ColumnDirection(Enum):
+    AcrossDown = 0
+    DownAcross = 1
 
 class CondensedTabType(Enum):
-    Round: int
-    Rectangle: int
-    RoundedRectangle: int
+    Round = 0
+    Rectangle = 1
+    RoundedRectangle = 2
 
 class ContiguousTabType(Enum):
-    Continuous: int
-    Rounded: int
-    Squared: int
+    Continuous = 0
+    Rounded = 1
+    Squared = 2
 
 class CruisingAltitudeDiagramType(Enum):
-    Vertical: int
-    Horizontal: int
-    Quadrantal: int
+    Vertical = 1
+    Horizontal = 2
+    Quadrantal = 3
 
 class DeclinationDirection(Enum):
-    West: int
-    East: int
+    West = 0
+    East = 1
 
 class DoubleFillScaleBarStyle(Enum):
-    Hollow: int
-    Alternating: int
-    DoubleAlternating: int
+    Hollow = 0
+    Alternating = 1
+    DoubleAlternating = 2
 
 class EndPointPosition(Enum):
-    eNone: int
-    FromPoint: int
-    ToPoint: int
+    eNone = 0
+    FromPoint = 1
+    ToPoint = 2
 
 class EndPointSelection(Enum):
-    First: int
-    Interior: int
-    Last: int
+    First = 1
+    Interior = 2
+    FirstAndInterior = 3
+    Last = 4
+    FirstAndLast = 5
+    InteriorAndLast = 6
+    All = 7
 
 class ExtentFitType(Enum):
-    BestFit: int
-    ExtentCenter: int
-    DataDriven: int
+    BestFit = 0
+    ExtentCenter = 1
+    DataDriven = 2
 
 class ExtentIndicatorType(Enum):
-    Frame: int
-    Rectangle: int
-    IndexFeatureFromDDP: int
+    Frame = 0
+    Rectangle = 1
+    IndexFeatureFromDDP = 2
 
 class FieldSortInfo(Enum):
-    eNone: int
-    Asc: int
-    AscCase: int
-    Desc: int
-    DescCase: int
+    eNone = 0
+    Asc = 1
+    AscCase = 2
+    Desc = 4
+    DescCase = 8
 
 class FieldStatisticsFlag(Enum):
-    NoStatistics: int
-    Count: int
-    Minimum: int
-    Maximum: int
-    Range: int
-    Sum: int
-    Mean: int
-    Median: int
-    Mode: int
-    StandardDeviation: int
+    NoStatistics = 0
+    Count = 1
+    Minimum = 2
+    Maximum = 4
+    Range = 8
+    Sum = 16
+    Mean = 32
+    Median = 64
+    Mode = 128
+    StandardDeviation = 256
 
 class GridElementType(Enum):
-    Line: int
-    Tick: int
-    Label: int
-    Corner: int
-    IntersectionPoint: int
+    Line = 0
+    Tick = 1
+    Label = 2
+    Corner = 3
+    IntersectionPoint = 4
 
 class GridLadderLabelPosition(Enum):
-    Half: int
-    Third: int
-    Quarter: int
+    Half = 0
+    Third = 1
+    Quarter = 2
 
 class GridLineOrientation(Enum):
-    NorthSouth: int
-    EastWest: int
+    NorthSouth = 0
+    EastWest = 1
 
 class GridReferencePrecisionLevel(Enum):
-    GridZoneDesignator: int
-    PrecisionLevel100km: int
-    PrecisionLevel10km: int
-    PrecisionLevel1km: int
-    PrecisionLevel100m: int
-    PrecisionLevel10m: int
-    PrecisionLevel1m: int
-    ICM: int
+    GridZoneDesignator = 0
+    PrecisionLevel100km = 1
+    PrecisionLevel10km = 2
+    PrecisionLevel1km = 3
+    PrecisionLevel100m = 4
+    PrecisionLevel10m = 5
+    PrecisionLevel1m = 6
+    ICM = 7
 
 class LeaderType(Enum):
-    eNone: int
-    LineToNearestPoint: int
-    LineToMidpoint: int
-    LineThroughCenters: int
-    CalloutToCenter: int
-    CalloutToEdge: int
-    CalloutToEdges: int
+    eNone = 0
+    LineToNearestPoint = 1
+    LineToMidpoint = 2
+    LineThroughCenters = 3
+    CalloutToCenter = 4
+    CalloutToEdge = 5
+    CalloutToEdges = 6
 
 class LegendFittingStrategy(Enum):
-    AdjustSize: int
-    AdjustColumns: int
-    AdjustColumnsAndSize: int
-    AdjustFrame: int
-    ManualColumns: int
+    AdjustSize = 0
+    AdjustColumns = 1
+    AdjustColumnsAndSize = 2
+    AdjustFrame = 3
+    ManualColumns = 4
 
 class LegendItemArrangement(Enum):
-    PatchLabelDescription: int
-    PatchDescriptionLabel: int
-    LabelPatchDescription: int
-    LabelDescriptionPatch: int
-    DescriptionPatchLabel: int
-    DescriptionLabelPatch: int
+    PatchLabelDescription = 0
+    PatchDescriptionLabel = 1
+    LabelPatchDescription = 2
+    LabelDescriptionPatch = 3
+    DescriptionPatchLabel = 4
+    DescriptionLabelPatch = 5
 
 class LegendKeepTogetherOption(Enum):
-    eNone: int
-    Items: int
-    Groups: int
+    eNone = 0
+    Items = 1
+    Groups = 2
 
 class MGRSLabelPosition(Enum):
-    Corner: int
-    Center: int
+    Corner = 1
+    Center = 2
 
 class MapProductSpecType(Enum):
-    Unset: int
-    TLM: int
-    ICM: int
-    JOG: int
-    USTOPO: int
-    GNC: int
-    JNC: int
-    ONC: int
-    TPC: int
+    Unset = -1
+    TLM = 0
+    ICM = 1
+    JOG = 2
+    USTOPO = 3
+    GNC = 4
+    JNC = 5
+    ONC = 6
+    TPC = 7
+    EVC = 8
 
 class MeterReferenceSquareType(Enum):
-    Single: int
-    Multiple: int
-    DualGrid: int
+    Single = 0
+    Multiple = 1
+    DualGrid = 2
 
 class NorthType(Enum):
-    SimpleNorth: int
-    TrueNorth: int
-    GridNorth: int
-    MagneticNorth: int
+    SimpleNorth = 0
+    TrueNorth = 1
+    GridNorth = 2
+    MagneticNorth = 3
 
 class Orientation(Enum):
-    Horizontal: int
-    Vertical: int
+    Horizontal = 0
+    Vertical = 1
 
 class PageOrientation(Enum):
-    Portrait: int
-    Landscape: int
+    Portrait = 0
+    Landscape = 1
 
 class ProfileFrameHeightOption(Enum):
-    ConstantHeight: int
-    ConstantRatio: int
+    ConstantHeight = 0
+    ConstantRatio = 1
 
 class ProfileFrameStyle(Enum):
-    AOC: int
-    PATC: int
+    AOC = 0
+    PATC = 1
 
 class ProfileFrameType(Enum):
-    Straight: int
-    Curved: int
+    Straight = 0
+    Curved = 1
 
 class ProfileObstacleGroundDisplayOption(Enum):
-    Actual: int
-    Max: int
-    Min: int
-    Average: int
+    Actual = 0
+    Max = 1
+    Min = 2
+    Average = 3
 
 class ProfileObstacleMarkerLocation(Enum):
-    Surface: int
-    Top: int
-    Base: int
+    Surface = 0
+    Top = 1
+    Base = 2
 
 class ProfileObstacleSymbolSubstitutionType(Enum):
-    eNone: int
-    Penetrating: int
-    Protruding: int
+    eNone = 0
+    Penetrating = 1
+    Protruding = 2
 
 class ProfileTerrainDisplayOption(Enum):
-    All: int
-    PenetratingOnly: int
-    Highlight: int
-    eNone: int
+    All = 0
+    PenetratingOnly = 1
+    Highlight = 2
+    eNone = 3
 
 class RectanglePosition(Enum):
-    TopSide: int
-    BottomSide: int
-    LeftSide: int
-    RightSide: int
+    TopSide = 0
+    BottomSide = 1
+    LeftSide = 2
+    RightSide = 3
 
 class ScaleBarFittingStrategy(Enum):
-    AdjustDivision: int
-    AdjustDivisions: int
-    AdjustDivisionAndDivisions: int
-    AdjustFrame: int
-    FixedWidth: int
-    FixedHeight: int
+    AdjustDivision = 0
+    AdjustDivisions = 1
+    AdjustDivisionAndDivisions = 2
+    AdjustFrame = 3
+    FixedWidth = 4
+    FixedHeight = 5
+    FixedBarWidth = 6
 
 class ScaleBarFrequency(Enum):
-    eNone: int
-    One: int
-    MajorDivisions: int
-    Divisions: int
-    DivisionsAndFirstMidpoint: int
-    DivisionsAndFirstSubdivisions: int
-    DivisionsAndSubdivisions: int
-    DivisionsFirstSubdivisionFirstMidpoint: int
+    eNone = 0
+    One = 1
+    MajorDivisions = 2
+    Divisions = 3
+    DivisionsAndFirstMidpoint = 4
+    DivisionsAndFirstSubdivisions = 5
+    DivisionsAndSubdivisions = 6
+    DivisionsFirstSubdivisionFirstMidpoint = 7
+    EndsAndFirstDivision = 8
 
 class ScaleBarLabelPosition(Enum):
-    Above: int
-    BeforeLabels: int
-    AfterLabels: int
-    BeforeBar: int
-    AfterBar: int
-    Below: int
-    AboveLeft: int
-    AboveRight: int
-    AboveEnds: int
-    BeforeAndAfterLabels: int
-    BeforeAndAfterBar: int
-    BelowLeft: int
-    BelowRight: int
-    BelowEnds: int
-    OnBarAfterFirstDivision: int
+    Above = 0
+    BeforeLabels = 1
+    AfterLabels = 2
+    BeforeBar = 3
+    AfterBar = 4
+    Below = 5
+    AboveLeft = 6
+    AboveRight = 7
+    AboveEnds = 8
+    BeforeAndAfterLabels = 9
+    BeforeAndAfterBar = 10
+    BelowLeft = 11
+    BelowRight = 12
+    BelowEnds = 13
+    OnBarAfterFirstDivision = 14
 
 class ScaleBarVerticalPosition(Enum):
-    Above: int
-    Top: int
-    On: int
-    Bottom: int
-    Below: int
-    OnRight: int
-    OnLeft: int
+    Above = 0
+    Top = 1
+    On = 2
+    Bottom = 3
+    Below = 4
+    OnRight = 5
+    OnLeft = 6
 
 class StreetIndexDelimiter(Enum):
-    Period: int
-    Space: int
-    Hyphen: int
-    Underscore: int
+    Period = 0
+    Space = 1
+    Hyphen = 2
+    Underscore = 3
 
 class StreetIndexWrapMethod(Enum):
-    Wrap: int
-    GroupWrap: int
+    Wrap = 0
+    GroupWrap = 1
 
 class TableFrameFillingStrategy(Enum):
-    ShowAllRows: int
-    ShowVisibleRows: int
-    ShowMapSeriesRows: int
-    CustomWhereClause: int
+    ShowAllRows = 0
+    ShowVisibleRows = 1
+    ShowMapSeriesRows = 2
+    CustomWhereClause = 3
 
 class TableFrameFittingStrategy(Enum):
-    AdjustSize: int
-    AdjustColumns: int
-    AdjustColumnsAndSize: int
-    AdjustFrame: int
+    AdjustSize = 0
+    AdjustColumns = 1
+    AdjustColumnsAndSize = 2
+    AdjustFrame = 3
 
 class UnitType(Enum):
-    Percent: int
-    MapUnits: int
-    PageUnits: int
+    Percent = 0
+    MapUnits = 1
+    PageUnits = 2
 
 class LinkChartFilterPropertyDataType(Enum):
-    EntityKeyValue: int
-    LabelValue: int
+    EntityKeyValue = 0
+    LabelValue = 1
 
 class LinkChartFilterScope(Enum):
-    Entities: int
-    Relationships: int
-    Both: int
+    Entities = 0
+    Relationships = 1
+    Both = 2
 
 class LinkChartFilterStage(Enum):
-    Unknown: int
-    Data: int
-    Visual: int
+    Unknown = 0
+    Data = 1
+    Visual = 2
 
 class LinkChartFilterType(Enum):
-    Unknown: int
-    FieldData: int
-    PropertyData: int
+    Unknown = 0
+    FieldData = 1
+    PropertyData = 2
 
 class LinkChartLayoutAlgorithm(Enum):
-    Clustered: int
-    Organic: int
-    Hierarchy_TopToBottom: int
-    Hierarchy_BottomToTop: int
-    Hierarchy_LeftToRight: int
-    Hierarchy_RightToLeft: int
+    Clustered = 0
+    Organic = 1
+    Hierarchy_TopToBottom = 2
+    Hierarchy_BottomToTop = 3
+    Hierarchy_LeftToRight = 4
+    Hierarchy_RightToLeft = 5
+    Circular_Default = 6
+    Circular_Substructures = 7
+    Organic_Substructures = 8
+    Organic_Clustered_Substructures = 9
+    Organic_Clustered = 10
+    Tree_Multi_Parent_Tree_TopToBottom = 11
+    Tree_Multi_Parent_Tree_BottomToTop = 12
+    Tree_Multi_Parent_Tree_LeftToRight = 13
+    Tree_Multi_Parent_Tree_RightToLeft = 14
+    Tree_Mindmap_TopToBottom = 15
+    Tree_Mindmap_BottomToTop = 16
+    Tree_Mindmap_LeftToRight = 17
+    Tree_Mindmap_RightToLeft = 18
+    Tree_Compact_TopToBottom = 19
+    Tree_Compact_BottomToTop = 20
+    Tree_Compact_LeftToRight = 21
+    Tree_Compact_RightToLeft = 22
+    Balloon_Default = 23
+    Balloon_Ray_Like = 24
+    Radial_Default = 25
+    Radial_Dendrogram = 26
+    Hierarchy_Curves_TopToBottom = 27
+    Hierarchy_Curves_BottomToTop = 28
+    Hierarchy_Curves_LeftToRight = 29
+    Hierarchy_Curves_RightToLeft = 30
+    Hierarchy_Flowchart_TopToBottom = 31
+    Hierarchy_Flowchart_BottomToTop = 32
+    Hierarchy_Flowchart_LeftToRight = 33
+    Hierarchy_Flowchart_RightToLeft = 34
 
 class LinkChartLinkDashStyle(Enum):
-    Solid: int
-    Dot: int
-    Dash: int
-    DashDot: int
-    DashDotDot: int
+    Solid = 0
+    Dot = 1
+    Dash = 2
+    DashDot = 3
+    DashDotDot = 4
 
 class LinkChartLinkLabelPlacement(Enum):
-    Parallel: int
-    Perpendicular: int
+    Parallel = 0
+    Perpendicular = 1
 
 class LinkChartRelationshipKeyType(Enum):
-    eNone: int
-    Entities: int
-    Foreign: int
+    eNone = 0
+    Entities = 1
+    Foreign = 2
 
 class LinkChartSymbolizationSource(Enum):
-    MapSymbology: int
-    SingleSymbology: int
+    MapSymbology = 0
+    SingleSymbology = 1
 
 class ClipDistanceMode(Enum):
-    Automatic: int
-    Manual: int
+    Automatic = 0
+    Manual = 1
 
 class ClippingMode(Enum):
-    eNone: int
-    MapExtent: int
-    CustomShape: int
-    MapSeries: int
+    eNone = 0
+    MapExtent = 1
+    CustomShape = 2
+    MapSeries = 3
 
 class ComparisonOperator(Enum):
-    IsEqual: int
-    NotEqual: int
-    LessThanOrEqualTo: int
-    LessThan: int
-    GreaterThanOrEqualTo: int
-    GreaterThan: int
+    IsEqual = 1
+    NotEqual = 2
+    LessThanOrEqualTo = 3
+    LessThan = 4
+    GreaterThanOrEqualTo = 5
+    GreaterThan = 6
 
 class CullDirection(Enum):
-    Inward: int
-    Outward: int
-    Camera: int
+    Inward = 0
+    Outward = 1
+    Camera = 2
 
 class EditingElevationCaptureMode(Enum):
-    Off: int
-    Constant: int
-    Surface: int
+    Off = 0
+    Constant = 1
+    Surface = 2
+
+class FloorVisibilityMode(Enum):
+    BelowSelected = 0
+    SelectedOnly = 1
 
 class GeoFenceEnterExitRule(Enum):
-    EnterContainsAndExitDoesNotIntersect: int
-    EnterContainsAndExitDoesNotContain: int
-    EnterIntersectsAndExitDoesNotIntersect: int
+    EnterContainsAndExitDoesNotIntersect = 0
+    EnterContainsAndExitDoesNotContain = 1
+    EnterIntersectsAndExitDoesNotIntersect = 2
 
 class GeoFenceNotificationRule(Enum):
-    Enter: int
-    EnterOrExit: int
-    Exit: int
+    Enter = 0
+    EnterOrExit = 1
+    Exit = 2
 
 class GeotriggerAccuracyMode(Enum):
-    UseGeometry: int
-    UseGeometryWithAccuracy: int
+    UseGeometry = 0
+    UseGeometryWithAccuracy = 1
 
 class GroundToGridScaleType(Enum):
-    ConstantFactor: int
-    ComputeUsingElevation: int
+    ConstantFactor = 0
+    ComputeUsingElevation = 1
 
 class IlluminationSource(Enum):
-    NoonAtCameraPosition: int
-    DateTime: int
-    AbsoluteSunPosition: int
-    MapTime: int
+    NoonAtCameraPosition = 0
+    DateTime = 1
+    AbsoluteSunPosition = 2
+    MapTime = 3
 
 class JoinOperator(Enum):
-    And: int
-    Or: int
-    eNone: int
+    And = 1
+    Or = 2
+    eNone = 3
 
 class LocatorType(Enum):
-    Locator: int
-    Layer: int
-    Table: int
+    Locator = 0
+    Layer = 1
+    Table = 2
 
 class MapType(Enum):
-    Map: int
-    Scene: int
-    Basemap: int
-    NetworkDiagram: int
-    ContainmentMap: int
-    LinkChart: int
+    Map = 0
+    Scene = 1
+    Basemap = 2
+    NetworkDiagram = 3
+    ContainmentMap = 4
+    LinkChart = 5
 
 class ReviewerMonotonicityDirection(Enum):
-    NoneAsError: int
-    DecreasingValueAsError: int
-    IncreasingValueAsError: int
+    NoneAsError = 0
+    DecreasingValueAsError = 1
+    IncreasingValueAsError = 2
 
 class ReviewerMonotonicityEvaluationType(Enum):
-    EvaluateNone: int
-    EvaluateZ: int
-    EvaluateM: int
+    EvaluateNone = 0
+    EvaluateZ = 1
+    EvaluateM = 2
 
 class ScaleDisplayFormat(Enum):
-    Value: int
-    Alias: int
-    ValueAndAlias: int
-    AliasAndValue: int
+    Value = 0
+    Alias = 1
+    ValueAndAlias = 2
+    AliasAndValue = 3
 
 class ScaleFormatType(Enum):
-    Absolute: int
-    Imperial: int
+    Absolute = 0
+    Imperial = 1
 
 class SliderExtentType(Enum):
-    AllLayers: int
-    VisibleLayers: int
-    SingleLayer: int
-    CustomRange: int
+    AllLayers = 0
+    VisibleLayers = 1
+    SingleLayer = 2
+    CustomRange = 3
 
 class SliderInteractionMode(Enum):
-    Slider: int
-    Picker: int
+    Slider = 0
+    Picker = 1
 
 class SliderStepType(Enum):
-    Interval: int
-    Count: int
-    Feature: int
+    Interval = 0
+    Count = 1
+    Feature = 2
 
 class SnapRequestType(Enum):
-    SnapRequestType_None: int
-    SnapRequestType_GeometricSnapping: int
-    SnapRequestType_VisualSnapping: int
-    SnapRequestType_GeometricAndVisualSnapping: int
+    SnapRequestType_None = 0
+    SnapRequestType_GeometricSnapping = 1
+    SnapRequestType_VisualSnapping = 2
+    SnapRequestType_GeometricAndVisualSnapping = 3
 
 class SnapTipDisplayPart(Enum):
-    SnapTipDisplayNone: int
-    SnapTipDisplayLayer: int
-    SnapTipDisplayType: int
+    SnapTipDisplayNone = 0
+    SnapTipDisplayLayer = 1
+    SnapTipDisplayType = 2
 
 class SnapXYToleranceUnit(Enum):
-    SnapXYToleranceUnitPixel: int
-    SnapXYToleranceUnitMap: int
+    SnapXYToleranceUnitPixel = 0
+    SnapXYToleranceUnitMap = 1
 
 class StereoModelDisplayMode(Enum):
-    Default: int
-    OnlyLeftImage: int
-    OnlyRightImage: int
-    eNone: int
+    Default = 0
+    OnlyLeftImage = 1
+    OnlyRightImage = 2
+    eNone = 3
 
 class StereoOrientation(Enum):
-    UpOrRight: int
-    UpOrLeft: int
-    DownOrRight: int
-    DownOrLeft: int
+    UpOrRight = 0
+    UpOrLeft = 1
+    DownOrRight = 2
+    DownOrLeft = 3
 
 class StereoSourceType(Enum):
-    StereoModel: int
-    StereoModelCollection: int
+    StereoModel = 0
+    StereoModelCollection = 1
 
 class SurfaceTINShadingMode(Enum):
-    Smooth: int
-    Flat: int
+    Smooth = 0
+    Flat = 1
 
 class SwipeDirection(Enum):
-    eNone: int
-    Top: int
-    Bottom: int
-    Left: int
-    Right: int
+    eNone = 0
+    Top = 1
+    Bottom = 2
+    Left = 3
+    Right = 4
 
 class TimeOffsetDirection(Enum):
-    Past: int
-    Future: int
-    PastAndFuture: int
+    Past = 0
+    Future = 1
+    PastAndFuture = 2
 
 class TimeSnapMode(Enum):
-    Automatic: int
-    Single: int
-    Interval: int
+    Automatic = 0
+    Single = 1
+    Interval = 2
 
 class NDSRendererTarget(Enum):
-    Edges: int
-    UserJunctions: int
-    SystemJunctions: int
-    Turns: int
-    Traffic: int
-    DirtyAreas: int
+    Edges = 0
+    UserJunctions = 1
+    SystemJunctions = 2
+    Turns = 3
+    Traffic = 4
+    DirtyAreas = 5
 
 class NetworkTravelModeSourceType(Enum):
-    NetworkDataset: int
-    Layer: int
-    Custom: int
+    NetworkDataset = 0
+    Layer = 1
+    Custom = 2
 
 class RestrictionStatus(Enum):
-    GeneralTraversable: int
-    NeutralPreferenceLevelTraversable: int
-    Prohibited: int
-    AvoidPreferenceLevelTraversable: int
-    PreferPreferenceLevelTraversable: int
-    MixedPreferenceLevelTraversable: int
-    Invalid: int
+    GeneralTraversable = 0
+    NeutralPreferenceLevelTraversable = 1
+    Prohibited = 2
+    AvoidPreferenceLevelTraversable = 3
+    PreferPreferenceLevelTraversable = 4
+    MixedPreferenceLevelTraversable = 5
+    Invalid = 6
 
 class TraversableDirections(Enum):
-    Prohibited: int
-    Traversable: int
-    OneWay: int
+    Prohibited = 0
+    Traversable = 1
+    OneWay = 2
 
 class ValueType(Enum):
-    Short: int
-    Long: int
-    Float: int
-    Double: int
-    Date: int
-    String: int
-    Bool: int
+    Short = 2
+    Long = 3
+    Float = 4
+    Double = 5
+    Date = 7
+    String = 8
+    Bool = 11
 
 class DirectionFormatOption(Enum):
-    DegreesMinutesSeconds: int
-    QuadrantBearing: int
+    DegreesMinutesSeconds = 0
+    QuadrantBearing = 1
 
 class DirectionType(Enum):
-    NorthAzimuth: int
-    SouthAzimuth: int
-    Polar: int
-    QuadrantBearing: int
+    NorthAzimuth = 0
+    SouthAzimuth = 1
+    Polar = 2
+    QuadrantBearing = 3
 
 class DirectionUnits(Enum):
-    Radians: int
-    DecimalDegrees: int
-    DegreesMinutesSeconds: int
-    Gradians: int
-    Gons: int
+    Radians = 0
+    DecimalDegrees = 1
+    DegreesMinutesSeconds = 2
+    Gradians = 3
+    Gons = 4
 
 class FractionOption(Enum):
-    Digits: int
-    Denominator: int
+    Digits = 0
+    Denominator = 1
 
 class NumericAlignment(Enum):
-    AlignRight: int
-    AlignLeft: int
+    AlignRight = 0
+    AlignLeft = 1
 
 class RoundingOption(Enum):
-    NumberOfDecimals: int
-    NumberOfSignificantDigits: int
+    NumberOfDecimals = 0
+    NumberOfSignificantDigits = 1
 
 class AttachmentDisplayType(Enum):
-    PreviewFirst: int
-    PreviewAll: int
-    List: int
-    Auto: int
+    PreviewFirst = 0
+    PreviewAll = 1
+    List = 2
+    Auto = 3
+
+class PopupUtilityNetworkAssociationType(Enum):
+    Attachment = 0
+    Connectivity = 1
+    Container = 2
+    Content = 3
+    Structure = 4
 
 class PresentationMediaContentFitType(Enum):
-    eNone: int
-    Fill: int
-    StretchToFill: int
-    Center: int
+    eNone = 0
+    Fill = 1
+    StretchToFill = 2
+    Center = 3
 
 class PresentationTransitionType(Enum):
-    eNone: int
-    Swipe: int
-    Fade: int
+    eNone = 0
+    Swipe = 1
+    Fade = 2
+    Fly = 3
 
 class ConnectionMode(Enum):
-    Consumer: int
-    Admin: int
-    Publisher: int
+    Consumer = 0
+    Admin = 1
+    Publisher = 2
 
 class IndexedSceneLayerType(Enum):
-    IntegratedMesh: int
-    Point: int
-    Object3D: int
+    IntegratedMesh = 0
+    Point = 1
+    Object3D = 2
 
 class Object3DRenderingMode(Enum):
-    eNone: int
-    Wireframe: int
+    eNone = 0
+    Wireframe = 1
 
 class ServerType(Enum):
-    AGS: int
-    WMS: int
-    WCS: int
-    WMTS: int
-    WFS: int
-    OGCAPI: int
+    AGS = 0
+    WMS = 1
+    WCS = 2
+    WMTS = 3
+    WFS = 4
+    OGCAPI = 5
 
 class Tiles3DLayerType(Enum):
-    IntegratedMesh: int
-    Object3D: int
+    IntegratedMesh = 0
+    Object3D = 1
 
 class VoxelAlignment(Enum):
-    Origin: int
-    Center: int
+    Origin = 0
+    Center = 1
 
 class VoxelInterpolationMode(Enum):
-    Linear: int
-    Nearest: int
+    Linear = 0
+    Nearest = 1
 
 class VoxelLayerOptimization(Enum):
-    Visualization: int
-    Size: int
+    Visualization = 0
+    Size = 1
 
 class VoxelScalarFormat(Enum):
-    I1: int
-    U1: int
-    I2: int
-    U2: int
-    I4: int
-    U4: int
-    I8: int
-    U8: int
-    F4: int
-    F8: int
+    I1 = 0
+    U1 = 1
+    I2 = 2
+    U2 = 3
+    I4 = 4
+    U4 = 5
+    I8 = 6
+    U8 = 7
+    F4 = 8
+    F8 = 9
 
 class VoxelValueFilterMode(Enum):
-    Exclude: int
-    Include: int
+    Exclude = 0
+    Include = 1
 
 class VoxelVariableDataType(Enum):
-    Continuous: int
-    Discrete: int
+    Continuous = 0
+    Discrete = 1
 
 class VoxelVariablePrecision(Enum):
-    InputData: int
-    Low: int
-    Medium: int
-    High: int
+    InputData = 0
+    Low = 1
+    Medium = 2
+    High = 3
 
 class VoxelVisualization(Enum):
-    Volume: int
-    Surface: int
+    Volume = 0
+    Surface = 1
+
+class FloodSimulationCalibrationMode(Enum):
+    Slow = 0
+    Moderate = 1
+    Fast = 2
 
 class FloodSimulationCulvertProfileType(Enum):
-    Elliptical: int
-    Rectangular: int
-    Arched: int
+    Elliptical = 0
+    Rectangular = 1
+    Arched = 2
 
 class FloodSimulationValueRangeType(Enum):
-    FlowIntensity: int
-    WaterDepth: int
+    FlowIntensity = 0
+    WaterDepth = 1
+    WaterSpeed = 2
 
 class FloodSimulationWaterDisplayType(Enum):
-    Fill: int
-    Edges: int
-    FillAndEdges: int
+    Fill = 0
+    Edges = 1
+    FillAndEdges = 2
 
 class BivariateGridLegendLabelStrategy(Enum):
-    Corners: int
-    Sides: int
+    Corners = 0
+    Sides = 1
 
 class BivariateGridLegendOrientationType(Enum):
-    eNone: int
-    High: int
-    Low: int
-    HighLow: int
-    LowHigh: int
+    eNone = 0
+    High = 1
+    Low = 2
+    HighLow = 3
+    LowHigh = 4
 
 class BivariateGridSizeOption(Enum):
-    TwoByTwo: int
-    ThreeByThree: int
-    FourByFour: int
+    TwoByTwo = 0
+    ThreeByThree = 1
+    FourByFour = 2
 
 class ClassBreakType(Enum):
-    GraduatedColor: int
-    GraduatedSymbol: int
-    UnclassedColor: int
+    GraduatedColor = 0
+    GraduatedSymbol = 1
+    UnclassedColor = 2
 
 class ClassBreaksLegendVisualVariableOptions(Enum):
-    ShowVisualVariableSymbolClasses: int
-    ShowClassesForEachPrimarySymbol: int
+    ShowVisualVariableSymbolClasses = 0
+    ShowClassesForEachPrimarySymbol = 1
 
 class ClassificationMethod(Enum):
-    DefinedInterval: int
-    EqualInterval: int
-    GeometricalInterval: int
-    Manual: int
-    NaturalBreaks: int
-    Quantile: int
-    StandardDeviation: int
+    DefinedInterval = 0
+    EqualInterval = 1
+    GeometricalInterval = 2
+    Manual = 3
+    NaturalBreaks = 4
+    Quantile = 5
+    StandardDeviation = 6
 
 class ColorChannelTarget(Enum):
-    SV: int
-    All: int
+    SV = 0
+    All = 1
 
 class DataNormalizationMethod(Enum):
-    Field: int
-    Log: int
-    PercentOfTotal: int
-    Nothing: int
+    Field = 0
+    Log = 1
+    PercentOfTotal = 2
+    Nothing = 3
 
 class ExpressionReturnType(Enum):
-    Default: int
-    String: int
-    Numeric: int
+    Default = 0
+    String = 1
+    Numeric = 2
 
 class PatchShape(Enum):
-    Default: int
-    Point: int
-    LineHorizontal: int
-    LineZigZag: int
-    LineAngles: int
-    LineArc: int
-    LineCurve: int
-    LineTrail: int
-    LineHydro: int
-    LineVertical3D: int
-    LineZigZag3D: int
-    LineCorkscrew3D: int
-    AreaRectangle: int
-    AreaRoundedRectangle: int
-    AreaPolygon: int
-    AreaCircle: int
-    AreaEllipse: int
-    AreaFootprint: int
-    AreaBoundary: int
-    AreaHydroPoly: int
-    AreaNaturalPoly: int
-    AreaSquare: int
-    AreaHexagonFlat: int
-    AreaHexagonPointy: int
-    AreaTrapezium: int
+    Default = 0
+    Point = 1
+    LineHorizontal = 2
+    LineZigZag = 3
+    LineAngles = 4
+    LineArc = 5
+    LineCurve = 6
+    LineTrail = 7
+    LineHydro = 8
+    LineVertical3D = 9
+    LineZigZag3D = 10
+    LineCorkscrew3D = 11
+    AreaRectangle = 12
+    AreaRoundedRectangle = 13
+    AreaPolygon = 14
+    AreaCircle = 15
+    AreaEllipse = 16
+    AreaFootprint = 17
+    AreaBoundary = 18
+    AreaHydroPoly = 19
+    AreaNaturalPoly = 20
+    AreaSquare = 21
+    AreaHexagonFlat = 22
+    AreaHexagonPointy = 23
+    AreaTrapezium = 24
+    Custom = 100
 
 class PolygonSymbolColorTarget(Enum):
-    Fill: int
-    Outline: int
-    FillOutline: int
+    Fill = 0
+    Outline = 1
+    FillOutline = 2
 
 class SizeVisualVariableAxis(Enum):
-    HeightAxis: int
-    WidthAxis: int
-    DepthAxis: int
-    WidthAndDepthAxes: int
-    AllAxes: int
+    HeightAxis = 0
+    WidthAxis = 1
+    DepthAxis = 2
+    WidthAndDepthAxes = 3
+    AllAxes = 4
 
 class SizeVisualVariableType(Enum):
-    eNone: int
-    Expression: int
-    Random: int
-    Proportional: int
-    Graduated: int
+    eNone = 0
+    Expression = 1
+    Random = 2
+    Proportional = 3
+    Graduated = 4
 
 class SymbolRotationType(Enum):
-    Geographic: int
-    Arithmetic: int
+    Geographic = 0
+    Arithmetic = 1
 
 class SymbolShapes(Enum):
-    Unknown: int
-    Circle: int
-    Square: int
+    Unknown = 0
+    Circle = 1
+    Square = 2
 
 class ValueRepresentations(Enum):
-    Radius: int
-    Area: int
-    Distance: int
-    Width: int
+    Radius = 0
+    Area = 1
+    Distance = 2
+    Width = 3
 
 class VisualVariableInfoType(Enum):
-    eNone: int
-    Expression: int
-    Random: int
+    eNone = 0
+    Expression = 1
+    Random = 2
 
 class AngleAlignment(Enum):
-    Display: int
-    Map: int
+    Display = 0
+    Map = 1
+
+class AnimatedSymbolEasingType(Enum):
+    Linear = 0
+    EaseIn = 1
+    EaseOut = 2
+    EaseInOut = 3
 
 class AnimatedSymbolRepeatType(Enum):
-    eNone: int
-    Loop: int
-    Oscillate: int
+    eNone = 0
+    Loop = 1
+    Oscillate = 2
 
 class BalloonCalloutStyle(Enum):
-    Rectangle: int
-    RoundedRectangle: int
-    Oval: int
+    Rectangle = 0
+    RoundedRectangle = 1
+    Oval = 2
 
 class BlendingMode(Enum):
-    eNone: int
-    Alpha: int
-    Screen: int
-    Multiply: int
-    Add: int
-    Color: int
-    ColorBurn: int
-    ColorDodge: int
-    Darken: int
-    Difference: int
-    Exclusion: int
-    HardLight: int
-    Hue: int
-    Lighten: int
-    Luminosity: int
-    Normal: int
-    Overlay: int
-    Saturation: int
-    SoftLight: int
-    LinearBurn: int
-    LinearDodge: int
-    LinearLight: int
-    PinLight: int
-    VividLight: int
+    eNone = 0
+    Alpha = 1
+    Screen = 2
+    Multiply = 3
+    Add = 4
+    Color = 5
+    ColorBurn = 6
+    ColorDodge = 7
+    Darken = 8
+    Difference = 9
+    Exclusion = 10
+    HardLight = 11
+    Hue = 12
+    Lighten = 13
+    Luminosity = 14
+    Normal = 15
+    Overlay = 16
+    Saturation = 17
+    SoftLight = 18
+    LinearBurn = 19
+    LinearDodge = 20
+    LinearLight = 21
+    PinLight = 22
+    VividLight = 23
 
 class BlockProgression(Enum):
-    TTB: int
-    RTL: int
-    BTT: int
+    TTB = 0
+    RTL = 1
+    BTT = 2
 
 class CGAAttributeType(Enum):
-    Float: int
-    String: int
-    Boolean: int
-    Float_Array: int
-    String_Array: int
-    Boolean_Array: int
+    Float = 0
+    String = 1
+    Boolean = 2
+    Float_Array = 3
+    String_Array = 4
+    Boolean_Array = 5
 
 class ClippingType(Enum):
-    Intersect: int
-    Subtract: int
+    Intersect = 0
+    Subtract = 1
 
 class ExternalColorMixMode(Enum):
-    Tint: int
-    Ignore: int
-    Multiply: int
+    Tint = 0
+    Ignore = 1
+    Multiply = 99
 
 class ExtremityPlacement(Enum):
-    Both: int
-    JustBegin: int
-    JustEnd: int
-    eNone: int
+    Both = 0
+    JustBegin = 1
+    JustEnd = 2
+    eNone = 3
 
 class FillMode(Enum):
-    Mosaic: int
-    Centered: int
+    Mosaic = 0
+    Centered = 1
 
 class FontEffects(Enum):
-    Normal: int
-    Superscript: int
-    Subscript: int
+    Normal = 0
+    Superscript = 1
+    Subscript = 2
 
 class FontEncoding(Enum):
-    MSSymbol: int
-    Unicode: int
+    MSSymbol = 0
+    Unicode = 1
 
 class FontType(Enum):
-    Unspecified: int
-    TrueType: int
-    PSOpenType: int
-    TTOpenType: int
-    Type1: int
+    Unspecified = 0
+    TrueType = 1
+    PSOpenType = 2
+    TTOpenType = 3
+    Type1 = 4
 
 class GeometricEffectArrowType(Enum):
-    OpenEnded: int
-    Block: int
-    Crossed: int
+    OpenEnded = 0
+    Block = 1
+    Crossed = 2
 
 class GeometricEffectControlMeasureLineRule(Enum):
-    FullGeometry: int
-    PerpendicularFromFirstSegment: int
-    ReversedFirstSegment: int
-    PerpendicularToSecondSegment: int
-    SecondSegmentWithTicks: int
-    DoublePerpendicular: int
-    OppositeToFirstSegment: int
-    TriplePerpendicular: int
-    HalfCircleFirstSegment: int
-    HalfCircleSecondSegment: int
-    HalfCircleExtended: int
-    OpenCircle: int
-    CoverageEdgesWithTicks: int
-    GapExtentWithDoubleTicks: int
-    GapExtentMidline: int
-    Chevron: int
-    PerpendicularWithArc: int
-    ClosedHalfCircle: int
-    TripleParallelExtended: int
-    ParallelWithTicks: int
-    Parallel: int
-    PerpendicularToFirstSegment: int
-    ParallelOffset: int
-    OffsetOpposite: int
-    OffsetSame: int
-    CircleWithArc: int
-    DoubleJog: int
-    PerpendicularOffset: int
-    LineExcludingLastSegment: int
-    MultivertexArrow: int
-    CrossedArrow: int
-    ChevronArrow: int
-    ChevronArrowOffset: int
-    PartialFirstSegment: int
-    Arch: int
-    CurvedParallelTicks: int
-    Arc90Degrees: int
-    TipWithPerpendicularAndTicks: int
+    FullGeometry = 0
+    PerpendicularFromFirstSegment = 1
+    ReversedFirstSegment = 2
+    PerpendicularToSecondSegment = 3
+    SecondSegmentWithTicks = 4
+    DoublePerpendicular = 5
+    OppositeToFirstSegment = 6
+    TriplePerpendicular = 7
+    HalfCircleFirstSegment = 8
+    HalfCircleSecondSegment = 9
+    HalfCircleExtended = 10
+    OpenCircle = 11
+    CoverageEdgesWithTicks = 12
+    GapExtentWithDoubleTicks = 13
+    GapExtentMidline = 14
+    Chevron = 15
+    PerpendicularWithArc = 16
+    ClosedHalfCircle = 17
+    TripleParallelExtended = 18
+    ParallelWithTicks = 19
+    Parallel = 20
+    PerpendicularToFirstSegment = 21
+    ParallelOffset = 22
+    OffsetOpposite = 23
+    OffsetSame = 24
+    CircleWithArc = 25
+    DoubleJog = 26
+    PerpendicularOffset = 27
+    LineExcludingLastSegment = 28
+    MultivertexArrow = 29
+    CrossedArrow = 30
+    ChevronArrow = 31
+    ChevronArrowOffset = 32
+    PartialFirstSegment = 33
+    Arch = 34
+    CurvedParallelTicks = 35
+    Arc90Degrees = 36
+    TipWithPerpendicularAndTicks = 37
+    ConcentricCircles = 38
+    DoubleJogArrow = 39
+    LinkedChevrons = 40
+    SegmentThenHalfCircle = 41
+    LineWithStraightTicks = 42
+    DoubleCurve = 43
+    ParallelWithTicksByWidth = 44
+    EnclosingRoundedRectangle = 45
 
 class GeometricEffectDonutMethod(Enum):
-    Mitered: int
-    Bevelled: int
-    Rounded: int
-    Square: int
-    TrueBuffer: int
+    Mitered = 0
+    Bevelled = 1
+    Rounded = 2
+    Square = 3
+    TrueBuffer = 4
 
 class GeometricEffectEnclosingPolygonMethod(Enum):
-    ClosePath: int
-    ConvexHull: int
-    RectangularBox: int
+    ClosePath = 0
+    ConvexHull = 1
+    RectangularBox = 2
 
 class GeometricEffectExtensionOrigin(Enum):
-    BeginningOfLine: int
-    EndOfLine: int
+    BeginningOfLine = 0
+    EndOfLine = 1
 
 class GeometricEffectLocalizerFeatherStyle(Enum):
-    Complete: int
-    Left: int
-    Right: int
+    Complete = 0
+    Left = 1
+    Right = 2
 
 class GeometricEffectOffsetMethod(Enum):
-    Mitered: int
-    Bevelled: int
-    Rounded: int
-    Square: int
+    Mitered = 0
+    Bevelled = 1
+    Rounded = 2
+    Square = 3
 
 class GeometricEffectOffsetOption(Enum):
-    Fast: int
-    Accurate: int
+    Fast = 0
+    Accurate = 1
 
 class GeometricEffectOffsetTangentMethod(Enum):
-    BeginningOfLine: int
-    EndOfLine: int
+    BeginningOfLine = 0
+    EndOfLine = 1
 
 class GeometricEffectWaveform(Enum):
-    Sinus: int
-    Square: int
-    Triangle: int
-    Random: int
+    Sinus = 0
+    Square = 1
+    Triangle = 2
+    Random = 3
 
 class GlyphHinting(Enum):
-    eNone: int
-    Default: int
-    Force: int
+    eNone = 0
+    Default = 1
+    Force = 2
 
 class GradientAlignment(Enum):
-    Buffered: int
-    Left: int
-    Right: int
-    AlongLine: int
+    Buffered = 0
+    Left = 1
+    Right = 2
+    AlongLine = 3
 
 class GradientFillMethod(Enum):
-    Linear: int
-    Rectangular: int
-    Circular: int
-    Buffered: int
+    Linear = 0
+    Rectangular = 1
+    Circular = 2
+    Buffered = 3
 
 class GradientStrokeType(Enum):
-    Discrete: int
-    Continuous: int
+    Discrete = 0
+    Continuous = 1
 
 class HorizontalAlignment(Enum):
-    Left: int
-    Right: int
-    Center: int
-    Justify: int
+    Left = 0
+    Right = 1
+    Center = 2
+    Justify = 3
 
 class LeaderLineStyle(Enum):
-    Base: int
-    MidPoint: int
-    ThreePoint: int
-    FourPoint: int
-    Underline: int
-    CircularCW: int
-    CircularCCW: int
+    Base = 0
+    MidPoint = 1
+    ThreePoint = 2
+    FourPoint = 3
+    Underline = 4
+    CircularCW = 5
+    CircularCCW = 6
 
 class LineCapStyle(Enum):
-    Butt: int
-    Round: int
-    Square: int
+    Butt = 0
+    Round = 1
+    Square = 2
 
 class LineDashEnding(Enum):
-    NoConstraint: int
-    HalfPattern: int
-    HalfGap: int
-    FullPattern: int
-    FullGap: int
-    Custom: int
+    NoConstraint = 0
+    HalfPattern = 1
+    HalfGap = 2
+    FullPattern = 3
+    FullGap = 4
+    Custom = 5
 
 class LineDecorationStyle(Enum):
-    eNone: int
-    Custom: int
-    Circle: int
-    OpenArrow: int
-    ClosedArrow: int
-    Diamond: int
+    eNone = -1
+    Custom = 0
+    Circle = 1
+    OpenArrow = 2
+    ClosedArrow = 3
+    Diamond = 4
 
 class LineGapType(Enum):
-    ExtraLeading: int
-    Multiple: int
-    Exact: int
+    ExtraLeading = 0
+    Multiple = 1
+    Exact = 2
 
 class LineJoinStyle(Enum):
-    Bevel: int
-    Round: int
-    Miter: int
+    Bevel = 0
+    Round = 1
+    Miter = 2
 
 class MarkerPlacementType(Enum):
-    InsidePolygon: int
-    PolygonCenter: int
-    RandomlyInsidePolygon: int
+    InsidePolygon = 0
+    PolygonCenter = 1
+    RandomlyInsidePolygon = 2
 
 class MaterialMode(Enum):
-    Tint: int
-    Replace: int
-    Multiply: int
+    Tint = 0
+    Replace = 1
+    Multiply = 2
 
 class PlacementAroundPolygonPosition(Enum):
-    Top: int
-    Bottom: int
-    Left: int
-    Right: int
-    TopLeft: int
-    TopRight: int
-    BottomLeft: int
-    BottomRight: int
+    Top = 0
+    Bottom = 1
+    Left = 2
+    Right = 3
+    TopLeft = 4
+    TopRight = 5
+    BottomLeft = 6
+    BottomRight = 7
 
 class PlacementClip(Enum):
-    ClipAtBoundary: int
-    RemoveIfCenterOutsideBoundary: int
-    DoNotTouchBoundary: int
-    DoNotClip: int
+    ClipAtBoundary = 0
+    RemoveIfCenterOutsideBoundary = 1
+    DoNotTouchBoundary = 2
+    DoNotClip = 3
 
 class PlacementEndings(Enum):
-    NoConstraint: int
-    WithMarkers: int
-    WithFullGap: int
-    WithHalfGap: int
-    Custom: int
+    NoConstraint = 0
+    WithMarkers = 1
+    WithFullGap = 2
+    WithHalfGap = 3
+    Custom = 4
 
 class PlacementGridType(Enum):
-    Fixed: int
-    Random: int
-    RandomFixedQuantity: int
+    Fixed = 0
+    Random = 1
+    RandomFixedQuantity = 2
 
 class PlacementOnLineRelativeTo(Enum):
-    LineMiddle: int
-    LineBeginning: int
-    LineEnd: int
-    SegmentMidpoint: int
+    LineMiddle = 0
+    LineBeginning = 1
+    LineEnd = 2
+    SegmentMidpoint = 3
 
 class PlacementPolygonCenterMethod(Enum):
-    OnPolygon: int
-    CenterOfMass: int
-    BoundingBoxCenter: int
+    OnPolygon = 0
+    CenterOfMass = 1
+    BoundingBoxCenter = 2
 
 class PlacementRandomlyAlongLineRandomization(Enum):
-    Low: int
-    Medium: int
-    High: int
+    Low = 0
+    Medium = 1
+    High = 2
 
 class PlacementStepPosition(Enum):
-    MarkerCenter: int
-    MarkerBounds: int
+    MarkerCenter = 0
+    MarkerBounds = 1
 
 class PointSymbolCalloutScale(Enum):
-    eNone: int
-    PropUniform: int
-    PropNonuniform: int
-    DifUniform: int
-    DifNonuniform: int
+    eNone = 0
+    PropUniform = 1
+    PropNonuniform = 2
+    DifUniform = 3
+    DifNonuniform = 4
 
 class Simple3DLineAnchor(Enum):
-    Center: int
-    Bottom: int
-    Top: int
+    Center = 0
+    Bottom = 1
+    Top = 2
 
 class Simple3DLineStyle(Enum):
-    Tube: int
-    Strip: int
-    Wall: int
-    Square: int
-    Rectangle: int
+    Tube = 0
+    Strip = 1
+    Wall = 2
+    Square = 3
+    Rectangle = 4
 
 class SimplePlacementEndings(Enum):
-    WithHalfGap: int
-    WithMarkers: int
+    WithHalfGap = 0
+    WithMarkers = 1
 
 class SizeVariationMethod(Enum):
-    Random: int
-    Increasing: int
-    Decreasing: int
-    IncreasingThenDecreasing: int
+    Random = 0
+    Increasing = 1
+    Decreasing = 2
+    IncreasingThenDecreasing = 3
 
 class SymbolUnits(Enum):
-    Relative: int
-    Absolute: int
+    Relative = 0
+    Absolute = 1
 
 class TextCase(Enum):
-    Normal: int
-    LowerCase: int
-    Allcaps: int
+    Normal = 0
+    LowerCase = 1
+    Allcaps = 2
 
 class TextReadingDirection(Enum):
-    LTR: int
-    RTL: int
+    LTR = 0
+    RTL = 1
 
 class TextureFilter(Enum):
-    Draft: int
-    Picture: int
-    Text: int
+    Draft = 0
+    Picture = 1
+    Text = 2
 
 class VerticalAlignment(Enum):
-    Top: int
-    Center: int
-    Baseline: int
-    Bottom: int
+    Top = 0
+    Center = 1
+    Baseline = 2
+    Bottom = 3
 
 class VerticalGlyphOrientation(Enum):
-    Right: int
-    Upright: int
+    Right = 0
+    Upright = 1
+    Mixed = 2
 
 class WaterbodySize(Enum):
-    Small: int
-    Medium: int
-    Large: int
+    Small = 0
+    Medium = 1
+    Large = 2
 
 class WaveStrength(Enum):
-    Calm: int
-    Rippled: int
-    Slight: int
-    Moderate: int
+    Calm = 0
+    Rippled = 1
+    Slight = 2
+    Moderate = 3
+
+class LASPointSizingMethod(Enum):
+    Fixed = 0
+    FixedAutoScale = 1
+    RealWorld = 2
 
 class LASStretchAttribute(Enum):
-    Elevation: int
-    RGB: int
-    Red: int
-    Green: int
-    Blue: int
-    NearInfrared: int
-    Intensity: int
-    ScanAngle: int
-    GPSTime: int
-    eNone: int
+    Elevation = 0
+    RGB = 1
+    Red = 2
+    Green = 3
+    Blue = 4
+    NearInfrared = 5
+    Intensity = 6
+    ScanAngle = 7
+    GPSTime = 8
+    eNone = 9
 
 class LASStretchDrawingType(Enum):
-    Symbol: int
-    Splat: int
-    SymbolTint: int
+    Symbol = 0
+    Splat = 1
+    SymbolTint = 2
 
 class LASStretchStatsType(Enum):
-    AreaOfView: int
-    Dataset: int
-    GlobalStats: int
+    AreaOfView = 0
+    Dataset = 1
+    GlobalStats = 2
 
 class LASStretchType(Enum):
-    DefaultFromSource: int
-    Custom: int
-    MinimumMaximum: int
-    StandardDeviations: int
-    Histogram: int
-    PercentMinMax: int
+    DefaultFromSource = 0
+    Custom = 1
+    MinimumMaximum = 2
+    StandardDeviations = 3
+    Histogram = 4
+    PercentMinMax = 5
 
 class PointCloudFieldTransformType(Enum):
-    eNone: int
-    LowFourBit: int
-    HighFourBit: int
-    AbsoluteValue: int
-    ModuloTen: int
+    eNone = 0
+    LowFourBit = 1
+    HighFourBit = 2
+    AbsoluteValue = 3
+    ModuloTen = 4
 
 class PointCloudReturnType(Enum):
-    Last: int
-    FirstOfMany: int
-    LastOfMany: int
-    Single: int
-    All: int
+    Last = 1
+    FirstOfMany = 2
+    LastOfMany = 4
+    Single = 8
+    All = -1
 
 class PointCloudShapeType(Enum):
-    DiskFlat: int
-    DiskShaded: int
+    DiskFlat = 0
+    DiskShaded = 1
 
 class PointCloudValueFilterMode(Enum):
-    Exclude: int
-    Include: int
+    Exclude = 0
+    Include = 1
 
 class TerrainDrawCursorType(Enum):
-    Composite: int
-    NodeSimple: int
-    NodeValue: int
-    NodeElevation: int
-    EdgeSimple: int
-    EdgeType: int
-    FaceSimple: int
-    FaceElevation: int
-    FaceSlope: int
-    FaceAspect: int
-    FaceValue: int
-    TerrainPointElevation: int
-    TerrainPointAttributeGraduated: int
-    TerrainPointAttributeUnique: int
-    TerrainDirtyArea: int
+    Composite = 0
+    NodeSimple = 1
+    NodeValue = 2
+    NodeElevation = 3
+    EdgeSimple = 4
+    EdgeType = 5
+    FaceSimple = 6
+    FaceElevation = 7
+    FaceSlope = 8
+    FaceAspect = 9
+    FaceValue = 10
+    TerrainPointElevation = 11
+    TerrainPointAttributeGraduated = 12
+    TerrainPointAttributeUnique = 13
+    TerrainDirtyArea = 14
+
+class TimeIndicatorSize(Enum):
+    Small = 0
+    Medium = 1
+    Large = 2
+
+class TimeSpanSymbolBoundary(Enum):
+    eNone = 0
+    StartPoint = 1
+    EndPoint = 2
+    StartAndEndPoint = 3
+
+class TimelineLaneViewType(Enum):
+    Overlap = 0
+    Cascade = 1
+
+class TimelineLayerType(Enum):
+    Individual = 0
+    Leftover = 1
+
+class TimelineSymbolStyleType(Enum):
+    SingleColor = 0
+    AlternatingColor = 1
+
+class TimelineTheme(Enum):
+    Light = 0
+    Medium = 1
+    Dark = 2
 
 class TimelineViewType(Enum):
-    DefaultView: int
-    SummaryView: int
+    DefaultView = 0
+    SummaryView = 1
 
 class BarrierWeight(Enum):
-    eNone: int
-    Low: int
-    Medium: int
-    High: int
+    eNone = 0
+    Low = 1
+    Medium = 2
+    High = 3
 
 class BindVariableType(Enum):
-    String: int
-    Integer: int
-    Double: int
-    Date: int
-    Geometry: int
+    String = 0
+    Integer = 1
+    Double = 2
+    Date = 3
+    Geometry = 4
 
 class BinsToPointsThresholdType(Enum):
-    MaxScale: int
-    FeatureCount: int
+    MaxScale = 0
+    FeatureCount = 1
 
 class DataSearchMode(Enum):
-    Contains: int
-    Exact: int
-    StartsWith: int
+    Contains = 0
+    Exact = 1
+    StartsWith = 2
+    FullTextSearchStartsWith = 3
+    FullTextSearchExact = 4
 
 class DimensionMarkerFit(Enum):
-    eNone: int
-    Tolerance: int
-    Text: int
+    eNone = 0
+    Tolerance = 1
+    Text = 2
 
 class DimensionPartOptions(Enum):
-    Begin: int
-    End: int
-    eNone: int
-    Both: int
+    Begin = 1
+    End = 2
+    eNone = 3
+    Both = 0
 
 class DimensionTextFit(Enum):
-    eNone: int
-    MoveBegin: int
-    MoveEnd: int
+    eNone = 0
+    MoveBegin = 1
+    MoveEnd = 2
 
 class DimensionTextOption(Enum):
-    Only: int
-    Suffix: int
-    Expression: int
-    eNone: int
+    Only = 0
+    Suffix = 1
+    Expression = 2
+    eNone = 3
 
 class DimensionType(Enum):
-    Aligned: int
-    Linear: int
+    Aligned = 0
+    Linear = 1
 
 class DisciplineType(Enum):
-    Architectural: int
-    Electrical: int
-    Mechanical: int
-    Piping: int
-    Structural: int
-    Infrastructure: int
+    Architectural = 0
+    Electrical = 1
+    Mechanical = 2
+    Piping = 3
+    Structural = 4
+    Infrastructure = 5
 
 class DisplayFilterType(Enum):
-    ByChoice: int
-    ByScale: int
+    ByChoice = 0
+    ByScale = 1
 
 class FeatureCacheType(Enum):
-    eNone: int
-    Session: int
+    eNone = 0
+    Session = 1
 
 class FeatureExpirationMethod(Enum):
-    MaximumFeatureCount: int
-    MaximumFeatureAge: int
+    MaximumFeatureCount = 0
+    MaximumFeatureAge = 1
 
 class FloorFilterRank(Enum):
-    eNone: int
-    Site: int
-    Facility: int
-    Level: int
+    eNone = 0
+    Site = 1
+    Facility = 2
+    Level = 3
 
 class HtmlPopupStyle(Enum):
-    TwoColumnTable: int
-    RedirectedHTML: int
-    XSLStyleSheet: int
+    TwoColumnTable = 0
+    RedirectedHTML = 1
+    XSLStyleSheet = 2
 
 class LocationConditionType(Enum):
-    In: int
-    Depart: int
-    Out: int
-    Arrive: int
-    Cross: int
-    Crossover: int
+    In = 0
+    Depart = 1
+    Out = 2
+    Arrive = 3
+    Cross = 4
+    Crossover = 5
 
 class MappedOIDFieldType(Enum):
-    OID32Bit: int
-    OID64Bit: int
+    OID32Bit = 4
+    OID64Bit = 8
 
 class S52AreaSymbolizationType(Enum):
-    Plain: int
-    Symbolized: int
+    Plain = 0
+    Symbolized = 1
 
 class S52ColorScheme(Enum):
-    Day: int
-    Dusk: int
-    Night: int
+    Day = 0
+    Dusk = 1
+    Night = 2
 
 class S52DepthDisplayUnits(Enum):
-    Meters: int
-    Feet: int
-    Fathoms: int
+    Meters = 0
+    Feet = 1
+    Fathoms = 2
 
 class S52PointSymbolizationType(Enum):
-    PaperChart: int
-    Simplified: int
+    PaperChart = 0
+    Simplified = 1
+
+class StandardDeviationMultiplier(Enum):
+    eNone = 0
+    OneFourth = 1
+    OneThird = 2
+    OneHalf = 3
+    One = 4
+    Two = 5
+    Custom = 6
 
 class SymbolSubstitutionType(Enum):
-    eNone: int
-    Color: int
-    IndividualSubordinate: int
-    IndividualDominant: int
+    eNone = 0
+    Color = 1
+    IndividualSubordinate = 2
+    IndividualDominant = 3
 
 class TemporalFeatureClassCachingMode(Enum):
-    All: int
-    eNone: int
+    All = 0
+    eNone = 1
 
 class TemporalFeatureClassPurgeRule(Enum):
-    KeepLatestPerTrack: int
-    PurgeOldest: int
+    KeepLatestPerTrack = 0
+    PurgeOldest = 1
 
 class TrajectorySubLayerType(Enum):
-    Footprint: int
-    Point: int
+    Footprint = 0
+    Point = 1
 
 class WorkspaceFactory(Enum):
-    SDE: int
-    FileGDB: int
-    Raster: int
-    Shapefile: int
-    OLEDB: int
-    Access: int
-    DelimitedTextFile: int
-    Custom: int
-    Sql: int
-    Tin: int
-    TrackingServer: int
-    NetCDF: int
-    LASDataset: int
-    SQLite: int
-    FeatureService: int
-    ArcInfo: int
-    Cad: int
-    Excel: int
-    WFS: int
-    StreamService: int
-    BIMFile: int
-    InMemoryDB: int
-    NoSQL: int
-    BigDataConnection: int
-    KnowledgeGraph: int
-    NITF: int
-    VPF: int
+    SDE = 0
+    FileGDB = 1
+    Raster = 2
+    Shapefile = 3
+    OLEDB = 4
+    Access = 5
+    DelimitedTextFile = 6
+    Custom = 7
+    Sql = 8
+    Tin = 9
+    TrackingServer = 10
+    NetCDF = 11
+    LASDataset = 12
+    SQLite = 13
+    FeatureService = 14
+    ArcInfo = 15
+    Cad = 16
+    Excel = 17
+    WFS = 18
+    StreamService = 19
+    BIMFile = 20
+    InMemoryDB = 21
+    NoSQL = 22
+    BigDataConnection = 23
+    KnowledgeGraph = 24
+    NITF = 25
+    VPF = 26
+    Parquet = 27
+    FileKnowledgeGraph = 28

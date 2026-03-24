@@ -13,15 +13,15 @@ Attribute: Incomplete
 AttributeParameter: Incomplete
 
 class NetworkTimeUsage(IntEnum):
-    BeforeTraversal: int
-    AfterTraversal: int
+    BeforeTraversal = 1
+    AfterTraversal = 2
 
 class AttributeUsage(IntEnum):
-    Cost: int
-    Descriptor: int
-    Restriction: int
-    Hierarchy: int
+    Cost = 0
+    Descriptor = 1
+    Restriction = 2
+    Hierarchy = 3
 
 class AttributeParameterUsage(IntEnum):
-    General: int
-    Restriction: int
+    General = 0
+    Restriction = 1

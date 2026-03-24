@@ -8,7 +8,7 @@ from .PixelBlockCollection import PixelBlock as PixelBlock, PixelBlockCollection
 from .RasterCollection import RasterCollection as RasterCollection
 from arcpy import Extent as Extent, Point as Point
 
-__all__ = ['Abs', 'ACos', 'ACosH', 'AggregateMultidimensionalRaster', 'AnalyzeChangesUsingCCDC', 'AnalyzeChangesUsingLandTrendr', 'ApplyGeometricTerrainCorrection', 'ApplyOrbitCorrection', 'ApplyRadiometricCalibration', 'ApplyRadiometricTerrainFlattening', 'ASin', 'ASinH', 'ATan', 'ATan2', 'ATanH', 'BitwiseAnd', 'BitwiseLeftShift', 'BitwiseNot', 'BitwiseOr', 'BitwiseRightShift', 'BitwiseXOr', 'BooleanAnd', 'BooleanNot', 'BooleanOr', 'BooleanXOr', 'CellStatistics', 'ClassifyObjectsUsingDeepLearning', 'ClassifyPixelsUsingDeepLearning', 'ClassifyRaster', 'ClassifyRasterUsingSpectra', 'CombinatorialAnd', 'CombinatorialOr', 'CombinatorialXOr', 'ComputeAccuracyForObjectDetection', 'ComputeChangeRaster', 'ComputeConfusionMatrix', 'ComputeSARIndices', 'ComputeSegmentAttributes', 'Con', 'ConvertSARUnits', 'Cos', 'CosH', 'CreateAccuracyAssessmentPoints', 'CreateBinaryMask', 'CreateColorComposite', 'Deburst', 'DeepLearningModelToEcd', 'Despeckle', 'DetectBrightOceanObjects', 'DetectChangeUsingChangeAnalysisRaster', 'DetectChangeUsingDeepLearning', 'DetectDarkOceanAreas', 'DetectObjectsUsingDeepLearning', 'DetectObjectsUsingText', 'Diff', 'DimensionalMovingStatistics', 'Divide', 'DownloadOrbitFile', 'EqualTo', 'Exp', 'Exp10', 'Exp2', 'ExportTrainingDataForDeepLearning', 'ExtractFeaturesUsingAIModels', 'ExtractVideoFramesToImages', 'ExtractWater', 'FindArgumentStatistics', 'Float', 'FocalStatistics', 'GenerateMultidimensionalAnomaly', 'GenerateTrainingSamplesFromSeedPoints', 'GenerateTrendRaster', 'GreaterThan', 'GreaterThanEqual', 'InList', 'InspectTrainingSamples', 'Int', 'InterpolateFromSpatiotemporalPoints', 'IsNull', 'LessThan', 'LessThanEqual', 'LinearSpectralUnmixing', 'Ln', 'Log10', 'Log2', 'Minus', 'Mod', 'MultidimensionalPrincipalComponents', 'MultidimensionalRasterCorrelation', 'Multilook', 'Negate', 'NonMaximumSuppression', 'NotEqual', 'OptimalInterpolation', 'Over', 'Pick', 'Plus', 'Power', 'PredictUsingRegressionModel', 'PredictUsingTrendRaster', 'RemoveRasterSegmentTilingArtifacts', 'RemoveThermalNoise', 'RoundDown', 'RoundUp', 'Sample', 'SegmentMeanShift', 'SetNull', 'Sin', 'SinH', 'Square', 'SquareRoot', 'SummarizeCategoricalRaster', 'Tan', 'TanH', 'Test', 'Times', 'TrainDeepLearningModel', 'TrainIsoClusterClassifier', 'TrainKNearestNeighborClassifier', 'TrainMaximumLikelihoodClassifier', 'TrainRandomTreesClassifier', 'TrainRandomTreesRegressionModel', 'TrainSupportVectorMachineClassifier', 'TrainUsingAutoDL', 'UpdateAccuracyAssessmentPoints', 'VideoMetadataToFeatureClass', 'VideoMultiplexer', 'WeightedSum', 'ZonalStatistics', 'ZonalStatisticsAsTable', 'ApplyEnvironment', 'FloatDivide', 'FloorDivide', 'Subset', 'Aggregate', 'Foreach', 'Apply', 'Anomaly', 'Render', 'Clip', 'Merge', 'utils', 'RasterToXarray', 'XarrayToRaster', 'FuzzyGaussian', 'FuzzyLarge', 'FuzzyLinear', 'FuzzyMSLarge', 'FuzzyMSSmall', 'FuzzyNear', 'FuzzySmall', 'HfBinary', 'HfForward', 'HfInverseLinear', 'HfLinear', 'HfTable', 'KrigingModelOrdinary', 'KrigingModelUniversal', 'NbrAnnulus', 'NbrCircle', 'NbrIrregular', 'NbrRectangle', 'NbrWedge', 'NbrWeight', 'RadiusFixed', 'RadiusVariable', 'RemapRange', 'RemapValue', 'TimeMultipleDays', 'TimeSpecialDays', 'TimeWholeYear', 'TimeWithinDay', 'TopoBoundary', 'TopoCliff', 'TopoCoast', 'TopoContour', 'TopoExclusion', 'TopoLake', 'TopoPointElevation', 'TopoSink', 'TopoStream', 'TfExponential', 'TfGaussian', 'TfLarge', 'TfLinear', 'TfLogarithm', 'TfLogisticDecay', 'TfLogisticGrowth', 'TfMSLarge', 'TfMSSmall', 'TfNear', 'TfPower', 'TfSmall', 'TfSymmetricLinear', 'VfBidirHikingTime', 'VfBinary', 'VfCos', 'VfCosSec', 'VfHikingTime', 'VfInverseLinear', 'VfLinear', 'VfSec', 'VfSecCos', 'VfSymInverseLinear', 'VfSymLinear', 'VfTable', 'WOTable', 'WSTable', 'ApparentReflectance', 'Apply', 'ArgStatistics', 'Arithmetic', 'Aspect', 'AspectSlope', 'BandArithmetic', 'BAI', 'Buffered', 'CIg', 'CIre', 'Classify', 'ClayMinerals', 'Colormap', 'ColormapToRGB', 'ColorspaceConversion', 'Complex', 'CompositeBand', 'ComputeChange', 'Contour', 'ContrastBrightness', 'Convolution', 'Curvature', 'DetectChangeUsingChangeAnalysis', 'EVI', 'ElevationVoidFill', 'EqualToFrequency', 'ExtractBand', 'FerrousMinerals', 'GEMI', 'GenerateTrend', 'Geometric', 'GeometricMedian', 'GNDVI', 'GVITM', 'Gradient', 'Grayscale', 'GreaterThanFrequency', 'HeatIndex', 'HighestPosition', 'Hillshade', 'InterpolateRasterByDimension', 'IronOxide', 'LessThanFrequency', 'LinearUnmixing', 'Lookup', 'LowestPosition', 'MLClassify', 'MNDWI', 'MSAVI', 'MTVI2', 'Mask', 'Majority', 'Max', 'Mean', 'Median', 'Min', 'Minority', 'NBR', 'NDBI', 'NDMI', 'NDSI', 'NDVI', 'NDVIre', 'NDWI', 'PVI', 'Pansharpen', 'Percentile', 'Popularity', 'PredictUsingTrend', 'RTVICore', 'RadarCalibration', 'Range', 'Rank', 'RasterCalculator', 'RasterizeFeatures', 'RegionGrow', 'RegionPixelCount', 'Remap', 'Reproject', 'Resample', 'S1RadiometricCalibration', 'S1ThermalNoiseRemoval', 'SAVI', 'SR', 'SRre', 'SegMeanShift', 'ShadedRelief', 'Slope', 'Speckle', 'SpectralConversion', 'Statistics', 'StatisticsHistogram', 'StdDev', 'Stretch', 'SubsetBands', 'Sultan', 'Sum', 'TSAVI', 'TasseledCap', 'Threshold', 'TransposeBits', 'TrendToRGB', 'UnitConversion', 'VARI', 'Variety', 'VectorField', 'VectorFieldRenderer', 'WindChill', 'ZonalRemap', 'Extent', 'Point', 'Raster', 'RasterCollection', 'PixelBlockCollection', 'PixelBlock', 'Mensuration']
+__all__ = ['Abs', 'ACos', 'ACosH', 'AggregateMultidimensionalRaster', 'AnalyzeChangesUsingCCDC', 'AnalyzeChangesUsingLandTrendr', 'ApplyComplexDataFilter', 'ApplyCoregistration', 'ApplyGeometricTerrainCorrection', 'ApplyOrbitCorrection', 'ApplyRadiometricCalibration', 'ApplyRadiometricTerrainFlattening', 'ASin', 'ASinH', 'ATan', 'ATan2', 'ATanH', 'BitwiseAnd', 'BitwiseLeftShift', 'BitwiseNot', 'BitwiseOr', 'BitwiseRightShift', 'BitwiseXOr', 'BooleanAnd', 'BooleanNot', 'BooleanOr', 'BooleanXOr', 'CalculateCutFillVolume', 'CellStatistics', 'ClassifyObjectsUsingDeepLearning', 'ClassifyPixelsUsingDeepLearning', 'ClassifyRaster', 'ClassifyRasterUsingSpectra', 'CombinatorialAnd', 'CombinatorialOr', 'CombinatorialXOr', 'ComputeAccuracyForObjectDetection', 'ComputeAccuracyForPixelClassification', 'ComputeChangeRaster', 'ComputeCoherence', 'ComputeConfusionMatrix', 'ComputeSARIndices', 'ComputeSegmentAttributes', 'Con', 'ConvertSARUnits', 'Cos', 'CosH', 'CreateAccuracyAssessmentPoints', 'CreateBinaryMask', 'CreateColorComposite', 'Deburst', 'DeepLearningModelToEcd', 'Despeckle', 'DetectBrightOceanObjects', 'DetectChangeUsingChangeAnalysisRaster', 'DetectChangeUsingDeepLearning', 'DetectControlPoints', 'DetectDarkOceanAreas', 'DetectImageAnomalies', 'DetectObjectsUsingDeepLearning', 'DetectObjectsUsingText', 'DetectTargetUsingSpectra', 'Diff', 'DimensionalMovingStatistics', 'Divide', 'DownloadOrbitFile', 'EqualTo', 'Exp', 'Exp10', 'Exp2', 'ExportTrainingDataForDeepLearning', 'ExtractFeaturesUsingAIModels', 'ExtractVideoFramesToImages', 'ExtractWater', 'FindArgumentStatistics', 'Float', 'FocalStatistics', 'GenerateInterferogram', 'GenerateMaskedSARRaster', 'GenerateMultidimensionalAnomaly', 'GenerateMultitemporalCoherence', 'GenerateRadiometricTerrainCorrectedData', 'GenerateTrainingSamplesFromSeedPoints', 'GenerateTrendRaster', 'GreaterThan', 'GreaterThanEqual', 'InList', 'InspectTrainingSamples', 'Int', 'InterpolateFromSpatiotemporalPoints', 'IsNull', 'LessThan', 'LessThanEqual', 'LinearSpectralUnmixing', 'Ln', 'Log10', 'Log2', 'Minus', 'Mod', 'MultidimensionalPrincipalComponents', 'MultidimensionalRasterCorrelation', 'Multilook', 'Negate', 'NonMaximumSuppression', 'NotEqual', 'OptimalInterpolation', 'Over', 'Pick', 'Plus', 'Power', 'PredictUsingRegressionModel', 'PredictUsingTrendRaster', 'RemoveRasterSegmentTilingArtifacts', 'RemoveThermalNoise', 'ResampleLibrarySpectra', 'RoundDown', 'RoundUp', 'Sample', 'SegmentMeanShift', 'SetNull', 'Sin', 'SinH', 'Square', 'SquareRoot', 'SummarizeCategoricalRaster', 'Tan', 'TanH', 'Test', 'Times', 'TrainDeepLearningModel', 'TrainIsoClusterClassifier', 'TrainKNearestNeighborClassifier', 'TrainMaximumLikelihoodClassifier', 'TrainRandomTreesClassifier', 'TrainRandomTreesRegressionModel', 'TrainSupportVectorMachineClassifier', 'TrainUsingAutoDL', 'TransformImageShapes', 'UnwrapPhase', 'UpdateAccuracyAssessmentPoints', 'VideoMetadataToFeatureClass', 'VideoMultiplexer', 'WeightedSum', 'ZonalStatistics', 'ZonalStatisticsAsTable', 'ApplyEnvironment', 'FloatDivide', 'FloorDivide', 'Subset', 'Aggregate', 'Foreach', 'Apply', 'Anomaly', 'Render', 'Clip', 'Merge', 'utils', 'RasterToXarray', 'XarrayToRaster', 'FuzzyGaussian', 'FuzzyLarge', 'FuzzyLinear', 'FuzzyMSLarge', 'FuzzyMSSmall', 'FuzzyNear', 'FuzzySmall', 'HfBinary', 'HfForward', 'HfInverseLinear', 'HfLinear', 'HfTable', 'KrigingModelOrdinary', 'KrigingModelUniversal', 'NbrAnnulus', 'NbrCircle', 'NbrIrregular', 'NbrRectangle', 'NbrWedge', 'NbrWeight', 'RadiusFixed', 'RadiusVariable', 'RemapRange', 'RemapValue', 'TimeMultipleDays', 'TimeSpecialDays', 'TimeWholeYear', 'TimeWithinDay', 'TopoBoundary', 'TopoCliff', 'TopoCoast', 'TopoContour', 'TopoExclusion', 'TopoLake', 'TopoPointElevation', 'TopoSink', 'TopoStream', 'TfExponential', 'TfGaussian', 'TfLarge', 'TfLinear', 'TfLogarithm', 'TfLogisticDecay', 'TfLogisticGrowth', 'TfMSLarge', 'TfMSSmall', 'TfNear', 'TfPower', 'TfSmall', 'TfSymmetricLinear', 'VfBidirHikingTime', 'VfBinary', 'VfCos', 'VfCosSec', 'VfHikingTime', 'VfInverseLinear', 'VfLinear', 'VfSec', 'VfSecCos', 'VfSymInverseLinear', 'VfSymLinear', 'VfTable', 'WOTable', 'WSTable', 'ApparentReflectance', 'Apply', 'ArgStatistics', 'Arithmetic', 'Aspect', 'AspectSlope', 'BandArithmetic', 'BAI', 'Buffered', 'CIg', 'CIre', 'Classify', 'ClayMinerals', 'Colormap', 'ColormapToRGB', 'ColorspaceConversion', 'Complex', 'CompositeBand', 'ComputeChange', 'Contour', 'ContrastBrightness', 'Convolution', 'Curvature', 'DetectChangeUsingChangeAnalysis', 'EVI', 'ElevationVoidFill', 'EqualToFrequency', 'ExtractBand', 'FerrousMinerals', 'GEMI', 'GenerateTrend', 'Geometric', 'GeometricMedian', 'GNDVI', 'GVITM', 'Gradient', 'Grayscale', 'GreaterThanFrequency', 'HeatIndex', 'HighestPosition', 'Hillshade', 'InterpolateRasterByDimension', 'IronOxide', 'LabelBadBands', 'LessThanFrequency', 'LinearUnmixing', 'Lookup', 'LowestPosition', 'MLClassify', 'MNDWI', 'MSAVI', 'MTVI2', 'Mask', 'Majority', 'Max', 'Mean', 'Median', 'Min', 'Minority', 'NBR', 'NDBI', 'NDMI', 'NDSI', 'NDVI', 'NDVIre', 'NDWI', 'PVI', 'Pansharpen', 'Percentile', 'Popularity', 'PredictUsingTrend', 'RTVICore', 'RadarCalibration', 'Range', 'Rank', 'RasterCalculator', 'RasterizeFeatures', 'RegionGrow', 'RegionPixelCount', 'Remap', 'Reproject', 'Resample', 'S1RadiometricCalibration', 'S1ThermalNoiseRemoval', 'SAVI', 'SR', 'SRre', 'SegMeanShift', 'ShadedRelief', 'Slope', 'Speckle', 'SpectralConversion', 'Statistics', 'StatisticsHistogram', 'StdDev', 'Stretch', 'SubsetBands', 'Sultan', 'Sum', 'TSAVI', 'TasseledCap', 'Threshold', 'TransposeBits', 'TrendToRGB', 'UnitConversion', 'VARI', 'Variety', 'VectorField', 'VectorFieldRenderer', 'WindChill', 'ZonalRemap', 'Extent', 'Point', 'Raster', 'RasterCollection', 'PixelBlockCollection', 'PixelBlock', 'Mensuration']
 
 # Names in __all__ with no definition:
 #   ACos
@@ -27,6 +27,8 @@ __all__ = ['Abs', 'ACos', 'ACosH', 'AggregateMultidimensionalRaster', 'AnalyzeCh
 #   ApparentReflectance
 #   Apply
 #   Apply
+#   ApplyComplexDataFilter
+#   ApplyCoregistration
 #   ApplyEnvironment
 #   ApplyGeometricTerrainCorrection
 #   ApplyOrbitCorrection
@@ -51,6 +53,7 @@ __all__ = ['Abs', 'ACos', 'ACosH', 'AggregateMultidimensionalRaster', 'AnalyzeCh
 #   Buffered
 #   CIg
 #   CIre
+#   CalculateCutFillVolume
 #   CellStatistics
 #   Classify
 #   ClassifyObjectsUsingDeepLearning
@@ -68,8 +71,10 @@ __all__ = ['Abs', 'ACos', 'ACosH', 'AggregateMultidimensionalRaster', 'AnalyzeCh
 #   Complex
 #   CompositeBand
 #   ComputeAccuracyForObjectDetection
+#   ComputeAccuracyForPixelClassification
 #   ComputeChange
 #   ComputeChangeRaster
+#   ComputeCoherence
 #   ComputeConfusionMatrix
 #   ComputeSARIndices
 #   ComputeSegmentAttributes
@@ -91,9 +96,12 @@ __all__ = ['Abs', 'ACos', 'ACosH', 'AggregateMultidimensionalRaster', 'AnalyzeCh
 #   DetectChangeUsingChangeAnalysis
 #   DetectChangeUsingChangeAnalysisRaster
 #   DetectChangeUsingDeepLearning
+#   DetectControlPoints
 #   DetectDarkOceanAreas
+#   DetectImageAnomalies
 #   DetectObjectsUsingDeepLearning
 #   DetectObjectsUsingText
+#   DetectTargetUsingSpectra
 #   Diff
 #   DimensionalMovingStatistics
 #   Divide
@@ -127,7 +135,11 @@ __all__ = ['Abs', 'ACos', 'ACosH', 'AggregateMultidimensionalRaster', 'AnalyzeCh
 #   GEMI
 #   GNDVI
 #   GVITM
+#   GenerateInterferogram
+#   GenerateMaskedSARRaster
 #   GenerateMultidimensionalAnomaly
+#   GenerateMultitemporalCoherence
+#   GenerateRadiometricTerrainCorrectedData
 #   GenerateTrainingSamplesFromSeedPoints
 #   GenerateTrend
 #   GenerateTrendRaster
@@ -155,6 +167,7 @@ __all__ = ['Abs', 'ACos', 'ACosH', 'AggregateMultidimensionalRaster', 'AnalyzeCh
 #   IsNull
 #   KrigingModelOrdinary
 #   KrigingModelUniversal
+#   LabelBadBands
 #   LessThan
 #   LessThanEqual
 #   LessThanFrequency
@@ -230,6 +243,7 @@ __all__ = ['Abs', 'ACos', 'ACosH', 'AggregateMultidimensionalRaster', 'AnalyzeCh
 #   Render
 #   Reproject
 #   Resample
+#   ResampleLibrarySpectra
 #   RoundDown
 #   RoundUp
 #   S1RadiometricCalibration
@@ -299,9 +313,11 @@ __all__ = ['Abs', 'ACos', 'ACosH', 'AggregateMultidimensionalRaster', 'AnalyzeCh
 #   TrainRandomTreesRegressionModel
 #   TrainSupportVectorMachineClassifier
 #   TrainUsingAutoDL
+#   TransformImageShapes
 #   TransposeBits
 #   TrendToRGB
 #   UnitConversion
+#   UnwrapPhase
 #   UpdateAccuracyAssessmentPoints
 #   VARI
 #   Variety

@@ -3,12 +3,12 @@ from enum import Enum
 __all__ = ['WhatToExpect', 'GetCoreType', 'GetCIMArrayType', 'GetBasicArrayType', 'GetAttributeWithType', 'ChangeNoneTypeInEnum', 'ChangeBoolType', 'GetCimType', 'GetObjectFromType', 'GetCIMObject']
 
 class WhatToExpect(Enum):
-    CimType: int
-    BasicType: int
-    ArrayOfBasicType: int
-    ArrayOfCimType: int
-    UnknownToLog: int
-    ArrayOfUnknownToLog: int
+    CimType = 0
+    BasicType = 1
+    ArrayOfBasicType = 2
+    ArrayOfCimType = 3
+    UnknownToLog = 4
+    ArrayOfUnknownToLog = 5
 
 def GetCoreType(type_string): ...
 def GetAttributeWithType(element, debug: bool = False): ...

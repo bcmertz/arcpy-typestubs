@@ -13,6 +13,7 @@ class CIMChart:
     metaData: Incomplete
     multiSeriesChartProperties: str
     enableServerSideProcessing: bool
+    chartType: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMChartAxis:
@@ -118,11 +119,13 @@ class CIMChartGeneralProperties:
     footer: Incomplete
     showFooter: bool
     theme: Incomplete
+    paletteColorRamp: str
     titleText: str
     subTitleText: str
     footerText: str
     backgroundSymbolProperties: str
     gridLineSymbolProperties: str
+    verticalGridLineSymbolProperties: str
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMChartGuide:
@@ -138,6 +141,10 @@ class CIMChartGuide:
     guideType: Incomplete
     guideValueType: Incomplete
     fillSymbolProperties: str
+    polyline: Incomplete
+    valueFromField: Incomplete
+    valueFromFieldAggregationType: Incomplete
+    markerSymbolProperties: str
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMChartLegend:
@@ -274,15 +281,14 @@ class CIMChartTrajectoryProfileVariable:
     enabled: bool
     def __init__(self, *args, **Kwargs) -> None: ...
 
-class CIMGridChartProperties:
-    miniChartsPerRow: int
-    selectedMiniChart: int
-    showPreviewChart: bool
-    useSeriesMinMaxForAxisX: bool
-    useSeriesMinMaxForAxisY: bool
-    selectionLineSymbolProperties: str
-    miniChartOutlineSymbolProperties: str
-    miniChartTitleText: str
+class CIMGridScatterProperties:
+    rSquareText: str
+    displayOption: Incomplete
+    colorRamp: str
+    breakColors: Incomplete
+    sortByType: Incomplete
+    sortDirection: Incomplete
+    showPValue: bool
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMMultiSeriesChartProperties:
@@ -295,15 +301,15 @@ class CIMChartBarSeries(CIMChartSeries):
     fillSymbolProperties: str
     verticalOrientation: bool
     sortedCategoryValues: Incomplete
-    showMovingAverage: bool
-    movingAverageLineSymbolProperties: str
-    movingAveragePeriod: int
     timeBinningProperties: str
     nullPolicy: Incomplete
     matchLayerSymbology: bool
     showNullCategory: bool
     nullCategoryFillSymbolProperties: str
     nullCategoryLabel: Incomplete
+    showMovingAverage: bool
+    movingAverageLineSymbolProperties: str
+    movingAveragePeriod: int
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMChartBoxPlotSeries(CIMChartSeries):
@@ -387,6 +393,9 @@ class CIMChartHistogramSeries(CIMChartSeries):
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMChartLineSeries(CIMChartSeries):
+    showMovingAverage: bool
+    movingAverageLineSymbolProperties: str
+    movingAveragePeriod: int
     lineSymbolProperties: str
     markerSymbolProperties: str
     timeAggregationType: Incomplete
@@ -439,6 +448,17 @@ class CIMChartProfileGraphSeries(CIMChartSeries):
     markerSymbolProperties: str
     horizontalUnit: Incomplete
     verticalUnit: Incomplete
+    variableInYAxis1: Incomplete
+    lineSeriesType: Incomplete
+    trackCursor: bool
+    verticalExaggeration: float
+    showLoSPoints: bool
+    showLoSConnectingLine: bool
+    chain: bool
+    chainingTolerance: float
+    chainingToleranceZ: float
+    profileGraphFields: Incomplete
+    flipDirection: bool
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMChartScatterPlotMatrixSeries(CIMChartSeries):
@@ -463,6 +483,7 @@ class CIMChartScatterPlotMatrixSeries(CIMChartSeries):
     sortDirection: Incomplete
     trendLineFitType: Incomplete
     trendOrder: int
+    showPValue: bool
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMChartScatterSeries(CIMChartSeries):
@@ -474,12 +495,16 @@ class CIMChartScatterSeries(CIMChartSeries):
     showTrendEquation: bool
     bubbleMinimumSize: float
     bubbleMaximumSize: float
+    visualAggregationThreshold: int
+    visualAggregationGridRowCount: int
+    visualAggregationGridColumnCount: int
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMChartSpectralProfileSeries(CIMChartSeries):
     displayMode: Incomplete
     showOutliers: bool
     standardizeValues: bool
+    horizontalUnit: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMChartSurfaceProfileSeries(CIMChartSeries):
@@ -508,4 +533,16 @@ class CIMChartTrajectoryProfileSeries(CIMChartSeries):
     verticalOrientation: bool
     trajectoryIDsURI: Incomplete
     nullPolicy: Incomplete
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMGridChartProperties(CIMMultiSeriesChartProperties):
+    miniChartsPerRow: int
+    selectedMiniChart: int
+    showPreviewChart: bool
+    useSeriesMinMaxForAxisX: bool
+    useSeriesMinMaxForAxisY: bool
+    selectionLineSymbolProperties: str
+    miniChartOutlineSymbolProperties: str
+    miniChartTitleText: str
+    scatterProperties: str
     def __init__(self, *args, **Kwargs) -> None: ...

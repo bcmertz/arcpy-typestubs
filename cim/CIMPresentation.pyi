@@ -9,18 +9,6 @@ class CIMAspectRatio:
     height: float
     def __init__(self, *args, **Kwargs) -> None: ...
 
-class CIMImagePresentationPage:
-    imageURI: Incomplete
-    sourceURL: Incomplete
-    fitType: Incomplete
-    def __init__(self, *args, **Kwargs) -> None: ...
-
-class CIMMapPresentationPage:
-    mapView: str
-    restingState: str
-    autoPlayAnimationName: Incomplete
-    def __init__(self, *args, **Kwargs) -> None: ...
-
 class CIMPresentationLayerOverrideSet:
     layerURI: Incomplete
     visibility: bool
@@ -42,6 +30,7 @@ class CIMPresentationPage:
     holdTime: int
     isAutomaticAdvancement: bool
     backgroundColor: str
+    showBackgroundBorder: bool
     margin: str
     elementStorageURI: Incomplete
     extent: Incomplete
@@ -49,27 +38,35 @@ class CIMPresentationPage:
     visibility: bool
     locked: bool
     colorVisionDeficiencyMode: Incomplete
+    speakerNotes: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMPresentationTransition:
     duration: int
     transitionType: Incomplete
-    def __init__(self, *args, **Kwargs) -> None: ...
-
-class CIMVideoPresentationPage:
-    videoSource: str
-    fitType: Incomplete
-    startTime: int
-    endTime: Incomplete
-    loop: bool
+    swipeDirection: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMPresentation(CIMDefinition):
+    pageSettings: str
     pages: Incomplete
     aspectRatio: str
     colorModel: Incomplete
     rGBColorProfile: Incomplete
     cMYKColorProfile: Incomplete
+    colorVisionDeficiencyMode: Incomplete
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMImagePresentationPage(CIMPresentationPage):
+    imageURI: Incomplete
+    sourceURL: Incomplete
+    fitType: Incomplete
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMMapPresentationPage(CIMPresentationPage):
+    mapView: str
+    restingState: str
+    autoPlayAnimationName: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMPresentationGravityWellRestingState(CIMPresentationMapRestingState):
@@ -78,4 +75,13 @@ class CIMPresentationGravityWellRestingState(CIMPresentationMapRestingState):
 
 class CIMPresentationRotateRestingState(CIMPresentationMapRestingState):
     rotationRate: int
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMVideoPresentationPage(CIMPresentationPage):
+    videoSource: str
+    fitType: Incomplete
+    startTime: int
+    endTime: Incomplete
+    loop: bool
+    autoPlay: bool
     def __init__(self, *args, **Kwargs) -> None: ...

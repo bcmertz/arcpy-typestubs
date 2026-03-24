@@ -5,7 +5,7 @@ from .Raster import Raster as Raster
 from arcgisscripting import RasterCellIterator as RasterCellIterator, RasterInfo as RasterInfo
 from arcpy import Extent as Extent, Point as Point
 
-__all__ = ['Abs', 'ACos', 'ACosH', 'AddSurfaceInformation', 'Aggregate', 'AggregateMultidimensionalRaster', 'AreaSolarRadiation', 'ASin', 'ASinH', 'Aspect', 'ATan', 'ATan2', 'ATanH', 'BandCollectionStats', 'Basin', 'BitwiseAnd', 'BitwiseLeftShift', 'BitwiseNot', 'BitwiseOr', 'BitwiseRightShift', 'BitwiseXOr', 'BlockStatistics', 'BooleanAnd', 'BooleanNot', 'BooleanOr', 'BooleanXOr', 'BoundaryClean', 'CalculateKernelDensityRatio', 'CellStatistics', 'ClassifyRaster', 'ClassProbability', 'CombinatorialAnd', 'CombinatorialOr', 'CombinatorialXOr', 'Combine', 'ComputeConfusionMatrix', 'ComputeSegmentAttributes', 'Con', 'Contour', 'ContourList', 'ContourWithBarriers', 'Corridor', 'Cos', 'CosH', 'CostAllocation', 'CostBackLink', 'CostConnectivity', 'CostDistance', 'CostPath', 'CostPathAsPolyline', 'CreateAccuracyAssessmentPoints', 'CreateConstantRaster', 'CreateNormalRaster', 'CreateRandomRaster', 'CreateSignatures', 'Curvature', 'CutFill', 'DarcyFlow', 'DarcyVelocity', 'DeepLearningModelToEcd', 'Dendrogram', 'DeriveContinuousFlow', 'DeriveStreamAsLine', 'DeriveStreamAsRaster', 'Diff', 'DimensionalMovingStatistics', 'DistanceAccumulation', 'DistanceAllocation', 'Divide', 'EditSignatures', 'EqualTo', 'EqualToFrequency', 'EucAllocation', 'EucBackDirection', 'EucDirection', 'EucDistance', 'Exp', 'Exp10', 'Exp2', 'Expand', 'ExportTrainingDataForDeepLearning', 'ExtractByAttributes', 'ExtractByCircle', 'ExtractByMask', 'ExtractByPoints', 'ExtractByPolygon', 'ExtractByRectangle', 'ExtractMultiValuesToPoints', 'ExtractValuesToPoints', 'FeatureSolarRadiation', 'Fill', 'Filter', 'Float', 'FlowAccumulation', 'FlowDirection', 'FlowDistance', 'FlowLength', 'FocalFlow', 'FocalStatistics', 'FuzzyMembership', 'FuzzyOverlay', 'GenerateMultidimensionalAnomaly', 'GenerateTrainingSamplesFromSeedPoints', 'GeomorphonLandforms', 'GreaterThan', 'GreaterThanEqual', 'GreaterThanFrequency', 'HighestPosition', 'Hillshade', 'Idw', 'InList', 'InspectTrainingSamples', 'Int', 'InterpolateShape', 'IsNull', 'IsoCluster', 'IsoClusterUnsupervisedClassification', 'KernelDensity', 'Kriging', 'LeastCostCorridor', 'LessThan', 'LessThanEqual', 'LessThanFrequency', 'LinearSpectralUnmixing', 'LineDensity', 'LineStatistics', 'Ln', 'LocateRegions', 'Log10', 'Log2', 'Lookup', 'LowestPosition', 'MajorityFilter', 'Minus', 'MLClassify', 'Mod', 'NaturalNeighbor', 'Negate', 'Nibble', 'NotEqual', 'ObserverPoints', 'OptimalCorridorConnections', 'OptimalPathAsLine', 'OptimalPathAsRaster', 'OptimalRegionConnections', 'Over', 'ParticleTrack', 'PathAllocation', 'PathBackLink', 'PathDistance', 'Pick', 'Plus', 'PointDensity', 'PointsSolarRadiation', 'PointStatistics', 'Popularity', 'PorousPuff', 'Power', 'PrincipalComponents', 'Rank', 'RasterSolarRadiation', 'ReclassByASCIIFile', 'ReclassByTable', 'Reclassify', 'RegionGroup', 'RemoveRasterSegmentTilingArtifacts', 'RescaleByFunction', 'RoundDown', 'RoundUp', 'Sample', 'SegmentMeanShift', 'SetNull', 'Shrink', 'Sin', 'SinH', 'Sink', 'Slice', 'Slope', 'SnapPourPoint', 'SolarRadiationGraphics', 'SpaceTimeKernelDensity', 'Spline', 'SplineWithBarriers', 'Square', 'SquareRoot', 'StorageCapacity', 'StreamLink', 'StreamOrder', 'StreamToFeature', 'SurfaceParameters', 'TabulateArea', 'Tan', 'TanH', 'Test', 'Thin', 'Times', 'TopoToRaster', 'TopoToRasterByFile', 'TrainIsoClusterClassifier', 'TrainKNearestNeighborClassifier', 'TrainMaximumLikelihoodClassifier', 'TrainRandomTreesClassifier', 'TrainSupportVectorMachineClassifier', 'Trend', 'UpdateAccuracyAssessmentPoints', 'Viewshed', 'Viewshed2', 'Visibility', 'Watershed', 'WeightedOverlay', 'WeightedSum', 'ZonalFill', 'ZonalGeometry', 'ZonalGeometryAsTable', 'ZonalHistogram', 'ZonalStatistics', 'ZonalStatisticsAsTable', 'ApplyEnvironment', 'FloatDivide', 'FloorDivide', 'FuzzyGaussian', 'FuzzyLarge', 'FuzzyLinear', 'FuzzyMSLarge', 'FuzzyMSSmall', 'FuzzyNear', 'FuzzySmall', 'HfBinary', 'HfForward', 'HfInverseLinear', 'HfLinear', 'HfTable', 'KrigingModelOrdinary', 'KrigingModelUniversal', 'NbrAnnulus', 'NbrCircle', 'NbrIrregular', 'NbrRectangle', 'NbrWedge', 'NbrWeight', 'RadiusFixed', 'RadiusVariable', 'RemapRange', 'RemapValue', 'TimeMultipleDays', 'TimeSpecialDays', 'TimeWholeYear', 'TimeWithinDay', 'TopoBoundary', 'TopoCliff', 'TopoCoast', 'TopoContour', 'TopoExclusion', 'TopoLake', 'TopoPointElevation', 'TopoSink', 'TopoStream', 'TfExponential', 'TfGaussian', 'TfLarge', 'TfLinear', 'TfLogarithm', 'TfLogisticDecay', 'TfLogisticGrowth', 'TfMSLarge', 'TfMSSmall', 'TfNear', 'TfPower', 'TfSmall', 'TfSymmetricLinear', 'VfBidirHikingTime', 'VfBinary', 'VfCos', 'VfCosSec', 'VfHikingTime', 'VfInverseLinear', 'VfLinear', 'VfSec', 'VfSecCos', 'VfSymInverseLinear', 'VfSymLinear', 'VfTable', 'WOTable', 'WSTable', 'Extent', 'Point', 'Raster', 'Subset', 'Foreach', 'Apply', 'Anomaly', 'ArgStatistics', 'Arithmetic', 'BandArithmetic', 'Convolution', 'ElevationVoidFill', 'ExtractBand', 'Pansharpen', 'RasterCalculator', 'Remap', 'ShadedRelief', 'Statistics', 'StatisticsHistogram', 'Stretch', 'TasseledCap', 'TransposeBits', 'UnitConversion', 'VectorField', 'VectorFieldRenderer', 'CIg', 'CIre', 'ClayMinerals', 'Colormap', 'ColormapToRGB', 'Complex', 'ContrastBrightness', 'EVI', 'Speckle', 'SpectralConversion', 'CompositeBand', 'Mask', 'Resample', 'AspectSlope', 'HeatIndex', 'WindChill', 'FerrousMinerals', 'GEMI', 'GNDVI', 'Grayscale', 'GVITM', 'IronOxide', 'MSAVI', 'MTVI2', 'NDVI', 'NDVIre', 'NDWI', 'PVI', 'RTVICore', 'SAVI', 'SRre', 'Sultan', 'Threshold', 'TSAVI', 'VARI', 'RasterCellIterator', 'RasterInfo', 'Classify', 'LinearUnmixing', 'RegionGrow', 'SegMeanShift', 'RasterizeFeatures', 'BAI', 'NBR', 'NDBI', 'NDMI', 'NDSI', 'ZonalRemap', 'Render']
+__all__ = ['Abs', 'ACos', 'ACosH', 'AddSurfaceInformation', 'AdjustStreamToRaster', 'Aggregate', 'AggregateMultidimensionalRaster', 'AreaSolarRadiation', 'ASin', 'ASinH', 'Aspect', 'ATan', 'ATan2', 'ATanH', 'BandCollectionStats', 'Basin', 'BitwiseAnd', 'BitwiseLeftShift', 'BitwiseNot', 'BitwiseOr', 'BitwiseRightShift', 'BitwiseXOr', 'BlockStatistics', 'BooleanAnd', 'BooleanNot', 'BooleanOr', 'BooleanXOr', 'BoundaryClean', 'CalculateKernelDensityRatio', 'CellStatistics', 'ClassifyRaster', 'ClassProbability', 'CombinatorialAnd', 'CombinatorialOr', 'CombinatorialXOr', 'Combine', 'ComputeConfusionMatrix', 'ComputeSegmentAttributes', 'Con', 'Contour', 'ContourList', 'ContourWithBarriers', 'Corridor', 'Cos', 'CosH', 'CostAllocation', 'CostBackLink', 'CostConnectivity', 'CostDistance', 'CostPath', 'CostPathAsPolyline', 'CreateAccuracyAssessmentPoints', 'CreateConstantRaster', 'CreateNormalRaster', 'CreateRandomRaster', 'CreateSignatures', 'Curvature', 'CutFill', 'DarcyFlow', 'DarcyVelocity', 'DeepLearningModelToEcd', 'Dendrogram', 'DeriveContinuousFlow', 'DeriveStreamAsLine', 'DeriveStreamAsRaster', 'Diff', 'DimensionalMovingStatistics', 'DistanceAccumulation', 'DistanceAllocation', 'Divide', 'EditSignatures', 'EqualTo', 'EqualToFrequency', 'EucAllocation', 'EucBackDirection', 'EucDirection', 'EucDistance', 'Exp', 'Exp10', 'Exp2', 'Expand', 'ExportTrainingDataForDeepLearning', 'ExtractByAttributes', 'ExtractByCircle', 'ExtractByMask', 'ExtractByPoints', 'ExtractByPolygon', 'ExtractByRectangle', 'ExtractMultiValuesToPoints', 'ExtractValuesToPoints', 'FeaturePreservingSmoothing', 'FeatureSolarRadiation', 'Fill', 'Filter', 'Float', 'FlowAccumulation', 'FlowDirection', 'FlowDistance', 'FlowLength', 'FocalFlow', 'FocalStatistics', 'FuzzyMembership', 'FuzzyOverlay', 'GenerateMultidimensionalAnomaly', 'GenerateTrainingSamplesFromSeedPoints', 'GeomorphonLandforms', 'GreaterThan', 'GreaterThanEqual', 'GreaterThanFrequency', 'HighestPosition', 'Hillshade', 'Idw', 'InList', 'InspectTrainingSamples', 'Int', 'InterpolateShape', 'IsNull', 'IsoCluster', 'IsoClusterUnsupervisedClassification', 'KernelDensity', 'Kriging', 'LeastCostCorridor', 'LessThan', 'LessThanEqual', 'LessThanFrequency', 'LinearSpectralUnmixing', 'LineDensity', 'LineStatistics', 'Ln', 'LocateDepressions', 'LocateRegions', 'Log10', 'Log2', 'Lookup', 'LowestPosition', 'MajorityFilter', 'Minus', 'MLClassify', 'Mod', 'MultiscaleSurfaceDeviation', 'MultiscaleSurfaceDifference', 'MultiscaleSurfacePercentile', 'NaturalNeighbor', 'Negate', 'Nibble', 'NotEqual', 'ObserverPoints', 'OptimalCorridorConnections', 'OptimalPathAsLine', 'OptimalPathAsRaster', 'OptimalRegionConnections', 'Over', 'ParticleTrack', 'PathAllocation', 'PathBackLink', 'PathDistance', 'Pick', 'Plus', 'PointDensity', 'PointsSolarRadiation', 'PointStatistics', 'Popularity', 'PorousPuff', 'Power', 'PrincipalComponents', 'Rank', 'RasterSolarRadiation', 'ReclassByASCIIFile', 'ReclassByTable', 'Reclassify', 'RegionGroup', 'RemoveRasterSegmentTilingArtifacts', 'RescaleByFunction', 'RoundDown', 'RoundUp', 'Sample', 'SegmentMeanShift', 'SetNull', 'Shrink', 'Sin', 'SinH', 'Sink', 'Slice', 'Slope', 'SnapPourPoint', 'SolarRadiationGraphics', 'SpaceTimeKernelDensity', 'Spline', 'SplineWithBarriers', 'Square', 'SquareRoot', 'StorageCapacity', 'StreamLink', 'StreamOrder', 'StreamToFeature', 'SurfaceParameters', 'TabulateArea', 'Tan', 'TanH', 'Test', 'Thin', 'Times', 'TopographicPositionIndex', 'TopoToRaster', 'TopoToRasterByFile', 'TrainIsoClusterClassifier', 'TrainKNearestNeighborClassifier', 'TrainMaximumLikelihoodClassifier', 'TrainRandomTreesClassifier', 'TrainSupportVectorMachineClassifier', 'Trend', 'UpdateAccuracyAssessmentPoints', 'ValuePercentileContours', 'Viewshed', 'Viewshed2', 'Visibility', 'VolumePercentileContours', 'Watershed', 'WeightedOverlay', 'WeightedSum', 'ZonalCharacterization', 'ZonalFill', 'ZonalGeometry', 'ZonalGeometryAsTable', 'ZonalHistogram', 'ZonalStatistics', 'ZonalStatisticsAsTable', 'ApplyEnvironment', 'FloatDivide', 'FloorDivide', 'FuzzyGaussian', 'FuzzyLarge', 'FuzzyLinear', 'FuzzyMSLarge', 'FuzzyMSSmall', 'FuzzyNear', 'FuzzySmall', 'HfBinary', 'HfForward', 'HfInverseLinear', 'HfLinear', 'HfTable', 'KrigingModelOrdinary', 'KrigingModelUniversal', 'NbrAnnulus', 'NbrCircle', 'NbrIrregular', 'NbrRectangle', 'NbrWedge', 'NbrWeight', 'RadiusFixed', 'RadiusVariable', 'RemapRange', 'RemapValue', 'TimeMultipleDays', 'TimeSpecialDays', 'TimeWholeYear', 'TimeWithinDay', 'TopoBoundary', 'TopoCliff', 'TopoCoast', 'TopoContour', 'TopoExclusion', 'TopoLake', 'TopoPointElevation', 'TopoSink', 'TopoStream', 'TfExponential', 'TfGaussian', 'TfLarge', 'TfLinear', 'TfLogarithm', 'TfLogisticDecay', 'TfLogisticGrowth', 'TfMSLarge', 'TfMSSmall', 'TfNear', 'TfPower', 'TfSmall', 'TfSymmetricLinear', 'VfBidirHikingTime', 'VfBinary', 'VfCos', 'VfCosSec', 'VfHikingTime', 'VfInverseLinear', 'VfLinear', 'VfSec', 'VfSecCos', 'VfSymInverseLinear', 'VfSymLinear', 'VfTable', 'WOTable', 'WSTable', 'Extent', 'Point', 'Raster', 'Subset', 'Foreach', 'Apply', 'Anomaly', 'ArgStatistics', 'Arithmetic', 'BandArithmetic', 'Convolution', 'ElevationVoidFill', 'ExtractBand', 'Pansharpen', 'RasterCalculator', 'Remap', 'ShadedRelief', 'Statistics', 'StatisticsHistogram', 'Stretch', 'TasseledCap', 'TransposeBits', 'UnitConversion', 'VectorField', 'VectorFieldRenderer', 'CIg', 'CIre', 'ClayMinerals', 'Colormap', 'ColormapToRGB', 'Complex', 'ContrastBrightness', 'EVI', 'Speckle', 'SpectralConversion', 'CompositeBand', 'Mask', 'Resample', 'AspectSlope', 'HeatIndex', 'WindChill', 'FerrousMinerals', 'GEMI', 'GNDVI', 'Grayscale', 'GVITM', 'IronOxide', 'MSAVI', 'MTVI2', 'NDVI', 'NDVIre', 'NDWI', 'PVI', 'RTVICore', 'SAVI', 'SRre', 'Sultan', 'Threshold', 'TSAVI', 'VARI', 'RasterCellIterator', 'RasterInfo', 'Classify', 'LinearUnmixing', 'RegionGrow', 'SegMeanShift', 'RasterizeFeatures', 'BAI', 'NBR', 'NDBI', 'NDMI', 'NDSI', 'ZonalRemap', 'Render']
 
 # Names in __all__ with no definition:
 #   ACos
@@ -17,6 +17,7 @@ __all__ = ['Abs', 'ACos', 'ACosH', 'AddSurfaceInformation', 'Aggregate', 'Aggreg
 #   ATanH
 #   Abs
 #   AddSurfaceInformation
+#   AdjustStreamToRaster
 #   Aggregate
 #   AggregateMultidimensionalRaster
 #   ApplyEnvironment
@@ -98,6 +99,7 @@ __all__ = ['Abs', 'ACos', 'ACosH', 'AddSurfaceInformation', 'Aggregate', 'Aggreg
 #   ExtractByRectangle
 #   ExtractMultiValuesToPoints
 #   ExtractValuesToPoints
+#   FeaturePreservingSmoothing
 #   FeatureSolarRadiation
 #   Fill
 #   Filter
@@ -152,6 +154,7 @@ __all__ = ['Abs', 'ACos', 'ACosH', 'AddSurfaceInformation', 'Aggregate', 'Aggreg
 #   LineStatistics
 #   LinearSpectralUnmixing
 #   Ln
+#   LocateDepressions
 #   LocateRegions
 #   Log10
 #   Log2
@@ -161,6 +164,9 @@ __all__ = ['Abs', 'ACos', 'ACosH', 'AddSurfaceInformation', 'Aggregate', 'Aggreg
 #   MajorityFilter
 #   Minus
 #   Mod
+#   MultiscaleSurfaceDeviation
+#   MultiscaleSurfaceDifference
+#   MultiscaleSurfacePercentile
 #   NaturalNeighbor
 #   NbrAnnulus
 #   NbrCircle
@@ -259,6 +265,7 @@ __all__ = ['Abs', 'ACos', 'ACosH', 'AddSurfaceInformation', 'Aggregate', 'Aggreg
 #   TopoStream
 #   TopoToRaster
 #   TopoToRasterByFile
+#   TopographicPositionIndex
 #   TrainIsoClusterClassifier
 #   TrainKNearestNeighborClassifier
 #   TrainMaximumLikelihoodClassifier
@@ -266,6 +273,7 @@ __all__ = ['Abs', 'ACos', 'ACosH', 'AddSurfaceInformation', 'Aggregate', 'Aggreg
 #   TrainSupportVectorMachineClassifier
 #   Trend
 #   UpdateAccuracyAssessmentPoints
+#   ValuePercentileContours
 #   VfBidirHikingTime
 #   VfBinary
 #   VfCos
@@ -281,11 +289,13 @@ __all__ = ['Abs', 'ACos', 'ACosH', 'AddSurfaceInformation', 'Aggregate', 'Aggreg
 #   Viewshed
 #   Viewshed2
 #   Visibility
+#   VolumePercentileContours
 #   WOTable
 #   WSTable
 #   Watershed
 #   WeightedOverlay
 #   WeightedSum
+#   ZonalCharacterization
 #   ZonalFill
 #   ZonalGeometry
 #   ZonalGeometryAsTable

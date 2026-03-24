@@ -1,10 +1,11 @@
+import types
 from _typeshed import Incomplete
 from enum import Flag
 
 class ViewContext(Flag):
-    maps: Incomplete
-    layouts: Incomplete
-    maps_and_layouts: Incomplete
+    maps = ...
+    layouts = ...
+    maps_and_layouts = ...
 
 class PauseDrawing:
     context: Incomplete

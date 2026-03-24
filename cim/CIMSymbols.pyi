@@ -40,6 +40,7 @@ class CIMAnimatedSymbolProperties:
     repeatType: Incomplete
     repeatDelay: float
     primitiveName: Incomplete
+    easing: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMCGAAttribute:
@@ -47,6 +48,7 @@ class CIMCGAAttribute:
     cGAAttributeType: Incomplete
     value: Incomplete
     values: Incomplete
+    arrayRowCount: int
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMCallout:
@@ -124,7 +126,13 @@ class CIMShapeVertices:
 class CIMSymbol:
     def __init__(self, *args, **Kwargs) -> None: ...
 
+class CIMSymbolAnimation:
+    animatedSymbolProperties: str
+    primitiveName: Incomplete
+    def __init__(self, *args, **Kwargs) -> None: ...
+
 class CIMSymbolLayer:
+    animations: Incomplete
     effects: Incomplete
     enable: bool
     name: Incomplete
@@ -405,6 +413,7 @@ class CIMMeshEdge(CIMSymbolLayer):
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMMultiLayerSymbol(CIMSymbol):
+    animations: Incomplete
     effects: Incomplete
     symbolLayers: Incomplete
     thumbnailURI: Incomplete
@@ -496,6 +505,32 @@ class CIMStroke(CIMSymbolLayer):
     anchor3D: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
+class CIMSymbolAnimationColor(CIMSymbolAnimation):
+    toColor: str
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMSymbolAnimationOffset(CIMSymbolAnimation):
+    offsetX: int
+    offsetY: int
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMSymbolAnimationRotation(CIMSymbolAnimation):
+    toRotation: int
+    rotateClockwise: bool
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMSymbolAnimationScale(CIMSymbolAnimation):
+    scaleFactor: int
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMSymbolAnimationSize(CIMSymbolAnimation):
+    toSize: int
+    def __init__(self, *args, **Kwargs) -> None: ...
+
+class CIMSymbolAnimationTransparency(CIMSymbolAnimation):
+    toTransparency: int
+    def __init__(self, *args, **Kwargs) -> None: ...
+
 class CIMTextSymbol(CIMSymbol):
     angle: float
     angleX: float
@@ -580,6 +615,8 @@ class CIMglTFMarker3D(CIMMarker):
     useAnchorPoint: bool
     animatedSymbolProperties: str
     primitiveShapeType: Incomplete
+    sourceStyleName: Incomplete
+    sourceSymbolKey: Incomplete
     def __init__(self, *args, **Kwargs) -> None: ...
 
 class CIMBackgroundCallout(CIMLineCallout):

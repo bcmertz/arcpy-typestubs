@@ -11,13 +11,13 @@ class NbrAnnulus(Neighborhood):
     innerRadius: Incomplete
     outerRadius: Incomplete
     units: Incomplete
-    def __init__(self, innerRadius: Incomplete | None = None, outerRadius: Incomplete | None = None, units: Incomplete | None = None) -> None: ...
+    def __init__(self, innerRadius=None, outerRadius=None, units=None) -> None: ...
 
 class NbrCircle(Neighborhood):
     __esri_toolinfo__: Incomplete
     radius: Incomplete
     units: Incomplete
-    def __init__(self, radius: Incomplete | None = None, units: Incomplete | None = None) -> None: ...
+    def __init__(self, radius=None, units=None) -> None: ...
 
 class NbrIrregular(Neighborhood):
     __esri_toolinfo__: Incomplete
@@ -29,7 +29,7 @@ class NbrRectangle(Neighborhood):
     width: Incomplete
     height: Incomplete
     units: Incomplete
-    def __init__(self, width: Incomplete | None = None, height: Incomplete | None = None, units: Incomplete | None = None) -> None: ...
+    def __init__(self, width=None, height=None, units=None) -> None: ...
 
 class NbrWedge(Neighborhood):
     __esri_toolinfo__: Incomplete
@@ -37,7 +37,7 @@ class NbrWedge(Neighborhood):
     startAngle: Incomplete
     endAngle: Incomplete
     units: Incomplete
-    def __init__(self, radius: Incomplete | None = None, startAngle: Incomplete | None = None, endAngle: Incomplete | None = None, units: Incomplete | None = None) -> None: ...
+    def __init__(self, radius=None, startAngle=None, endAngle=None, units=None) -> None: ...
 
 class NbrWeight(Neighborhood):
     __esri_toolinfo__: Incomplete

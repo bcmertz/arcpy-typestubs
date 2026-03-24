@@ -11,7 +11,7 @@ class VfBinary(VerticalFactor):
     zeroFactor: Incomplete
     lowCutAngle: Incomplete
     highCutAngle: Incomplete
-    def __init__(self, zeroFactor: Incomplete | None = None, lowCutAngle: Incomplete | None = None, highCutAngle: Incomplete | None = None) -> None: ...
+    def __init__(self, zeroFactor=None, lowCutAngle=None, highCutAngle=None) -> None: ...
 
 class VfLinear(VerticalFactor):
     __esri_toolinfo__: Incomplete
@@ -19,7 +19,7 @@ class VfLinear(VerticalFactor):
     lowCutAngle: Incomplete
     highCutAngle: Incomplete
     slope: Incomplete
-    def __init__(self, zeroFactor: Incomplete | None = None, lowCutAngle: Incomplete | None = None, highCutAngle: Incomplete | None = None, slope: Incomplete | None = None) -> None: ...
+    def __init__(self, zeroFactor=None, lowCutAngle=None, highCutAngle=None, slope=None) -> None: ...
 
 class VfInverseLinear(VerticalFactor):
     __esri_toolinfo__: Incomplete
@@ -27,7 +27,7 @@ class VfInverseLinear(VerticalFactor):
     lowCutAngle: Incomplete
     highCutAngle: Incomplete
     slope: Incomplete
-    def __init__(self, zeroFactor: Incomplete | None = None, lowCutAngle: Incomplete | None = None, highCutAngle: Incomplete | None = None, slope: Incomplete | None = None) -> None: ...
+    def __init__(self, zeroFactor=None, lowCutAngle=None, highCutAngle=None, slope=None) -> None: ...
 
 class VfSymLinear(VerticalFactor):
     __esri_toolinfo__: Incomplete
@@ -43,21 +43,21 @@ class VfSymInverseLinear(VerticalFactor):
     lowCutAngle: Incomplete
     highCutAngle: Incomplete
     slope: Incomplete
-    def __init__(self, zeroFactor: Incomplete | None = None, lowCutAngle: Incomplete | None = None, highCutAngle: Incomplete | None = None, slope: Incomplete | None = None) -> None: ...
+    def __init__(self, zeroFactor=None, lowCutAngle=None, highCutAngle=None, slope=None) -> None: ...
 
 class VfCos(VerticalFactor):
     __esri_toolinfo__: Incomplete
     lowCutAngle: Incomplete
     highCutAngle: Incomplete
     cosPower: Incomplete
-    def __init__(self, lowCutAngle: Incomplete | None = None, highCutAngle: Incomplete | None = None, cosPower: Incomplete | None = None) -> None: ...
+    def __init__(self, lowCutAngle=None, highCutAngle=None, cosPower=None) -> None: ...
 
 class VfSec(VerticalFactor):
     __esri_toolinfo__: Incomplete
     lowCutAngle: Incomplete
     highCutAngle: Incomplete
     secPower: Incomplete
-    def __init__(self, lowCutAngle: Incomplete | None = None, highCutAngle: Incomplete | None = None, secPower: Incomplete | None = None) -> None: ...
+    def __init__(self, lowCutAngle=None, highCutAngle=None, secPower=None) -> None: ...
 
 class VfCosSec(VerticalFactor):
     __esri_toolinfo__: Incomplete
@@ -65,7 +65,7 @@ class VfCosSec(VerticalFactor):
     highCutAngle: Incomplete
     cosPower: Incomplete
     secPower: Incomplete
-    def __init__(self, lowCutAngle: Incomplete | None = None, highCutAngle: Incomplete | None = None, cosPower: Incomplete | None = None, secPower: Incomplete | None = None) -> None: ...
+    def __init__(self, lowCutAngle=None, highCutAngle=None, cosPower=None, secPower=None) -> None: ...
 
 class VfSecCos(VerticalFactor):
     __esri_toolinfo__: Incomplete
@@ -73,7 +73,7 @@ class VfSecCos(VerticalFactor):
     highCutAngle: Incomplete
     secPower: Incomplete
     cosPower: Incomplete
-    def __init__(self, lowCutAngle: Incomplete | None = None, highCutAngle: Incomplete | None = None, secPower: Incomplete | None = None, cosPower: Incomplete | None = None) -> None: ...
+    def __init__(self, lowCutAngle=None, highCutAngle=None, secPower=None, cosPower=None) -> None: ...
 
 class VfTable(VerticalFactor):
     __esri_toolinfo__: Incomplete
@@ -84,10 +84,10 @@ class VfHikingTime(VerticalFactor):
     __esri_toolinfo__: Incomplete
     lowCutAngle: Incomplete
     highCutAngle: Incomplete
-    def __init__(self, lowCutAngle: Incomplete | None = None, highCutAngle: Incomplete | None = None) -> None: ...
+    def __init__(self, lowCutAngle=None, highCutAngle=None) -> None: ...
 
 class VfBidirHikingTime(VerticalFactor):
     __esri_toolinfo__: Incomplete
     lowCutAngle: Incomplete
     highCutAngle: Incomplete
-    def __init__(self, lowCutAngle: Incomplete | None = None, highCutAngle: Incomplete | None = None) -> None: ...
+    def __init__(self, lowCutAngle=None, highCutAngle=None) -> None: ...
